@@ -7,3 +7,5 @@ This `gh-pages` branch is the result of a remote script that monitors the reposi
  * renders the static HTML pages for documentation
  * changes the name of the index pages for each product
  * merges the unique content from the individual repos into this repo's `gh-pages` branch
+
+This included content from the "-Docs" repositories as well as the "landingpage" repository, which serves as the gateway to all documentation.
