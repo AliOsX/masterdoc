@@ -942,22 +942,24 @@ PWM can be accessed through an <code class="prettyprint">sysfs</code> protocol.<
 
 <h2 id="linux-specific">Linux-specific</h2>
 
-<p>Linux requires permissions to write to C.H.I.P. when it&rsquo;s plugged into your computer. Chrome (or Chromium) does not have these permissions, so you need to explicitly create them before you&rsquo;ll be able to use the <a href="#flash-chip-with-an-os">web flasher</a> .</p>
+<p>Linux requires permissions to write to C.H.I.P. when its plugged into your computer. Chrome (or Chromium) does not have these permissions, so you need to explicitly create them before you&rsquo;ll be able to use the <a href="#flash-chip-with-an-os">web flasher</a> .</p>
 
 <h3 id="on-ubuntu">On Ubuntu:</h3>
 
-<p>You need to paste the following into a terminal:
-<code class="prettyprint">shell
-sudo usermod -a -G dialout $(logname)
-sudo usermod -a -G plugdev $(logname)
-</code></p>
+<p>You need to paste the following into a terminal:</p>
+<pre class="highlight shell"><code>sudo usermod -a -G dialout <span class="k">$(</span>logname<span class="k">)</span>
+sudo usermod -a -G plugdev <span class="k">$(</span>logname<span class="k">)</span>
+</code></pre>
 
 <p>Then logout and log back in. </p>
 
-<p>For the curious:
-   * logname: outputs your username 
-   * dialout: gives non-root access to serial connections 
-   * plugdev: allows non-root mounting with pmount </p>
+<p>For the curious:</p>
+
+<ul>
+<li>logname: outputs your username </li>
+<li>dialout: gives non-root access to serial connections </li>
+<li>plugdev: allows non-root mounting with pmount </li>
+</ul>
 
 <p>For more information, check https://wiki.debian.org/SystemGroups</p>
 
@@ -965,22 +967,18 @@ sudo usermod -a -G plugdev $(logname)
 
 <ul>
 <li>If you have any issues, try using a USB2 port and not a USB3 one, or try using a USB2 hub in your USB3 port and plug C.H.I.P. into that.</li>
-<li>If you get stuck &ldquo;Waiting for Fastboot&rdquo; and the above options don&rsquo;t work, you should be able to install a &ldquo;headless no fastboot&rdquo; image. However, it will take quite a bit longer, and the Operating System won&rsquo;t have a GUI.</li>
+<li>If you get stuck &ldquo;Waiting for Fastboot&rdquo; and the above options do not work, you should be able to install a &ldquo;headless no fastboot&rdquo; image. However, it will take quite a bit longer, and the Operating System won&rsquo;t have a GUI.</li>
 </ul>
 
 <h4 id="caveat">Caveat</h4>
 
-<p>In rare cases, you may have an issue with your <a href="http://askubuntu.com/questions/185274/how-can-i-disable-usb-autosuspend-for-a-specific-device">computer</a> putting C.H.I.P. into auto-suspend mode. Here is an example on how to fix this problem:
-&ldquo;`shell
-apt-get install laptop-mode-tools</p>
-
-<h3 id="edit-etc-laptop-mode-conf-d-runtime-pm-conf-uncomment-change-autosuspend_runtime_devid_blacklist">edit /etc/laptop-mode/conf.d/runtime-pm.conf, uncomment/change AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST</h3>
-
-<h3 id="add-all-fel-devices-to-the-blacklist">add all fel devices to the blacklist:</h3>
-
-<p>AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST=&quot;1f3a:efe8&rdquo;
+<p>In rare cases, you may have an issue with your <a href="http://askubuntu.com/questions/185274/how-can-i-disable-usb-autosuspend-for-a-specific-device">computer</a> putting C.H.I.P. into auto-suspend mode. Here is an example on how to fix this problem:</p>
+<pre class="highlight shell"><code>apt-get install laptop-mode-tools
+<span class="c">### edit /etc/laptop-mode/conf.d/runtime-pm.conf, uncomment/change AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST</span>
+<span class="c">### add all fel devices to the blacklist:</span>
+<span class="nv">AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST</span><span class="o">=</span><span class="s2">"1f3a:efe8"</span>
 reboot
-&ldquo;`</p>
+</code></pre>
 
           <h1 id="advanced">Advanced</h1>
 
