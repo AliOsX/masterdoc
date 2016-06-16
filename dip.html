@@ -432,12 +432,15 @@ A registered vendor id does not imply the device tree overlay will be included i
 git clone https://github.com/NextThingCo/CHIP-dt-overlays.git
 </code></pre>
 
-<p>This repository has some very useful directories and files for getting your DIP working with your C.H.I.P.:
-  * <strong>samples/</strong> - some basic examples
-  * <strong>nextthingco/</strong> - NTC DIP overlay examples
-  * <strong>fimware/</strong> - example of a DTS that would compile to DTBO that would load with EEPROM
-  * <strong>tools/</strong> - script that generates an eeprom file that can be used to auto-load a DTBO
-  * <strong>Makefile</strong> - run <code class="prettyprint">make</code> to compile your device tree overlays in <code class="prettyprint">/samples</code> and <code class="prettyprint">/firmware</code> into device tree blob overlay files.</p>
+<p>This repository has some very useful directories and files for getting your DIP working with your C.H.I.P.:</p>
+
+<ul>
+<li><strong>samples/</strong> - some basic examples</li>
+<li><strong>nextthingco/</strong> - NTC DIP overlay examples</li>
+<li><strong>fimware/</strong> - example of a DTS that would compile to DTBO that would load with EEPROM</li>
+<li><strong>tools/</strong> - script that generates an eeprom file that can be used to auto-load a DTBO</li>
+<li><strong>Makefile</strong> - run <code class="prettyprint">make</code> to compile your device tree overlays in <code class="prettyprint">/samples</code> and <code class="prettyprint">/firmware</code> into device tree blob overlay files.</li>
+</ul>
 
 <p>You will need to make sure you have Linux kernel version 4.4 or later. Read more about this in the <a href="#update-c-h-i-p-to-debian-4-4">update section</a></p>
 
@@ -459,31 +462,67 @@ git clone https://github.com/NextThingCo/CHIP-dt-overlays.git
 
 <p>The following protocols can be enabled and configured with Device Tree Overlay files. Each protocol can be configured with a &ldquo;fragment&rdquo; in a DTO. Because some of these functions share pins, not all of these can be enabled at once. For example, if SPI2 is enabled, then it would not be possible to enable the CSI interface, since they share pins on U14.</p>
 
-<p>| <strong>Device/Protocol</strong> | <strong>Target name</strong> |
-| Two Wire Serial (I2C) | &lt;&amp;i2c0&gt; or &lt;&amp;i2c1&gt; or &lt;&amp;i2c2&gt; |
-| Touch Screen | &lt;&amp;rtp&gt; |
-| LCD display |  multiple(+)  |
-| GPIO | &lt;&amp;pio&gt; |
-| GPIO Expander Pins | &lt;&amp;xio&gt;  |
-| Pulse Width Modulation (PWM) | &lt;&amp;pwm&gt; |
-| Serial Peripheral Interface (SPI) | &lt;&amp;spi2&gt; |
-| CMOS (Camera) Sensor Interface (CSI) | no driver yet |
-| API Interrupt | &lt;&amp;pio&gt; |</p>
+<table><thead>
+<tr>
+<th><strong>Device/Protocol</strong></th>
+<th><strong>Target name</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Two Wire Serial (I2C)</td>
+<td>&lt;&amp;i2c0&gt; or &lt;&amp;i2c1&gt; or &lt;&amp;i2c2&gt;</td>
+</tr>
+<tr>
+<td>Touch Screen</td>
+<td>&lt;&amp;rtp&gt;</td>
+</tr>
+<tr>
+<td>LCD display</td>
+<td>multiple(+)</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td>&lt;&amp;pio&gt;</td>
+</tr>
+<tr>
+<td>GPIO Expander Pins</td>
+<td>&lt;&amp;xio&gt;</td>
+</tr>
+<tr>
+<td>Pulse Width Modulation (PWM)</td>
+<td>&lt;&amp;pwm&gt;</td>
+</tr>
+<tr>
+<td>Serial Peripheral Interface (SPI)</td>
+<td>&lt;&amp;spi2&gt;</td>
+</tr>
+<tr>
+<td>CMOS (Camera) Sensor Interface (CSI)</td>
+<td>no driver yet</td>
+</tr>
+<tr>
+<td>API Interrupt</td>
+<td>&lt;&amp;pio&gt;</td>
+</tr>
+</tbody></table>
 
 <p>(+) <em>several device and bus targets are used for an LCD display. See the PocketC.H.I.P. overlay in the DDK repo at nextthingco/dip-pocket.dts</em></p>
 
-<p>These protocols are enabled on C.H.I.P. by default. It is extremely unlikely your DIP would benefit from additional configuration with a DTO:
-  * One Wire Serial
-  * UART Serial
-  * Audio I/O
-  * Composite Video Output
-  * USB OTG
-  * USB
-  * Bluetooth
-  * Wifi
-  * USB Power
-  * Battery power
-  * Low Res Analog Digital Converter (not yet enabled, but will be by default)</p>
+<p>These protocols are enabled on C.H.I.P. by default. It is extremely unlikely your DIP would benefit from additional configuration with a DTO:</p>
+
+<ul>
+<li>One Wire Serial</li>
+<li>UART Serial</li>
+<li>Audio I/O</li>
+<li>Composite Video Output</li>
+<li>USB OTG</li>
+<li>USB</li>
+<li>Bluetooth</li>
+<li>Wifi</li>
+<li>USB Power</li>
+<li>Battery power</li>
+<li>Low Res Analog Digital Converter (not yet enabled, but will be by default)</li>
+</ul>
 
 <h2 id="development-by-example">Development by Example</h2>
 
@@ -610,12 +649,15 @@ created:</p>
 
 <p>With your finished board, you are now ready to flash the EEPROM with your unique data. The &ldquo;tools/&rdquo; directory in the DDK has a simple python script that can be used to generate a file that can be written to the hardware. </p>
 
-<p>Let&rsquo;s make up some values that you&rsquo;ll need to write to the EEPROM. 
-  * vendor ID (vid) = 0x16 (22) [32 bit]
-  * product ID (pid) = 0x44 (68) [16 bit]
-  * vendor = RadCo [32 characters]
-  * product = SuperT [32 characters]
-  * product-version = 1 [8 bit]</p>
+<p>Let&rsquo;s make up some values that you&rsquo;ll need to write to the EEPROM. </p>
+
+<ul>
+<li>vendor ID (vid) = 0x16 (22) [32 bit]</li>
+<li>product ID (pid) = 0x44 (68) [16 bit]</li>
+<li>vendor = RadCo [32 characters]</li>
+<li>product = SuperT [32 characters]</li>
+<li>product-version = 1 [8 bit]</li>
+</ul>
 
 <p>From the &ldquo;tools/&rdquo; directory, run </p>
 <pre class="highlight shell"><code>python dip-header-generator.py SuperTEEPROM.img --vid 22 --pid 68 --vendor <span class="s1">'RadCo'</span> --product <span class="s1">'SuperT'</span> --product-version 1
@@ -712,16 +754,6 @@ setenv dip_overlay_cmd <span class="s1">'ubifsload $dip_addr_r $dip_overlay_dir/
 </code></pre>
 
 <p>This process will soon be unneeded, as these commands will be rolled into U-Boot.</p>
-
-<h1 id="f-a-q">F.A.Q.</h1>
-
-<h2 id="can-i-sell-a-c-h-i-p-extension-board-without-complying-to-all-or-any-the-c-h-i-p-dip-specifications">Can I sell a C.H.I.P. extension board without complying to all (or any) the C.H.I.P. DIP specifications?</h2>
-
-<p>That&rsquo;s perfectly fine - just don&rsquo;t call it a DIP!</p>
-
-<h2 id="what-do-i-have-to-pay-to-get-my-extension-dip-certified">What do I have to pay to get my extension DIP certified?</h2>
-
-<p>Nothing! In case your extension complies the C.H.I.P. specifications, it will be listed in the C.H.I.P. directory - the C.H.I.P community will judge on whether the extension is fully compliant or not.</p>
 
       </div>
       <div class="dark-box">
