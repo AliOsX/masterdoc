@@ -327,16 +327,69 @@ Because this is actually the <strong>only</strong> requirement for an extension 
 
 <p>The data is structured as follows:</p>
 
-<p>|Offset | Length | Name | Description|
-|0x00 | 4 | MAGIC | Header to identify a DIP, must be ‘C’,’H’,’I’,’P’|
-|0x04 | 1 | VERSION | Version of the data format|
-|0x05 | 4 | VENDOR ID | 32-bit vendor ID, must be unique|
-|0x09 | 2 | PRODUCT ID | 16-bit product ID, vendor manages product ids|
-|0x0B | 1 | PRODUCT VERSION | Product version, managed by vendor|
-|0x0C | 32 | VENDOR NAME | Vendor name as human readable ASCII string|
-|0x2C | 32 | PRODUCT STRING | Product name as human readable ASCII string|
-|0x4C | 20 | RESERVED | space reserved for future updates|
-|0x60 | 16 | USER DATA | Random data, e.g. a MAC address for an ethernet DIP|</p>
+<table><thead>
+<tr>
+<th>Offset</th>
+<th>Length</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0x00</td>
+<td>4</td>
+<td>MAGIC</td>
+<td>Header to identify a DIP, must be ‘C’,’H’,’I’,’P’</td>
+</tr>
+<tr>
+<td>0x04</td>
+<td>1</td>
+<td>VERSION</td>
+<td>Version of the data format</td>
+</tr>
+<tr>
+<td>0x05</td>
+<td>4</td>
+<td>VENDOR ID</td>
+<td>32-bit vendor ID, must be unique</td>
+</tr>
+<tr>
+<td>0x09</td>
+<td>2</td>
+<td>PRODUCT ID</td>
+<td>16-bit product ID, vendor manages product ids</td>
+</tr>
+<tr>
+<td>0x0B</td>
+<td>1</td>
+<td>PRODUCT VERSION</td>
+<td>Product version, managed by vendor</td>
+</tr>
+<tr>
+<td>0x0C</td>
+<td>32</td>
+<td>VENDOR NAME</td>
+<td>Vendor name as human readable ASCII string</td>
+</tr>
+<tr>
+<td>0x2C</td>
+<td>32</td>
+<td>PRODUCT STRING</td>
+<td>Product name as human readable ASCII string</td>
+</tr>
+<tr>
+<td>0x4C</td>
+<td>20</td>
+<td>RESERVED</td>
+<td>space reserved for future updates</td>
+</tr>
+<tr>
+<td>0x60</td>
+<td>16</td>
+<td>USER DATA</td>
+<td>Random data, e.g. a MAC address for an ethernet DIP</td>
+</tr>
+</tbody></table>
 
 <h2 id="vendor-id-and-product-id">Vendor ID and Product ID</h2>
 
