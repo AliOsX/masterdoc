@@ -747,7 +747,7 @@ By default, connecting CHIP&rsquo;s micro USB to a computer will create a USB Se
 
 <p><img alt="CHIP mechanical drawing" src="images/chip_mechanical.jpg" /></p>
 
-<p>Our git repo for CHIP hardware has a <a href="https://github.com/NextThingCo/CHIP-Hardware/blob/master/CHIP%5Bv1_0%5D/NTC_100088_CHIP_PCB_Assembly_drawing_r0.91.PDF">mechanical drawing</a></p>
+<p>Our git repo for CHIP hardware has a <a href="https://github.com/NextThingCo/CHIP-Hardware/tree/master/CHIP%5Bv1_0%5D/C.H.I.P._Mechanical">mechanical drawing</a></p>
 
 <h2 id="open-source-hardware-where-to-get-it">Open Source Hardware: Where To Get It</h2>
 
@@ -2071,7 +2071,10 @@ ls
 
 <h2 id="connecting-bluetooth-devices">Connecting Bluetooth Devices</h2>
 
-<p>CHIP has built-in Bluetooth. This tutorial instructs how to use a Bluetooth keyboard, since it is a simple and obvious example. There are, of course, several types of Bluetooth devices, such as earpieces, audio connectors, vacuum cleaners, and more. Future tutorials will cover those devices, but the keyboard is a good introduction to the commands and an easy way to test your system.</p>
+<p>CHIP has built-in Bluetooth and uses the <a href="http://www.bluez.org/">bluez 5 stack</a> for implementing connections and devices. 
+This tutorial instructs how to use a Bluetooth keyboard, since it is a simple and obvious example. 
+There are, of course, several types of Bluetooth devices, such as earpieces, audio connectors, vacuum cleaners, and more. 
+Future tutorials (search our <a href="http://bbs.nextthing.co">bbs</a> will cover those devices, but the keyboard is a good introduction to the commands and an easy way to test your system.</p>
 
 <h3 id="requirements">Requirements</h3>
 
@@ -2088,7 +2091,7 @@ ls
 
 <h3 id="about-bluetoothctl">About <code class="prettyprint">bluetoothctl</code></h3>
 
-<p>We&rsquo;ll be using the command <code class="prettyprint">bluetoothctl</code> to find, pair with, and connect to devices.</p>
+<p>We&rsquo;ll be using the command <code class="prettyprint">bluetoothctl</code> to find, pair with, and connect to devices. </p>
 
 <p>In the terminal, type</p>
 <pre class="highlight shell"><code>  bluetoothctl
@@ -2100,7 +2103,8 @@ ls
 <span class="o">[</span>NEW] Device 15:03:26:A0:26:26 SK032B02-2626
 </code></pre>
 
-<p>which is a list of MAC addresses of CHIP&rsquo;s Bluetooth controller chip (the first line) and any other devices that have been paired with CHIP in the past. Use the <code class="prettyprint">help</code> command - it lists all the very useful commands in the <code class="prettyprint">bluetoothctl</code> interactive mode.</p>
+<p>which is a list of MAC addresses of CHIP&rsquo;s Bluetooth controller chip (the first line) and any other devices that have been paired with CHIP in the past. 
+Use the <code class="prettyprint">help</code> command - it lists all the very useful commands in the <code class="prettyprint">bluetoothctl</code> interactive mode.</p>
 
 <p>In Bluetooth interactive mode, use the command</p>
 <pre class="highlight shell"><code>  power on
@@ -2203,6 +2207,19 @@ Connection successful
 <span class="gp">[bluetooth]## </span><span class="o">[</span> 1304.470000] Bluetooth: HIDP <span class="o">(</span>Human Interface Emulation<span class="o">)</span> ver 1.2
 <span class="o">[</span> 1304.480000] Bluetooth: HIDP socket layer initialized
 Failed to connect: org.bluez.Error.Failed
+</code></pre>
+
+<h3 id="trusting-a-bluetooth-device">Trusting a Bluetooth Device</h3>
+
+<p>Trust between people leads to understanding and perhaps even harmonious living. Trust between bluetooth devices means that you won&rsquo;t have to connect the device every time it&rsquo;s near. Which is a sort of harmony, I suppose. 
+Once you have connected a bluetooth device to CHIP, if you intend to use it again, you can trust it:</p>
+<pre class="highlight shell"><code> trust 15:03:26:A0:26:26
+</code></pre>
+
+<h3 id="remove-a-bluetooth-device">Remove a Bluetooth device</h3>
+
+<p>You may want CHIP to not pair or connect to a device - perhaps the conveniently trusted device needs to be freed for another connection. Whatever the reason, if you want to remove your Bluetooth device, </p>
+<pre class="highlight shell"><code> remove 15:03:26:A0:26:26
 </code></pre>
 
 <h3 id="troubleshooting">Troubleshooting</h3>
