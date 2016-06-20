@@ -320,8 +320,8 @@ Then, open the Terminal application (from the drop-down menu at the top, left co
 <p>C.H.I.P. needs to know which extension board is attached in order to configure Linux accordingly. To do this, C.H.I.P. checks for a 1wire EEPROM at boot time.
 If a 1wire EEPROM is detected, its data is read, and if C.H.I.P. recognizes a supported DIP, it automatically sets up the software accordingly (<a href="#dip-maker-s-Guide">using a device tree overlay</a>).</p>
 
-<p>The 1wire EEPROM needs to be connected to the <strong>LCD_D2</strong> pin on <a href="chip.html#pin-headers">pin header U13</a> and should be able to store a least 122 bytes (see data-format below). The DS2421 is a common eeprom that works well for this.
-Because this is actually the <strong>only</strong> requirement for an extension board to comply the DIP specification.</p>
+<p>The 1wire EEPROM needs to be connected to the <strong>LCD_D2</strong> pin on <a href="chip.html#pin-headers">pin header U13</a> and should be able to store a least 122 bytes (see data-format below). The DS2431 is a common EEPROM part that works well for this.
+This readable EEPROM is actually the <strong>only</strong> requirement for an extension board to comply with the DIP specification.</p>
 
 <h2 id="data-format">Data Format</h2>
 
