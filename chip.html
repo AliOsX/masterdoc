@@ -790,6 +790,29 @@ CHIP&rsquo;s pin headers have all the connections to make this happen. An annota
 
 <p><img alt="Pinout diagram for CHIP" src="images/chip_pinouts.jpg" /></p>
 
+<h3 id="kernel-4-3-vs-4-4-gpio-how-to-tell-the-difference">Kernel 4.3 vs 4.4 GPIO - How To Tell The Difference</h3>
+
+<p>For various reasons related to the community nature of Linux development, the GPIO expander pin numbers are different between CHIP OS kernels 4.3 and 4.4. What follows is a very technical discussion of the GPIO access. If you just want to start making stuff and don&rsquo;t need low-level information, you might just want to skip this section and go straight to the <a href="#python-library">python library</a>.</p>
+
+<p>If you are developing applications on CHIP that use GPIO pins and you would like consistent behavior between the two kernel versions, you need to know how to find out the base value for the GPIO values. It may be enough for you to know that the GPIO expander pins start at <em>408</em> on 4.3 and <em>1016</em> on 4.4, however, it would be ideal to calculate this in your application to truly future-proof for future kernels.</p>
+
+<p>If you look in the directory <code class="prettyprint">/sys/class/gpio</code>, you&rsquo;ll find two directories starting with <code class="prettyprint">gpio</code>: <code class="prettyprint">gpiochip0</code> and either <code class="prettyprint">gpiochip408</code> (4.3) or <code class="prettyprint">gpiochip1016</code> (4.4).</p>
+
+<p>The <code class="prettyprint">408</code> and <code class="prettyprint">1016</code> are the bases for the expander pins. If you want to definitively find out what the base is using code, you should </p>
+<pre class="highlight shell"><code>cat gpiochip<span class="k">*</span>/label
+cat gpiochip<span class="k">*</span>/ngpio
+cat gpiochip<span class="k">*</span>/base
+</code></pre>
+
+<p>The <code class="prettyprint">label</code> you are interested in is the value <code class="prettyprint">pcf8574a</code> which is the device that provides GPIO expansion. This provides the number of GPIO as returned by <code class="prettyprint">ngpio</code>. The first expander pin starts with the <code class="prettyprint">base</code> value. If you parse all these values and apply to your code, you can setup your application to be kernel-agnostic for GPIO access. </p>
+
+<p>Here is a python script that demonstrates this <a href="https://gist.github.com/howientc/606545e0ff47e2cda61f14fca5c46eee">in a gist</a></p>
+
+<p>Here is a bash script to compute the base (courtesy of <a href="https://bbs.nextthing.co/users?name=fordsfords">bbs user @fordsfords</a>)</p>
+<pre class="highlight shell"><code><span class="nv">LABEL_FILE</span><span class="o">=</span><span class="sb">`</span>grep -l pcf8574a /sys/class/gpio/<span class="k">*</span>/<span class="k">*</span>label<span class="sb">`</span> <span class="nv">BASE_FILE</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$LABEL_FILE</span><span class="sb">`</span>/base 
+<span class="nv">BASE</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$BASE_FILE</span><span class="sb">`</span>
+</code></pre>
+
 <h3 id="how-the-system-sees-gpio">How The System Sees GPIO</h3>
 
 <p>There is a <code class="prettyprint">sysfs</code> interface available for the GPIO. This just means you can access the GPIO states in a file-system-like manner. For example, you can reference XIO-P0 using this path:</p>
@@ -836,7 +859,7 @@ CHIP&rsquo;s pin headers have all the connections to make this happen. An annota
 
 <h2 id="python-library">Python Library</h2>
 
-<p>A Python-based library for accessing GPIO data is in development. You can see some examples in use </p>
+<p>There is a well-maintained python library that works for 4.3 and 4.4 kernels available <a href="https://github.com/xtacocorex/CHIP_IO">here</a>. This is analogous to the RPi.GPIO library, but is designed for CHIP. It&rsquo;s an excellent place for quickly working with GPIO and PWM on CHIP.</p>
 
 <h2 id="gpio-types">GPIO Types</h2>
 
