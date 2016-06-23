@@ -951,7 +951,7 @@ PWM can be accessed through an <code class="prettyprint">sysfs</code> protocol.<
 
 <h2 id="web-flasher-os-specific-issues">Web Flasher OS-Specific Issues</h2>
 
-<h4 id="before-you-try-anything-else-try-using-a-different-usb-cable-many-cables-are-charging-only-or-do-not-support-high-bandwidth-and-will-cause-flashing-to-fail">Before you try anything else, try using a different USB cable. Many cables are charging-only, or do not support high bandwidth and will cause flashing to fail.</h4>
+<p>Before you try anything else, try using a different USB cable. Many cables are charging-only, or do not support high bandwidth and will cause flashing to fail.</p>
 
 <h3 id="windows-specific">Windows-specific</h3>
 
@@ -1012,16 +1012,12 @@ sudo udevadm control --reload-rules
 
 <p>For more information, check <a href="https://wiki.debian.org/SystemGroups">the systems group page on debian.org</a>.</p>
 
-<h5 id="usb3-issues">USB3 Issues</h5>
+<p><strong>USB3 Issues</strong>
+   * If you have any issues, try using a USB2 port and not a USB3 one, or try using a USB2 hub in your USB3 port and plug C.H.I.P. into that.
+   * If you get stuck &ldquo;Waiting for Fastboot&rdquo; and the above options do not work, you should be able to install a &ldquo;headless no fastboot&rdquo; image. However, it will take quite a bit longer, and the Operating System won&rsquo;t have a GUI.</p>
 
-<ul>
-<li>If you have any issues, try using a USB2 port and not a USB3 one, or try using a USB2 hub in your USB3 port and plug C.H.I.P. into that.</li>
-<li>If you get stuck &ldquo;Waiting for Fastboot&rdquo; and the above options do not work, you should be able to install a &ldquo;headless no fastboot&rdquo; image. However, it will take quite a bit longer, and the Operating System won&rsquo;t have a GUI.</li>
-</ul>
-
-<h5 id="caveat">Caveat</h5>
-
-<p>In rare cases, you may have an issue with your <a href="http://askubuntu.com/questions/185274/how-can-i-disable-usb-autosuspend-for-a-specific-device">computer</a> putting C.H.I.P. into auto-suspend mode. Here is an example on how to fix this problem:</p>
+<p><strong>Caveat</strong>
+In rare cases, you may have an issue with your <a href="http://askubuntu.com/questions/185274/how-can-i-disable-usb-autosuspend-for-a-specific-device">computer</a> putting C.H.I.P. into auto-suspend mode. Here is an example on how to fix this problem:</p>
 <pre class="highlight shell"><code>apt-get install laptop-mode-tools
 <span class="c">#### edit /etc/laptop-mode/conf.d/runtime-pm.conf, uncomment/change AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST</span>
 <span class="c">#### add all fel devices to the blacklist:</span>
