@@ -168,6 +168,16 @@ Once C.H.I.P is booted, you may want to change the resolution. You can do this w
 
 <p>With great care! It&rsquo;s important to pull with an even force to separate the DIP from the CHIP. You do not want bent header pins on your DIP! We&rsquo;ve found that the <a href="https://en.wikipedia.org/wiki/IC_extractor">IC Extractor</a> is an excellent companion if you want to frequently remove DIPs.</p>
 
+<h2 id="hack-it">Hack It</h2>
+
+<p>The HDMI DIP is hackable. There are breakouts for the headers and a small proto-board area so you can add some simple circuits. One example is adding a pin header so you can access C.H.I.P.&rsquo;s UART bus. This image shows an HDMI DIP with the added pin header soldered in place:</p>
+
+<p><img alt="pin headers for UART passthrough to CHIP" src="images/hdmi_uart_placement.jpg" /></p>
+
+<p>and the receive, transmit, and ground wires of a USB-UART cable connecting CHIP to a computer&rsquo;s serial bus:</p>
+
+<p><img alt="uart artfully applied" src="images/hdmi_uart_cnxn.jpg" /></p>
+
 <h2 id="open-source">Open Source</h2>
 
 <p>The HDMI DIP is open source. Design files are in our <a href="https://github.com/NextThingCo/DIP-HDMI-PCB">github repo.</a></p>
@@ -255,6 +265,10 @@ Once C.H.I.P is booted, you may want to change the resolution. You can do this w
 
 <h2 id="hack-it">Hack It</h2>
 
+<p>The VGA DIP is hackable. There are breakouts for the headers and a small proto-board area so you can add some simple circuits. There&rsquo;s also access to the RGB signals for extra colorful fun! Here are a couple example hacks that bring joy and utility to your VGA DIP.</p>
+
+<h3 id="rgb-trim-pots">RGB Trim Pots</h3>
+
 <p>Heat up your soldering iron, the VGA DIP is hackable. You may have noticed the pads suitably spaced for 10K trim pots, and the RGB breakouts. Here&rsquo;s a photo guide to soldering up some trim pots so you can manually adjust the individual red, green, and blue levels in the image. You can find <a href="http://www.bourns.com/docs/Product-Datasheets/3386.pdf">these pots</a> at vendors such as <a href="http://www.digikey.com/product-detail/en/bourns-inc/3386P-1-103TLF/3386P-103TLF-ND/1232547">digikey</a> and <a href="http://www.mouser.com/ProductDetail/Bourns/3386P-1-103TLF/?qs=sGAEpiMZZMvygUB3GLcD7rufck0TIBKysL9OZJpl%2f%2fo%3d">mouser</a></p>
 
 <p>Trim pots are able to go in one way on TOP of the PCB for accessibility.</p>
@@ -276,6 +290,16 @@ Once C.H.I.P is booted, you may want to change the resolution. You can do this w
 <p>Time to start Bending Colors!!!</p>
 
 <p><img alt="Control and Compose" src="images/vgapot_02allpots.jpg" /></p>
+
+<h3 id="uart-connection">UART Connection</h3>
+
+<p>Another example is adding a pin header so you can access C.H.I.P.&rsquo;s UART bus. This image shows an VGA DIP with the added pin header soldered in place:</p>
+
+<p><img alt="pin headers for UART passthrough to CHIP" src="images/vga_uart_placement.jpg" /></p>
+
+<p>and the receive, transmit, and ground wires of a USB-UART cable connecting CHIP to a computer&rsquo;s serial bus:</p>
+
+<p><img alt="uart artfully applied" src="images/vga_uart_cnxn.jpg" /></p>
 
 <h2 id="open-source">Open Source</h2>
 
