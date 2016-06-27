@@ -1210,7 +1210,7 @@ vagrant ssh
 
 <p><em>Note: this jumper needs to be present only when you connect CHIP to power</em>. If for some reason the wire becomes disconnected after you have powered CHIP, there is no problem or need to panic.</p>
 
-<p>Now connect CHIP to your computer with a <a href="https://commons.wikimedia.org/wiki/File:Micro_USB.jpg">micro-USB</a>-&gt;USB-B cable. The power LED will illuminate.</p>
+<p>Now connect CHIP to your computer with a <a href="https://commons.wikimedia.org/wiki/File:Micro_USB.jpg">micro-USB</a>-&gt;USB-A cable. The power LED will illuminate.</p>
 
 <h4 id="option-1-flash-with-ntc-buildroot-os">Option 1: Flash With NTC Buildroot OS</h4>
 
@@ -2946,12 +2946,10 @@ VmallocChunk:     482532 kB
 
 <p><strong><em>Problem:</em></strong> I attached a keyboard, monitor, and powered CHIP, but it does not do anything. The LEDs are on, but I can&rsquo;t do anything with CHIP!</p>
 
-<p><strong><em>Fixes:</em></strong> The initial batch of CHIPs shipped with a problem in their NAND flash storage. Don&rsquo;t worry, this is a software issue, and we&rsquo;ve built a repair tool.</p>
+<p><strong><em>Fixes:</em></strong> Don&rsquo;t worry, your CHIP is probably fine. This can be fixed by reflashing CHIP from our web flasher.</p>
 
 <ul>
-<li>Download the repair tool.</li>
-<li>Double-click on the repair tool icon.</li>
-<li>Follow the onscreen messages to complete the repair process.</li>
+<li>Follow the instructions <a href="#flash-chip-with-an-os">for flashing your CHIP</a>.</li>
 </ul>
 
 <h2 id="sudden-shutdown-brown-out">Sudden Shutdown (Brown-out)</h2>
