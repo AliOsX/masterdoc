@@ -819,30 +819,45 @@ cat gpiochip<span class="k">*</span>/base
 <pre class="highlight shell"><code>  /sys/class/gpio/gpio408/
 </code></pre>
 
-<p>The number is somewhat unfortunate, since the <code class="prettyprint">sysfs</code> names do not match the labels on our diagram! But is not too hard to translate. PinsXIO-P0 to P7 linearly map to gpio408 to gpio415.</p>
+<p>The number is somewhat unfortunate, since the <code class="prettyprint">sysfs</code> names do not match the labels on our diagram! But is not too hard to translate. PinsXIO-P0 to P7 linearly map to <code class="prettyprint">gpio408</code> to <code class="prettyprint">gpio415</code> on kernel 4.3 and <code class="prettyprint">gpio1016</code> to <code class="prettyprint">gpio1023</code> on kernel 4.4. See <a href="#kernel-4-3-vs-4-4-gpio-how-to-tell-the-difference">above</a> to learn more about that distinction.</p>
 
 <h3 id="some-gpio-switch-action">Some GPIO Switch Action</h3>
 
 <p>These lines of code will let us read values on pin XIO-P7. First, we tell the system we want to listen to this pin:</p>
-<pre class="highlight shell"><code>  sudo sh -c <span class="s1">'echo 415 &gt; /sys/class/gpio/export'</span>
+<pre class="highlight shell"><code>    <span class="c">#4.3</span>
+  sudo sh -c <span class="s1">'echo 415 &gt; /sys/class/gpio/export'</span>
+  <span class="c">#4.4</span>
+  sudo sh -c <span class="s1">'echo 1023 &gt; /sys/class/gpio/export'</span>
 </code></pre>
 
 <p>View the mode of the pin. It should return “in”:</p>
-<pre class="highlight shell"><code>  cat /sys/class/gpio/gpio415/direction
+<pre class="highlight shell"><code>    <span class="c">#4.3</span>
+  cat /sys/class/gpio/gpio415/direction
+  <span class="c">#4.4</span>
+  cat /sys/class/gpio/gpio1023/direction
 </code></pre>
 
 <p>Connect a jumper wire between Pin 20 (XIO-P7) and Pin 39 (GND). Now use this line of code to read the value:</p>
-<pre class="highlight shell"><code>  cat /sys/class/gpio/gpio415/value
+<pre class="highlight shell"><code>    <span class="c">#4.3</span>
+  cat /sys/class/gpio/gpio415/value
+    <span class="c">#4.4</span>
+  cat /sys/class/gpio/gpio1023/value
 </code></pre>
 
 <h3 id="some-gpio-output">Some GPIO Output</h3>
 
 <p>You could also change the mode of a pin from “in” to “out”</p>
-<pre class="highlight shell"><code>  sudo sh -c <span class="s1">'echo out &gt; /sys/class/gpio/gpio415/direction'</span>
+<pre class="highlight shell"><code>    <span class="c">#4.3</span>
+  sudo sh -c <span class="s1">'echo out &gt; /sys/class/gpio/gpio415/direction'</span>
+  <span class="c">#4.4</span>
+  sudo sh -c <span class="s1">'echo out &gt; /sys/class/gpio/gpio1023/direction'</span>
 </code></pre>
 
 <p>Now that it&rsquo;s in output mode, you can write a value to the pin:</p>
-<pre class="highlight shell"><code>  sudo sh -c <span class="s1">'echo 1 &gt; /sys/class/gpio/gpio415/value'</span>
+<pre class="highlight shell"><code>    <span class="c">#4.3</span>
+  sudo sh -c <span class="s1">'echo 1 &gt; /sys/class/gpio/gpio415/value'</span>
+  <span class="c">#4.4</span>
+  sudo sh -c <span class="s1">'echo 1 &gt; /sys/class/gpio/gpio1023/value'</span>
 </code></pre>
 
 <p>If you attach an LED to the pin and ground, the LED will illuminate according to your control messages.</p>
@@ -850,7 +865,10 @@ cat gpiochip<span class="k">*</span>/base
 <h3 id="enough-io">Enough IO</h3>
 
 <p>When you are done experimenting, you can tell the system to stop listening to the gpio pin:</p>
-<pre class="highlight shell"><code>  sudo sh -c <span class="s1">'echo 415 &gt; /sys/class/gpio/unexport'</span>
+<pre class="highlight shell"><code>    <span class="c">#4.3</span>
+  sudo sh -c <span class="s1">'echo 415 &gt; /sys/class/gpio/unexport'</span>
+    <span class="c">#4.4</span>
+  sudo sh -c <span class="s1">'echo 1023 &gt; /sys/class/gpio/unexport'</span>
 </code></pre>
 
 <h3 id="learn-more">Learn More</h3>
@@ -2945,7 +2963,7 @@ VmallocChunk:     482532 kB
 <ul>
 <li> Use a <a href="#powered-usb-hub">powered USB hub</a></li>
 <li> Use a <a href="#bluetooth-keyboard-and-mouse">bluetooth keyboard and mouse</a>. Yes, this is a very specific solution, but a good one when you are only using the USB port for keyboard and mouse. Keeps your desk cleaner too!</li>
-<li> Execute the command <code class="prettyprint">sudo axp209 --no_limit</code> in the terminal before you attach your USB peripherals.</li>
+<li> Execute the command <code class="prettyprint">sudo axp209 --no-limit</code> in the terminal before you attach your USB peripherals.</li>
 <li> Provide power from a supply connecting ground and 5V the pins <a href="#pin-headers">headers 1 and 2 on U13</a>.</li>
 </ul>
 
