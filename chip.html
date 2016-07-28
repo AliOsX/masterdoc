@@ -1206,10 +1206,6 @@ vagrant ssh
 
 <p>Now that the <a href="#installing-c-h-i-p-sdk">virtual machine and SDK</a> are running and configured, you can connect CHIP to your computer and give it an operating system. If you want to flash using a native Ubuntu installation, read how to <a href="#setup-ubuntu-for-flashing">prepare Ubuntu to flash</a></p>
 
-<h4 id="have-you-repaired-your-chip">Have you repaired your CHIP?</h4>
-
-<p>The original batch of CHIPs shipped with a software bug in the NAND flash storage. We&rsquo;ve built a repair tool.</p>
-
 <h4 id="prepare-chip-for-flashing">Prepare CHIP for Flashing</h4>
 
 <p>Prepare CHIP with a jumper wire connecting Pin 7 and Pin 39 on header U14 (FEL pin and GND). Here&rsquo;s a reference image that labels the headers and pins:</p>
@@ -1222,7 +1218,7 @@ vagrant ssh
 
 <h4 id="option-1-flash-with-ntc-buildroot-os">Option 1: Flash With NTC Buildroot OS</h4>
 
-<p>Buildroot is a lean operating system, and does not have a package manager to install software. You can add additional software before you flash CHIP by <a href="#customize-buildroot">customizing buildroot</a>. To flash CHIP with the buildroot OS:</p>
+<p>Buildroot is a lean operating system, and does not have a package manager to install software. You can add additional software before you flash CHIP by <a href="#customize-buildroot">customizing buildroot</a>. </p>
 <pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-tools
   ./chip-update-firmware.sh -f
 </code></pre>
@@ -1242,7 +1238,7 @@ vagrant ssh
 
 <h4 id="option-3-flash-with-chip-operating-system">Option 3: Flash With CHIP Operating System</h4>
 
-<p>If you want to flash CHIP with the complete CHIP Operating System</p>
+<p>If you want to flash CHIP with the complete CHIP Operating System with a desktop manager and GUI:</p>
 <pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-tools
   ./chip-update-firmware.sh -d -b stable-gui -f
 </code></pre>
@@ -1264,7 +1260,8 @@ vagrant ssh
 <h4 id="customize-buildroot">Customize Buildroot</h4>
 
 <p>If you want to customize buildroot, use these commands before you run the <code class="prettyprint">./chip-update-firmware.sh</code> script to flash CHIP with firmware:</p>
-<pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-buildroot
+<pre class="highlight shell"><code>  git clone https://github.com/NextThingCo/CHIP-buildroot
+  <span class="nb">cd</span> ~/CHIP-buildroot
   make chip_defconfig
   make nconfig
 </code></pre>
@@ -1273,11 +1270,11 @@ vagrant ssh
 <pre class="highlight shell"><code>  /home/vagrant/CHIP-buildroot/.config
 </code></pre>
 
-<p>Now let&rsquo;s build your buildroot with your custom additions:
-<code class="prettyprint">shell
-  make
-</code>
-This will take a while, maybe an hour. When finished, flash CHIP with the script:</p>
+<p>Now let&rsquo;s build your buildroot with your custom additions:</p>
+<pre class="highlight shell"><code>  make
+</code></pre>
+
+<p>This will take a while, maybe an hour. When finished, flash CHIP with the script:</p>
 <pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-tools
   <span class="nv">BUILDROOT_OUTPUT_DIR</span><span class="o">=</span>../CHIP-buildroot/output ./chip-fel-flash.sh
 </code></pre>
@@ -1538,7 +1535,7 @@ git clone http://github.com/NextThingCo/CHIP-tools
 
 <p>If you have already cloned the CHIP-tools from a previous CHIP flashing, you can, of course, just update your existing repository</p>
 <pre class="highlight shell"><code><span class="nb">cd </span>CHIP-tools
-git pull http://github.com/NextThingCo/CHIP-tools
+git pull
 </code></pre>
 
 <p>You&rsquo;ll also need to add your user to some groups and add a udev rule
