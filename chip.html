@@ -151,7 +151,7 @@ If you&rsquo;re a beginner, here&rsquo;s a quick reference of some really import
 <li><strong>grep</strong> a tool used for searching through files. It&rsquo;s quite deep and can be complicated, but if you see the word <code class="prettyprint">grep</code> in some command, you know it&rsquo;s searching for a match.</li>
 <li><strong>| (pipe)</strong>  a command used to redirect data into an application.</li>
 <li><strong>&lt; (redirect)</strong> a command use to redirect data into a file.</li>
-<li><strong>cat</strong> concactenate. used to append data to a file. Ex: <code class="prettyprint">cat &quot;Last line of text&quot; &gt; sometext.txt</code>. Merge files: <code class="prettyprint">cat append.txt &gt; main.txt</code> will put all the text in append.txt into main.txt.</li>
+<li><strong>cat</strong> and <strong>echo</strong> concactenate. append data to a file. Ex: <code class="prettyprint">echo &quot;Last line of text&quot; &gt;&gt; sometext.txt</code>. Merge files: <code class="prettyprint">cat append.txt &gt;&gt; main.txt</code> will put all the text in append.txt into main.txt. Overwrite: <code class="prettyprint">echo &quot;New contents of text file&quot;  &gt; whatevs.txt</code> will replace all text in the file with the text in quotes. Display text in file: <code class="prettyprint">cat showit.txt</code> will print the contents in the terminal window. Create: <code class="prettyprint">cat &gt; new.txt</code> will let you create a new text file in the terminal by typing lines (ctl-c to exit).</li>
 <li><strong>less</strong> makes it so you can paginate and read a text tile. Ex: <code class="prettyprint">less longtext.txt</code> will fill the screen with the first part of the longtext.txt file. Use the space bar to view the next page. Type <code class="prettyprint">q</code> to exit.</li>
 <li><strong>nano</strong> a text editor. You&rsquo;ll often see commands that call <code class="prettyprint">nano</code> so you can edit a configuration. Ex: <code class="prettyprint">nano /etc/avahi/services/afpd.service</code> to edit the avahi Apple file service file.</li>
 <li><strong>find</strong> look for files in the filesystem. Ex: <code class="prettyprint">find ~/Documents -name particular.txt -type f</code> will look for the file with the name <code class="prettyprint">particular.txt</code> in the Documents directory.</li>
@@ -414,9 +414,12 @@ You can select an application from the &ldquo;Computer Things!&rdquo; menu and s
 
 <p><img alt="AbiWord can process words." src="images/appscreen_abiword.jpg" /></p>
 
-<h3 id="ice-weasel-browser">Ice Weasel Browser</h3>
+<h3 id="web-browser">Web Browser</h3>
 
-<p>Ice Weasel is a Debian Linux version of the Firefox browser. The browser is largely the same as Firefox, just with a different name. More information is at the <a href="https://wiki.debian.org/Iceweasel">Debian website</a> and in this <a href="http://unix.stackexchange.com/questions/44215/is-there-any-advantage-of-using-iceweasel-and-firefox">stack exchange thread</a>.</p>
+<p>CHIP OS ships with the Ice Weasel browser. It is a Debian Linux version of the Firefox browser. 
+The browser is largely the same as Firefox, just with a different name. 
+More information is at the <a href="https://wiki.debian.org/Iceweasel">Debian website</a> and in this <a href="http://unix.stackexchange.com/questions/44215/is-there-any-advantage-of-using-iceweasel-and-firefox">stack exchange thread</a>.
+If you update your system (either through Synaptic or the command <code class="prettyprint">apt-get update &amp;&amp; apt-get upgrade</code>, you will suddenly find that your browser is called Firefox. This change is documented on the <a href="https://wiki.debian.org/Iceweasel">debian wiki</a></p>
 
 <p><img alt="Browse the web with IceWeasel" src="images/appscreen_webbrowser.jpg" /></p>
 
@@ -916,7 +919,7 @@ There is no driver for this link yet. ADC is used to read continuous sensors (te
 
 <h2 id="uart">UART</h2>
 
-<p>UART connections can be made using the UART connections on header U14. </p>
+<p>UART connections can be made using the UART connections on header U14. There is more detail about connections and drivers in <a href="#usb-to-uart-serial-connection">another section</a> of this document.</p>
 
 <h2 id="pwm">PWM</h2>
 
