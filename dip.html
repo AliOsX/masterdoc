@@ -717,10 +717,12 @@ created:</p>
 </code></pre>
 
 <p>then</p>
-<pre class="highlight shell"><code>sudo mkdir -p /lib/firmware/nextthing/chip <span class="o">&amp;&amp;</span> sudo cp dip-16-44.dtbo /lib/firmware/nextthing/chip
+<pre class="highlight shell"><code>sudo mkdir -p /lib/firmware/nextthingco/chip <span class="o">&amp;&amp;</span> sudo cp dip-16-44.dtbo /lib/firmware/nextthingco/chip
 </code></pre>
 
-<p>to put it in <code class="prettyprint">/lib/firmware/nextthing/chip/</code> to ensure the overlay is loaded on EEPROM detection. </p>
+<p>to put it in <code class="prettyprint">/lib/firmware/nextthingco/chip/</code> to ensure the overlay is loaded on EEPROM detection.</p>
+
+<p>You may also need to make sure that the w1_ds2431 module loads on boot so the EEPROM module can be found and read. You simply need to modify the configuration file with a text editor <code class="prettyprint">sudo nano /etc/modules.d/modules.conf</code> and add this line to the end: <code class="prettyprint">w1_ds2431</code></p>
 
 <h3 id="use-dip-with-software">Use DIP with software</h3>
 
