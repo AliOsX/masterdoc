@@ -647,7 +647,7 @@ sudo  make install <span class="nv">PREFIX</span><span class="o">=</span>/usr
 </code></pre>
 
 <p>then make a place for the overlay and catenate your blob:</p>
-<pre class="highlight shell"><code>sudo mkdir /sys/kernel/config/device-tree/overlays/DIPexample
+<pre class="highlight shell"><code>sudo mkdir -p /sys/kernel/config/device-tree/overlays/DIPexample
 su -c <span class="s1">'cat irtempi2c.dtbo &gt; /sys/kernel/config/device-tree/overlays/DIPexample/dtbo'</span>
 </code></pre>
 
