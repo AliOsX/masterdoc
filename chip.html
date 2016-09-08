@@ -921,7 +921,51 @@ There is no driver for this link yet. ADC is used to read continuous sensors (te
 
 <h2 id="uart">UART</h2>
 
-<p><a href="https://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter">UART</a> connections can be made using the UART connections on header U14. There is more detail about connections and drivers in <a href="#usb-to-uart-serial-connection">another section</a> of this document.</p>
+<p><a href="https://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter">UART</a> connections can be made using the UART connections on header U14. It allows serial connection which can be used to:</p>
+
+<ul>
+<li>Connect from another machine to <a href="#usb-to-uart-serial-connection">CHIP via remote serial console</a></li>
+<li>Use CHIP to connect to a microcontroller or other peripheral which has a serial interface (see below).</li>
+</ul>
+
+<h3 id="serial-connection-to-a-microcontroller-or-other-peripheral">Serial connection to a microcontroller or other peripheral</h3>
+
+<p>First stop <em>Getty</em> to avoid most shell stdin/stdout to interfere with UART. Yes most, saddly kernel messages will still go though and there is currently no way to stop them (and they may happen from time to time after boot):</p>
+
+<p>$ sudo systemctl stop serial-getty@ttyS0.service</p>
+
+<p>You may even disable completely that service so that it remains off after reboot but then you won&rsquo;t be able to use the serial console:</p>
+
+<p>$ sudo systemctl mask serial-getty@ttyS0.service</p>
+
+<p>You can then use UART as a standard serial port from <code class="prettyprint">/dev/ttyS0</code>. Below is a little sample experiment to test your UART port:</p>
+
+<h4 id="example-usage">Example usage</h4>
+
+<p>Connect UART Tx to Rx directly via a cable. So all outputs will come as inputs.</p>
+
+<p>Install PySerial (we&rsquo;ll have to run our process as <code class="prettyprint">root</code> to get access to the port):</p>
+
+<p>$ sudo pip install pyserial</p>
+
+<p>Write this little script and save it for example as <code class="prettyprint">test.py</code>:</p>
+
+<p>import serial
+    import time
+    with serial.Serial(&rsquo;/dev/ttyS0&rsquo;) as ser:
+    for i in range(10):
+        ser.write([i])
+        print(bytearray(ser.read())[0])
+        time.sleep(1)</p>
+
+<p>Finally let&rsquo;s run it:</p>
+
+<p>$ sudo python test.py
+    1
+    2
+    3
+    &hellip;
+    99</p>
 
 <h2 id="pwm">PWM</h2>
 
@@ -2477,7 +2521,7 @@ sudo apt-get autoremove
 
           <h2 id="headless-chip">Headless CHIP</h2>
 
-<p>One of the most amazing features of CHIP is that it&rsquo;s insanely simple to use it as small, wireless computer. Low power requirements, battery powered with charge management, and both WiFi and Bluetooth connectivity makes CHIP easy to run as a headless, autonomous machine. 
+<p>One of the most amazing features of CHIP is that it&rsquo;s insanely simple to use it as small, wireless computer. Low power requirements, battery-powered with charge management, and both WiFi and Bluetooth connectivity makes CHIP easy to run as a headless, autonomous machine.
 Of course, you&rsquo;ll still want to access it and control it without a monitor or keyboard. You can control CHIP with another computer and a serial or network connection. Here&rsquo;s how you do this.</p>
 
 <h3 id="begin">Begin</h3>
@@ -2485,8 +2529,8 @@ Of course, you&rsquo;ll still want to access it and control it without a monitor
 <p>If you want to use CHIP without a monitor or keyboard attached, there&rsquo;s a few ways to do this:</p>
 
 <ul>
-<li>Serial connection with USB to UART cable</li>
-<li>Serial connection with USB cable</li>
+<li>Serial connection between a computer and CHIP with a micro-USB cable (USB OTG)</li>
+<li>Serial connection between a computer and CHIP with USB to UART cable</li>
 <li>Secure Shell (SSH) over wireless or wired ethernet</li>
 </ul>
 
@@ -2495,48 +2539,14 @@ Of course, you&rsquo;ll still want to access it and control it without a monitor
 <ul>
 <li>Computer running OS X 10.10+, Ubuntu 14.04+, or Windows 7+</li>
 <li>CHIP</li>
-<li>Monitor and keyboard (somewhat optional, though handy)</li>
-<li><a href="#connecting-c-h-i-p-to-wi-fi-with-nmcli">Connection to the network</a></li>
+<li>Micro-USB cable for USB OTG</li>
+<li>USB-UART cable for USB serial</li>
+<li>A <a href="#connecting-c-h-i-p-to-wi-fi-with-nmcli">network connection</a> for SSH</li>
 </ul>
 
-<h3 id="ssh">SSH</h3>
+<h3 id="usb-on-the-go-serial-connection">USB On-The-Go Serial Connection</h3>
 
-<p>SSH (or &ldquo;Secure Shell&rdquo;) is a common way to control a computer remotely over a network. You&rsquo;ll need to first get your computer&rsquo;s network name or IP address before you can connect.</p>
-
-<h4 id="how-to-get-your-ip-address">How to get your IP address.</h4>
-
-<p>The easiest way to get CHIPs IP address is to hook up a monitor and keyboard. Bootup, log in, <a href="#connecting-c-h-i-p-to-wi-fi-with-nmcli">connect to the network</a> if you need to, and use the command</p>
-<pre class="highlight shell"><code>hostname -i
-</code></pre>
-
-<p>which results in your IP address, which might look like this:</p>
-<pre class="highlight shell"><code>10.1.1.99
-</code></pre>
-
-<p>If the <code class="prettyprint">hostname -i</code> command doesn&rsquo;t work you can use</p>
-<pre class="highlight shell"><code>ip addr show dev wlan0
-</code></pre>
-
-<p>which will output a lot of data. Look for the line <code class="prettyprint">wlan0</code> and the entry <code class="prettyprint">inet</code>, something like:</p>
-<pre class="highlight shell"><code>inet 10.1.1.99
-</code></pre>
-
-<h4 id="connect-to-chip-over-a-network">Connect to CHIP over a network</h4>
-
-<p>Now that you know your IP address, use the command:</p>
-<pre class="highlight shell"><code>ssh root@10.1.1.99
-</code></pre>
-
-<p>You&rsquo;ll be asked for CHIP&rsquo;s password. The default password is <code class="prettyprint">chip</code>.
-This process is the same if CHIP is connected to the network using built-in wireless or a USB-Ethernet adapter.</p>
-
-<h4 id="make-connections-to-chip-easy">Make Connections To CHIP Easy</h4>
-
-<p>You may want to setup your network so it will always provide the same (static) IP address to CHIP. You can then rely on CHIP always having the same IP address. </p>
-
-<p>Alternatively, you can <a href="#zero-configuration-networking">setup zero configuration networking</a> to give your CHIP an easily remembered name. </p>
-
-<p>You are now free to do whatever it is you do with Linux command line on CHIP.</p>
+<p>Possibly the simplest method to connect to a CHIP is with USB OTG (On-The-Go) Serial. You can connect to CHIP with a micro-USB cable to your computer. Your computer will see CHIP as a serial device as well as provide power to the CHIP. Once you&rsquo;ve connected the USB cable to CHIP and your computer, you can read how to <a href="#control-chip-using-a-serial-terminal">control CHIP using a serial terminal</a></p>
 
 <h3 id="usb-to-uart-serial-connection">USB to UART Serial Connection</h3>
 
@@ -2547,6 +2557,7 @@ This process is the same if CHIP is connected to the network using built-in wire
 <li>No USB-ethernet cable</li>
 <li>Don&rsquo;t know the IP or network name of CHIP</li>
 <li>You&rsquo;re old-school and like it</li>
+<li>You need to see terminal output from the beginning of boot</li>
 </ul>
 
 <p>Connect a USB to UART cable to the Ground (GND), Transmit (TX), and Recieve (RX) pins on CHIP</p>
@@ -2587,13 +2598,58 @@ Plugging in a +5 V pin could damage your CHIP</p>
 <p>Again, there is a chance your USB to UART cable may be different.
 Please check your data sheets!</p>
 
-<p>This is what our cable looks like plugged in:</p>
+<p>The correct pins are on U14 at 1, 3, and 5.</p>
+
+<p><img alt="Pinout diagram for CHIP" src="images/chip_pinouts.jpg" /></p>
+
+<p>Here&rsquo;s a photo of the cable properly plugged in:</p>
 
 <p><img alt="Properly connect USB to UART cable" src="images/uart_connection.jpg" /></p>
 
-<h3 id="usb-on-the-go-serial-connection">USB On The Go Serial Connection</h3>
+<h3 id="ssh">SSH</h3>
 
-<p>Simpler than the UART cable, you can connect to CHIP with a USB cable to your computer. Your computer will see CHIP as a serial device as well as provide power to the CHIP. Either way, you&rsquo;ll be able to continue with the directions below.</p>
+<p>SSH (or &ldquo;Secure Shell&rdquo;) is a common way to control a computer remotely over a network. You&rsquo;ll need to first get your computer&rsquo;s network name or IP address before you can connect.</p>
+
+<h4 id="connect-to-chip-over-a-network">Connect to CHIP over a network</h4>
+
+<p>CHIP comes with <code class="prettyprint">avahi</code> installed, meaning you can simply refer to it with a name, rather than an IP address</p>
+<pre class="highlight shell"><code>ssh chip@chip.local
+</code></pre>
+
+<p>In some situations, you&rsquo;ll need to use CHIP&rsquo;s <a href="#how-to-get-your-ip-address">IP address</a> to connect, in which case the command would look like: </p>
+<pre class="highlight shell"><code>ssh chip@10.1.1.99
+</code></pre>
+
+<p>You&rsquo;ll be asked for CHIP&rsquo;s password. The default password is <code class="prettyprint">chip</code>.
+This process is the same if CHIP is connected to the network using built-in wireless or a USB-Ethernet adapter.</p>
+
+<h5 id="how-to-get-your-ip-address">How to get your IP address</h5>
+
+<p>The easiest way to get CHIPs IP address is to hook up a monitor and keyboard. Bootup, log in, <a href="#connecting-c-h-i-p-to-wi-fi-with-nmcli">connect to the network</a> if you need to, and use the command</p>
+<pre class="highlight shell"><code>hostname -i
+</code></pre>
+
+<p>which results in your IP address, which might look like this:</p>
+<pre class="highlight shell"><code>10.1.1.99
+</code></pre>
+
+<p>If the <code class="prettyprint">hostname -i</code> command doesn&rsquo;t work you can use</p>
+<pre class="highlight shell"><code>ip addr show dev wlan0
+</code></pre>
+
+<p>(You can use the abbreviated <code class="prettyprint">ip a</code> for an easy to remember command).</p>
+
+<p>which will output a lot of data. Look for the line <code class="prettyprint">wlan0</code> and the entry <code class="prettyprint">inet</code>, something like:</p>
+<pre class="highlight shell"><code>inet 10.1.1.99
+</code></pre>
+
+<h4 id="make-connections-to-chip-easy">Make Connections To CHIP Easy</h4>
+
+<p>You may want to setup your network so it will always provide the same (static) IP address to CHIP. You can then rely on CHIP always having the same IP address. </p>
+
+<p>Alternatively, you can <a href="#zero-configuration-networking">setup zero configuration networking</a> to give your CHIP an easily remembered name. </p>
+
+<p>You are now free to do whatever it is you do with Linux command line on CHIP.</p>
 
 <h3 id="control-chip-using-a-serial-terminal">Control CHIP Using a Serial Terminal</h3>
 
@@ -2633,7 +2689,7 @@ Please check your data sheets!</p>
 
 <p>Now power up CHIP. You could do this at anytime, but you&rsquo;ll have the most reliable experience powering CHIP after connecting the USB-UART wires. If you make the serial connection after booting chip, you&rsquo;ll probably need to hit &#39;return&rsquo; on your keyboard a few times to get CHIP to send some data to you and print in your terminal.</p>
 
-<p>You&rsquo;ll then be prompted for login. Defaults are username <code class="prettyprint">root</code> and password <code class="prettyprint">chip</code>.</p>
+<p>You&rsquo;ll then be prompted for login. Defaults are username <code class="prettyprint">chip</code> and password <code class="prettyprint">chip</code>.</p>
 
 <p>You are now free to do whatever it is you do with Linux command line on CHIP.</p>
 
@@ -2723,7 +2779,7 @@ You&rsquo;ll also need to modify the hosts file where you&rsquo;ll need to chang
 </code></pre>
 
 <p>You can now access chip with the new name:</p>
-<pre class="highlight shell"><code>  ssh root@bobofettywap.local 
+<pre class="highlight shell"><code>  ssh chip@bobofettywap.local 
 </code></pre>
 
 <h3 id="other-packages">Other packages</h3>
