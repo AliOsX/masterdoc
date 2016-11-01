@@ -952,23 +952,23 @@ There is no driver for this link yet. ADC is used to read continuous sensors (te
 <p>$ sudo pip install pyserial</p>
 
 <p>Write this little script and save it for example as <code class="prettyprint">test.py</code>:</p>
-
-<p>import serial
-    import time
-    with serial.Serial(&rsquo;/dev/ttyS0&rsquo;) as ser:
-    for i in range(10):
-        ser.write([i])
-        print(bytearray(ser.read())[0])
-        time.sleep(1)</p>
+<pre class="highlight python"><code>    <span class="kn">import</span> <span class="nn">serial</span>
+    <span class="kn">import</span> <span class="nn">time</span>
+    <span class="k">with</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="s">'/dev/ttyS0'</span><span class="p">)</span> <span class="k">as</span> <span class="n">ser</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">(</span><span class="n">ser</span><span class="o">.</span><span class="n">read</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre>
 
 <p>Finally let&rsquo;s run it:</p>
-
-<p>$ sudo python test.py
+<pre class="highlight shell"><code>    <span class="nv">$ </span>sudo python test.py
     1
     2
     3
-    &hellip;
-    99</p>
+    ...
+    99
+</code></pre>
 
 <h2 id="pwm">PWM</h2>
 
