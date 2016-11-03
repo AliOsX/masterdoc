@@ -1334,6 +1334,28 @@ vagrant ssh
 
 <p>Unless you changed the users or passwords, you can login to CHIP as <code class="prettyprint">chip</code> or <code class="prettyprint">root</code> using the password <code class="prettyprint">chip</code>.</p>
 
+<h5 id="buildroot-cheat-sheet">Buildroot Cheat Sheet</h5>
+
+<p>Here&rsquo;s a very terse explanation of how the make commands work in CHIP-buildroot:</p>
+<pre class="highlight shell"><code>CHIP-buildroot/
+├── make chip_defconfig
+│   ├── apply pre-existing chip-specific configuration to buildroot
+│   └── apply pre-existing chip-specific configuration to kernel
+├── make chippro_defconfig
+│   ├── apply pre-existing chippro-specific configuration to buildroot
+│   └── apply pre-existing chippro-specific configuration to kernel
+├── make linux_nconfig
+│   └── make realtime changes to currently applied kernel defconfig
+└── make nconfig
+    └── make realtime changes to currently applied buildroot defconfig
+</code></pre>
+
+<p>The <code class="prettyprint">defconfig</code> is a sort of macro that loads a suggested starting point for a buildroot OS, for packages (nconfig) and kernel (linux-nconfig).</p>
+
+<p>Use <code class="prettyprint">make nconfig</code> to add packages for extending the capabilities, like you might with a package manager in debian.</p>
+
+<p>The <code class="prettyprint">make linux_nconfig</code> command modifies the kernel for specific drivers or hardware additions.</p>
+
 <h3 id="appendix">Appendix</h3>
 
 <p>Sample outputs are provided in this appendix so you can more easily troubleshoot or proceed with confidence when flashing CHIP with firmware.</p>
