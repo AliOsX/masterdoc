@@ -2410,9 +2410,23 @@ Once you have connected a bluetooth device to CHIP, if you intend to use it agai
 
 <p>which will force installation of any alternate or missing dependencies of any installed packages.</p>
 
-          <h2 id="building-and-installing-puredata-pd-on-chip">Building and Installing PureData (PD) on CHIP</h2>
+          <h2 id="install-the-latest-puredata">Install the latest PureData</h2>
 
-<p>PureData is a graphical programming environment, primarily for making audio and multimedia applications. This tutorial describes how to build the &ldquo;vanilla&rdquo; version of PD. This is a very rudimentary version of PD - it does not compile or build the extras objects, such as &ldquo;bob~&rdquo; or &ldquo;expr~&rdquo;.</p>
+<p>The latest versions of PureData can be installed via apt-get. Use these commands (or put them in a script). This adds a repository source to your apt sources, updates apt-get, then installs puredata and all the dependencies.</p>
+<pre class="highlight shell"><code><span class="c">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="s2">"deb http://ftp.de.debian.org/debian stretch main"</span> | sudo tee --append /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get install -y puredata
+<span class="nb">echo</span> <span class="s2">"@audio - rtprio 99"</span> | sudo tee --append /etc/security/limits.conf
+<span class="nb">echo</span> <span class="s2">"@audio - memlock unlimited"</span> | sudo tee --append /etc/security/limits.conf
+<span class="nv">WHO</span><span class="o">=</span><span class="nv">$USER</span>
+sudo adduser <span class="nv">$WHO</span> audio
+</code></pre>
+
+<h2 id="building-and-installing-puredata-pd-on-chip">Building and Installing PureData (PD) on CHIP</h2>
+
+<p>If you want to build from source, these instructions will take you there.
+PureData is a graphical programming environment, primarily for making audio and multimedia applications. This tutorial describes how to build the &ldquo;vanilla&rdquo; version of PD. This is a very rudimentary version of PD - it does not compile or build the extras objects, such as &ldquo;bob~&rdquo; or &ldquo;expr~&rdquo;.</p>
 
 <h3 id="get-source">Get Source</h3>
 
