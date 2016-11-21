@@ -798,6 +798,10 @@ CHIP&rsquo;s pin headers have all the connections to make this happen. An annota
 
 <p><img alt="Pinout diagram for CHIP" src="images/chip_pinouts.jpg" /></p>
 
+<h3 id="gpio-library">GPIO Library</h3>
+
+<p>There is an excellent library for working with GPIO and CHIP&rsquo;s IO busses, made available by our wonderful community. Check out the <a href="https://github.com/xtacocorex/Adafruit_Python_GPIO">Adafruit_Python_GPIO</a> and the <a href="https://github.com/xtacocorex/CHIP_IO">CHIP_IO</a> libraries. These make it very easy to get started with making things with CHIP.</p>
+
 <h3 id="kernel-4-3-vs-4-4-gpio-how-to-tell-the-difference">Kernel 4.3 vs 4.4 GPIO - How To Tell The Difference</h3>
 
 <p>For various reasons related to the community nature of Linux development, the GPIO expander pin numbers are different between CHIP OS kernels 4.3 and 4.4. What follows is a very technical discussion of the GPIO access. If you just want to start making stuff and don&rsquo;t need low-level information, you might just want to skip this section and go straight to the <a href="#python-library">python library</a>.</p>
@@ -906,8 +910,20 @@ cat gpiochip<span class="k">*</span>/base
 <h2 id="expanding-gpio">Expanding GPIO</h2>
 
 <p>If you don&rsquo;t need to drive an LCD, you can use those pins for more, faster GPIO if you want to. 
-These are the pins numbered 18-40 on U13 and 27-40 on U14 to act as GPIO to increase the number of available GPIO pins. 
-Documentation on this process is forthcoming!</p>
+These are the pins numbered 18-40 on U13 and 27-40 on U14 to act as GPIO to increase the number of available GPIO pins. </p>
+
+<h3 id="finding-gpio-pin-names">Finding GPIO Pin Names</h3>
+
+<p>The process for reading the pins using sysfs are the same as the <a href="#some-gpio-switch-action">documentation above</a>. You can calculate the Pin name using the <a href="https://github.com/NextThingCo/CHIP-Hardware/blob/master/CHIP%5Bv1_0%5D/CHIPv1_0-BOM-Datasheets/Allwinner%20R8%20Datasheet%20V1.2.pdf">Allwinner R8 Datasheet</a>, starting on page 18. </p>
+
+<p>The letter index is a multiple of 32 (where A=0), and the number is an offset. For example PD4 is <code class="prettyprint">LCD_D4</code> so</p>
+<pre class="highlight plaintext"><code>D=3
+(32*3)+4 = 100
+</code></pre>
+
+<p>Therefore, listening to LCD_D4 in sysfs would begin with</p>
+<pre class="highlight plaintext"><code>sudo sh -c 'echo 415 &gt; /sys/class/gpio/export'
+</code></pre>
 
 <h2 id="analog-to-digital-conversion">Analog to Digital Conversion</h2>
 
