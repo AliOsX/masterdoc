@@ -1629,13 +1629,12 @@ git clone http://github.com/NextThingCo/CHIP-tools
 git pull
 </code></pre>
 
-<p>You&rsquo;ll also need to add your user to some groups and add a udev rule
-<code class="prettyprint">shell
-sudo usermod -a -G dialout $(logname) &amp;&amp;
-sudo usermod -a -G plugdev $(logname) &amp;&amp;
-&#39;SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;1f3a&quot;, ATTRS{idProduct}==&quot;efe8&quot;, GROUP=&quot;plugdev&quot;, MODE=&quot;0660&quot; SYMLINK+=&quot;usb-chip&quot; SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;18d1&quot;, ATTRS{idProduct}==&quot;1010&quot;, GROUP=&quot;plugdev&quot;, MODE=&quot;0660&quot; SYMLINK+=&quot;usb-chip-fastboot&quot; SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;1f3a&quot;, ATTRS{idProduct}==&quot;1010&quot;, GROUP=&quot;plugdev&quot;, MODE=&quot;0660&quot; SYMLINK+=&quot;usb-chip-fastboot&quot; SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;067b&quot;, ATTRS{idProduct}==&quot;2303&quot;, GROUP=&quot;plugdev&quot;, MODE=&quot;0660&quot; SYMLINK+=&quot;usb-serial-adapter&quot;&#39; | sudo tee /etc/udev/rules.d/99-allwinner.rules &amp;&amp;
+<p>You&rsquo;ll also need to add your user to some groups and add a udev rule</p>
+<pre class="highlight shell"><code>sudo usermod -a -G dialout <span class="nv">$LOGNAME</span> <span class="o">&amp;&amp;</span>
+sudo usermod -a -G plugdev <span class="nv">$LOGNAME</span> <span class="o">&amp;&amp;</span>
+<span class="s1">'SUBSYSTEM=="usb", ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="efe8", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip" SUBSYSTEM=="usb", ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="1010", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip-fastboot" SUBSYSTEM=="usb", ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="1010", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip-fastboot" SUBSYSTEM=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", GROUP="plugdev", MODE="0660" SYMLINK+="usb-serial-adapter"'</span> | sudo tee /etc/udev/rules.d/99-allwinner.rules <span class="o">&amp;&amp;</span>
 sudo udevadm control --reload-rules
-</code></p>
+</code></pre>
 
 <p>Now you are ready to <a href="#flash-chip-firmware">flash CHIP</a> with firmware.</p>
 
