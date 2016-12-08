@@ -1641,6 +1641,8 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", GROUP="plug
 
 <p>Now you are ready to <a href="#flash-chip-firmware">flash CHIP</a> with firmware.</p>
 
+<p>Note, if you are using openSUSE, you have to change the GROUP to &#39;lp&rsquo;.</p>
+
 <h4 id="all-the-commands-at-once">All The Commands At Once</h4>
 
 <p>Here&rsquo;s all the commands in one place:</p>
@@ -1708,12 +1710,7 @@ git clone http://github.com/NextThingCo/CHIP-tools
 
 <h5 id="c-hidden-ssid-and-password-protected">C: Hidden SSID and Password Protected</h5>
 
-<p>To connect to a hidden, WPA2-password protected network, use these set of commands, inserting your own network name and password:</p>
-<pre class="highlight shell"><code>sudo nmcli con add con-name <span class="s1">'mywifi'</span> ifname wlan0 <span class="nb">type </span>wifi ssid <span class="s1">'(your wifi network name/SSID)'</span>
-sudo nmcli con modify <span class="s1">'mywifi'</span> wifi-sec.key-mgmt wpa-psk
-sudo nmcli con modify <span class="s1">'mywifi'</span> wifi-sec.psk <span class="s1">'(your wifi password)'</span>
-sudo nmcli con up id <span class="s1">'mywifi'</span>
-</code></pre>
+<p>To connect to a hidden network, append <code class="prettyprint">hidden yes</code> to the command, after <code class="prettyprint">ifname wlan0</code></p>
 
 <h4 id="step-3-test-your-connection">Step 3: Test your Connection</h4>
 
