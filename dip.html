@@ -4,29 +4,113 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
-    <link rel="icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
     
+		<link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
+    <link rel="icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
+		
     <title>Next Thing Co. DIPs for C.H.I.P. Documentation</title>
 
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #272822;
+  background-color: #f92672;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #f8f8f2;
+}
+.highlight .p, .highlight .pi {
+  color: #f8f8f2;
+}
+.highlight .gi {
+  color: #a6e22e;
+}
+.highlight .gd {
+  color: #f92672;
+}
+.highlight .gh {
+  color: #66d9ef;
+  background-color: #272822;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #ae81ff;
+}
+.highlight .kc {
+  color: #fd971f;
+}
+.highlight .kt {
+  color: #fd971f;
+}
+.highlight .kd {
+  color: #fd971f;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #a6e22e;
+}
+.highlight .sr {
+  color: #a1efe4;
+}
+.highlight .si {
+  color: #cc6633;
+}
+.highlight .se {
+  color: #cc6633;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #66d9ef;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #a6e22e;
+}
+.highlight .ss {
+  color: #a6e22e;
+}
+    </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <link href="stylesheets/ntc_override.css" rel="stylesheet" media="screen" />
+    
       <script src="javascripts/all.js"></script>
-
   </head>
 
-  <body class="index">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAVI
-        <img src="images/navbar.png" />
+        <img src="images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="tocify-wrapper">
+    
       <div class="nav-bar-logo">
-        <a href="index.html"><img src="images/ntclogo_doccorner.png" /></a>
+        <a href="index.html"><img src="images/ntclogo_doccorner.png" alt="Ntclogo doccorner" /></a>
       </div>
+      
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -57,15 +141,15 @@
 
 <p>Orient the USB connector opposite the video connector.</p>
 
-<p><img alt="Attach the DIP" src="images/vga_attach-0.jpg" /></p>
+<p><img src="images/vga_attach-0.jpg" alt="Attach the DIP" /></p>
 
 <p>Align the pins to C.H.I.P.&rsquo;s headers and gently press with even force until&hellip;.</p>
 
-<p><img alt="Attach the DIP" src="images/vga_attach-1.jpg" /></p>
+<p><img src="images/vga_attach-1.jpg" alt="Attach the DIP" /></p>
 
 <p>&hellip;the two pieces are joined. Tasty!</p>
 
-<p><img alt="Attach the DIP" src="images/vga_attach-2.jpg" /></p>
+<p><img src="images/vga_attach-2.jpg" alt="Attach the DIP" /></p>
 
 <h2 id="disconnect-the-dip">Disconnect the DIP</h2>
 
@@ -87,7 +171,7 @@
 
 <h3 id="pictures">Pictures</h3>
 
-<p><img alt="HDMI DIP Callout Graphic" src="images/hdmi_callout.jpg" /></p>
+<p><img src="images/hdmi_callout.jpg" alt="HDMI DIP Callout Graphic" /></p>
 
 <ul>
 <li>Power switch: We added this is located on the top edge of the PCB, as it is close to impossible to access it.</li>
@@ -111,7 +195,7 @@
 
 <h2 id="use-it">Use It</h2>
 
-<p><img alt="Plug it!" src="images/hdmi_plugged_in_half.jpg" /></p>
+<p><img src="images/hdmi_plugged_in_half.jpg" alt="Plug it!" /></p>
 
 <p>The HDMI DIP is extremely easy to use. Once you have your C.H.I.P. OS updated, it&rsquo;s really as simple as attaching the DIP to your C.H.I.P, plugging in an HDMI monitor, plugging into your power supply and booting up C.H.I.P. But, for posterity&rsquo;s sake, here&rsquo;s all the details.</p>
 
@@ -125,20 +209,19 @@
 <p>Once C.H.I.P has power, you&rsquo;ll start seeing output on your monitor. Don&rsquo;t try to power C.H.I.P. with the HDMI DIP from your computer&rsquo;s USB power supply. There simply isn&rsquo;t enough power!
 Once C.H.I.P is booted, you may want to change the resolution. You can do this with the control panel found in the Computer Things menu, going to Settings/Display</p>
 
-<p><img alt="display control panel" src="images/settings_select.jpg" /></p>
+<p><img src="images/settings_select.jpg" alt="display control panel" /></p>
 
 <p>In the Display control panel, you can select a resolution in the Outputs menu:</p>
 
-<p><img alt="Change Resolutions" src="images/settings_hdmi_resolution.jpg" /></p>
+<p><img src="images/settings_hdmi_resolution.jpg" alt="Change Resolutions" /></p>
 
 <p>After you select a resolution, you&rsquo;ll need to &ldquo;Apply&rdquo; it:</p>
 
-<p><img alt="apply the new resolution" src="images/settings_apply.jpg" /></p>
+<p><img src="images/settings_apply.jpg" alt="apply the new resolution" /></p>
 
 <p>If you like using commandline in the terminal, you can change resolutions with <code class="prettyprint">xrandr</code>, such as</p>
 <pre class="highlight shell"><code>xrandr -s 1280x720
 </code></pre>
-
 <h2 id="know-it">Know it</h2>
 
 <h3 id="supported-resolutions">Supported Resolutions</h3>
@@ -172,11 +255,11 @@ Once C.H.I.P is booted, you may want to change the resolution. You can do this w
 
 <p>The HDMI DIP is hackable. There are breakouts for the headers and a small proto-board area so you can add some simple circuits. One example is adding a pin header so you can access C.H.I.P.&rsquo;s UART bus. This image shows an HDMI DIP with the added pin header soldered in place:</p>
 
-<p><img alt="pin headers for UART passthrough to CHIP" src="images/hdmi_uart_placement.jpg" /></p>
+<p><img src="images/hdmi_uart_placement.jpg" alt="pin headers for UART passthrough to CHIP" /></p>
 
 <p>and the receive, transmit, and ground wires of a USB-UART cable connecting CHIP to a computer&rsquo;s serial bus:</p>
 
-<p><img alt="uart artfully applied" src="images/hdmi_uart_cnxn.jpg" /></p>
+<p><img src="images/hdmi_uart_cnxn.jpg" alt="uart artfully applied" /></p>
 
 <h2 id="open-source">Open Source</h2>
 
@@ -196,7 +279,7 @@ Once C.H.I.P is booted, you may want to change the resolution. You can do this w
 
 <h3 id="pictures">Pictures</h3>
 
-<p><img alt="VGA DIP Callout Graphic" src="images/vga_callout.jpg" /></p>
+<p><img src="images/vga_callout.jpg" alt="VGA DIP Callout Graphic" /></p>
 
 <ul>
 <li>RGB breakouts - RGB breakouts can be found at the edge of the VGA connector on the left side. These are available if you ever want to add cool effects, or to &ldquo;bend&rdquo; your VGA DIP</li>
@@ -233,20 +316,19 @@ Once C.H.I.P is booted, you may want to change the resolution. You can do this w
 
 <p>Once C.H.I.P has power, you&rsquo;ll start seeing output on your monitor. Once C.H.I.P is booted, you may want to change the resolution. You can do this with the control panel found in the Computer Things menu, going to Settings/Display</p>
 
-<p><img alt="display control panel" src="images/settings_select.jpg" /></p>
+<p><img src="images/settings_select.jpg" alt="display control panel" /></p>
 
 <p>In the Display control panel, you can select a resolution in the Outputs menu:</p>
 
-<p><img alt="Change Resolutions" src="images/settings_vga_resolution.jpg" /></p>
+<p><img src="images/settings_vga_resolution.jpg" alt="Change Resolutions" /></p>
 
 <p>After you select a resolution, you&rsquo;ll need to &ldquo;Apply&rdquo; it:</p>
 
-<p><img alt="apply the new resolution" src="images/settings_apply.jpg" /></p>
+<p><img src="images/settings_apply.jpg" alt="apply the new resolution" /></p>
 
 <p>If you like using commandline in the terminal, you can change resolutions with <code class="prettyprint">xrandr</code>, such as</p>
 <pre class="highlight shell"><code>xrandr -s 1024x768
 </code></pre>
-
 <h2 id="know-it">Know It</h2>
 
 <h3 id="supported-resolutions">Supported Resolutions</h3>
@@ -273,33 +355,33 @@ Once C.H.I.P is booted, you may want to change the resolution. You can do this w
 
 <p>Trim pots are able to go in one way on TOP of the PCB for accessibility.</p>
 
-<p><img alt="able to go in one way" src="images/vgapot_01place.jpg" /></p>
+<p><img src="images/vgapot_01place.jpg" alt="able to go in one way" /></p>
 
 <p>Trim pots are sized and spaced for a precise alignment.</p>
 
-<p><img alt="sized and spaced for a precise alignment" src="images/vgapot_02allpots.jpg" /></p>
+<p><img src="images/vgapot_02allpots.jpg" alt="sized and spaced for a precise alignment" /></p>
 
 <p>Here we see that there is only one way for the pots to go on the TOP side.</p>
 
-<p><img alt="only one way for the pots to go" src="images/vgapot_03thruhole.jpg" /></p>
+<p><img src="images/vgapot_03thruhole.jpg" alt="only one way for the pots to go" /></p>
 
 <p>Solder the leads and trim them like so.</p>
 
-<p><img alt="Solder the leads and trim them like so." src="images/vgapot_04soldered.jpg" /></p>
+<p><img src="images/vgapot_04soldered.jpg" alt="Solder the leads and trim them like so." /></p>
 
 <p>Time to start Bending Colors!!!</p>
 
-<p><img alt="Control and Compose" src="images/vgapot_02allpots.jpg" /></p>
+<p><img src="images/vgapot_02allpots.jpg" alt="Control and Compose" /></p>
 
 <h3 id="uart-connection">UART Connection</h3>
 
 <p>Another example is adding a pin header so you can access C.H.I.P.&rsquo;s UART bus. This image shows an VGA DIP with the added pin header soldered in place:</p>
 
-<p><img alt="pin headers for UART passthrough to CHIP" src="images/vga_uart_placement.jpg" /></p>
+<p><img src="images/vga_uart_placement.jpg" alt="pin headers for UART passthrough to CHIP" /></p>
 
 <p>and the receive, transmit, and ground wires of a USB-UART cable connecting CHIP to a computer&rsquo;s serial bus:</p>
 
-<p><img alt="uart artfully applied" src="images/vga_uart_cnxn.jpg" /></p>
+<p><img src="images/vga_uart_cnxn.jpg" alt="uart artfully applied" /></p>
 
 <h2 id="open-source">Open Source</h2>
 
@@ -316,7 +398,7 @@ Then, open the Terminal application (from the drop-down menu at the top, left co
 
 <p>Once the applications loads, type <code class="prettyprint">uname -a</code>. This outputs information about your system software version.</p>
 
-<p><img alt="uname results in terminal" src="images/update_uname.jpg" /></p>
+<p><img src="images/update_uname.jpg" alt="uname results in terminal" /></p>
 
 <p>Look for a number in appended with <code class="prettyprint">-ntc</code>, for example <code class="prettyprint">4.3.0</code> or <code class="prettyprint">4.4.0</code>. This number is the kernel version running on your C.H.I.P. If the number is <code class="prettyprint">4.4.0</code> or greater, you don’t need to upgrade your kernel version. Most likely, your number is <code class="prettyprint">4.3.0</code>, keep reading: you need to upgrade your kernel.</p>
 
@@ -325,7 +407,6 @@ Then, open the Terminal application (from the drop-down menu at the top, left co
 <p>Backup any important data on your C.H.I.P. before you upgrade your system. Upgrading will overwrite all of the C.H.I.P. storage. You can backup your user directory with a simple command in the Terminal emulator:</p>
 <pre class="highlight shell"><code>tar cfpzv homebackup.tar.gz /home/chip
 </code></pre>
-
 <p>You can transfer that <code class="prettyprint">tar</code> file to another computer or cloud service from C.H.I.P. There&rsquo;s more to learn in <a href="https://mylinuxramblings.wordpress.com/2010/01/10/how-to-backup-and-restore-your-home-directory/">this detailed guide</a>.</p>
 
 <p>If you have installed a lot of packages with Synaptic or <code class="prettyprint">apt</code>, and would like to be able to be able to easily re-install those packages, there&rsquo;s some good <a href="http://www.debianadmin.com/clone-your-ubuntu-installation.html">guides</a> and <a href="http://serverfault.com/questions/175504/how-do-i-get-the-history-of-apt-get-install-on-ubuntu">suggestions</a> on the web.</p>
@@ -460,7 +541,6 @@ A registered vendor id does not imply the device tree overlay will be included i
 <pre class="highlight plaintext"><code>sudo apt-get update &amp;&amp; sudo apt-get install git
 git clone https://github.com/NextThingCo/CHIP-dt-overlays.git
 </code></pre>
-
 <p>This repository has some very useful directories and files for getting your DIP working with your C.H.I.P.:</p>
 
 <ul>
@@ -619,7 +699,6 @@ git clone https://github.com/NextThingCo/CHIP-dt-overlays.git
     <span class="o">}</span>;
 <span class="o">}</span>;
 </code></pre>
-
 <p>Notice that the <code class="prettyprint">wakeup-gpios</code> option is commented out - this makes testing simpler since this will not enable any power management features on the MLX90614.</p>
 
 <h3 id="make-a-dtbo-device-tree-overlay-blob">Make a DTBO - Device Tree Overlay Blob</h3>
@@ -631,13 +710,11 @@ git clone https://github.com/atenart/dtc
 make
 sudo  make install <span class="nv">PREFIX</span><span class="o">=</span>/usr
 </code></pre>
-
 <p>The easy way to compile is to put your .dts file in the &ldquo;samples/&rdquo; directory of the <code class="prettyprint">CHIP-dt-overlays</code> directory, then, from the root of this repository, just run <code class="prettyprint">make</code>. This produces a .dtbo (device tree blob) file in the &ldquo;samples/&rdquo; directory with the .dts file.</p>
 
 <p>The Makefile is designed to look in the &ldquo;samples/&rdquo; and &ldquo;firmware/&rdquo; directories for .dts files and compile them to .dtbo files using this command:</p>
 <pre class="highlight shell"><code>dtc -I dts -O dtb -o &lt;output file&gt;.dtbo &lt;input file&gt;.dts -@
 </code></pre>
-
 <p>You may find this useful if you are just want to compile a dts file in-place. More information on the device tree compiler can be found <a href="http://manpages.ubuntu.com/manpages/trusty/man1/dtc.1.html">in the ubuntu manpages site</a></p>
 
 <h3 id="manually-load-your-overlay">Manually Load your Overlay</h3>
@@ -645,17 +722,14 @@ sudo  make install <span class="nv">PREFIX</span><span class="o">=</span>/usr
 <p>Once you have compiled your device tree blob, you will need to add the overlay to the existing device tree. First, make sure configfs is mounted:</p>
 <pre class="highlight shell"><code>sudo mount -t configfs none /sys/kernel/config
 </code></pre>
-
 <p>then make a place for the overlay and catenate your blob:</p>
 <pre class="highlight shell"><code>sudo mkdir -p /sys/kernel/config/device-tree/overlays/DIPexample
 su -c <span class="s1">'cat irtempi2c.dtbo &gt; /sys/kernel/config/device-tree/overlays/DIPexample/dtbo'</span>
 </code></pre>
-
 <p>If you want to remove it later on, simply remove the directory you
 created:</p>
 <pre class="highlight plaintext"><code>sudo rmdir /sys/kernel/config/device-tree/overlays/DIPexample/
 </code></pre>
-
 <h3 id="confirm-overlay-loaded">Confirm Overlay Loaded</h3>
 
 <p>Before you started this procedure, you would have seen two i2c devices where <code class="prettyprint">ls /dev/i2c*</code> would output <code class="prettyprint">/dev/i2c-0  /dev/i2c-2</code>. After the overlay is applied, the output from that <code class="prettyprint">ls</code> will show the new i2c device: <code class="prettyprint">/dev/i2c-0  /dev/i2c-1  /dev/i2c-2</code></p>
@@ -691,23 +765,19 @@ created:</p>
 <p>From the &ldquo;tools/&rdquo; directory, run </p>
 <pre class="highlight shell"><code>python dip-header-generator.py SuperTEEPROM.img --vid 22 --pid 68 --vendor <span class="s1">'RadCo'</span> --product <span class="s1">'SuperT'</span> --product-version 1
 </code></pre>
-
 <p>to generate an EEPROM file &ldquo;SuperTEEPROM.img&rdquo;.</p>
 
 <p>You&rsquo;ll find the EEPROM device in the sysfs file system:</p>
 <pre class="highlight shell"><code>ls /sys/bus/w1/devices/2<span class="k">*</span>/eeprom
 </code></pre>
-
 <p>Once you know the UUID (name) of the directory (e.g. &ldquo;2d-0000132785ea/&rdquo;), you can write the data to the eeprom with:</p>
 <pre class="highlight shell"><code>su -c <span class="s1">'cat SuperTEEPROM.img &gt; /sys/bus/w1/devices/2d-(UUID)/eeprom'</span>
 </code></pre>
-
 <h3 id="verify-eeprom">Verify EEPROM</h3>
 
 <p>For personal assurances, you may want to verify that the EEPROM has the correct data on it. Use this command to print the data in (hexadecimal format) to your terminal:</p>
 <pre class="highlight shell"><code>cat /sys/bus/w1/devices/2<span class="k">*</span>/eeprom |hexdump -C
 </code></pre>
-
 <p>You can also use a lowercase <code class="prettyprint">-c</code> option to print the data in character format, which is useful for viewing the vendor strings. </p>
 
 <h3 id="boot-with-dip-in-place-read-eeprom">Boot with DIP in place (read EEPROM)</h3>
@@ -715,11 +785,9 @@ created:</p>
 <p>Now that you have a functioning device tree blob and EEPROM populated with data unique to your product, you&rsquo;ll need to name your blob with a special name using your (hex) vendor ID and product id:</p>
 <pre class="highlight shell"><code>dip-16-44.dtbo
 </code></pre>
-
 <p>then</p>
 <pre class="highlight shell"><code>sudo mkdir -p /lib/firmware/nextthingco/chip <span class="o">&amp;&amp;</span> sudo cp dip-16-44.dtbo /lib/firmware/nextthingco/chip
 </code></pre>
-
 <p>to put it in <code class="prettyprint">/lib/firmware/nextthingco/chip/</code> to ensure the overlay is loaded on EEPROM detection.</p>
 
 <p>You may also need to make sure that the w1_ds2431 module loads on boot so the EEPROM module can be found and read. You simply need to modify the configuration file with a text editor <code class="prettyprint">sudo nano /etc/modules.d/modules.conf</code> and add this line to the end: <code class="prettyprint">w1_ds2431</code></p>
@@ -759,7 +827,6 @@ created:</p>
     <span class="o">}</span>;
 <span class="o">}</span>;
 </code></pre>
-
 <p>The device tree is composed of nodes, where each node configures a device that Linux must relate to a driver and know what interface to present to the system.</p>
 
 <p>The top of the &ldquo;<strong>overlay</strong>&rdquo; node describes settings that are relevant to the C.H.I.P.&rsquo;s target device, such as <code class="prettyprint">&lt;&amp;i2c1&gt;</code>, <code class="prettyprint">&lt;&amp;spi2&gt;</code>, <code class="prettyprint">&lt;&amp;pwm&gt;</code>. Example settings and documentation for these take some detective work in the C.H.I.P.-linux repo, for example device trees for <a href="https://github.com/NextThingCo/CHIP-linux/blob/nextthing/4.4/next/arch/arm/boot/dts/sun5i.dtsi">sun5i</a> and <a href="https://github.com/NextThingCo/CHIP-linux/blob/nextthing/4.4/next/arch/arm/boot/dts/sun5i-r8-chip.dts">sun5i-r8</a></p>
@@ -783,7 +850,6 @@ created:</p>
 setenv dip_overlay_dir /lib/firmware/nexttching/chip/early/
 setenv dip_overlay_cmd <span class="s1">'ubifsload $dip_addr_r $dip_overlay_dir/$dip_overlay_name'</span>
 </code></pre>
-
 <p>This process will soon be unneeded, as these commands will be rolled into U-Boot.</p>
 
       </div>
