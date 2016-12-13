@@ -4,29 +4,113 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
-    <link rel="icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
     
+		<link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
+    <link rel="icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
+		
     <title>Next Thing Co Documentation</title>
 
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #272822;
+  background-color: #f92672;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #f8f8f2;
+}
+.highlight .p, .highlight .pi {
+  color: #f8f8f2;
+}
+.highlight .gi {
+  color: #a6e22e;
+}
+.highlight .gd {
+  color: #f92672;
+}
+.highlight .gh {
+  color: #66d9ef;
+  background-color: #272822;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #ae81ff;
+}
+.highlight .kc {
+  color: #fd971f;
+}
+.highlight .kt {
+  color: #fd971f;
+}
+.highlight .kd {
+  color: #fd971f;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #a6e22e;
+}
+.highlight .sr {
+  color: #a1efe4;
+}
+.highlight .si {
+  color: #cc6633;
+}
+.highlight .se {
+  color: #cc6633;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #66d9ef;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #a6e22e;
+}
+.highlight .ss {
+  color: #a6e22e;
+}
+    </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <link href="stylesheets/ntc_override.css" rel="stylesheet" media="screen" />
+    
       <script src="javascripts/all.js"></script>
-
   </head>
 
-  <body class="index">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAVI
-        <img src="images/navbar.png" />
+        <img src="images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="tocify-wrapper">
+    
       <div class="nav-bar-logo">
-        <a href="index.html"><img src="images/ntclogo_doccorner.png" /></a>
+        <a href="index.html"><img src="images/ntclogo_doccorner.png" alt="Ntclogo doccorner" /></a>
       </div>
+      
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -50,7 +134,7 @@
 
 <p>Ours is The CHIP Operating System. Grab an old TV (or any screen with a composite video input), a keyboard and mouse, and stick some electricity in the micro USB port. In a few seconds, you&rsquo;ll have CHIP&rsquo;s operating system on your screen, ready to do <strong>computer things.</strong> </p>
 
-<p><img alt="DERP desktop" src="images/screen_desktop.jpg" /></p>
+<p><img src="images/screen_desktop.jpg" alt="DERP desktop" /></p>
 
 <p>CHIP is built for making - we&rsquo;ve packed a powerful processor, 4 GB of storage, stereo audio, video out,  and lots of connections for playing and making your projects and products. </p>
 
@@ -78,13 +162,13 @@
 
 <p>The CHIP&rsquo;s microUSB connector is used to provide power from most any USB power source. USB wall-wart adapters are probably littered all over your house. If for some reason you don&rsquo;t have one, you can buy one at any electronics retailer. We recommend a 5V powersupply with 2 Amps current available. Just plug a USB-A-to-microUSB-B cable (that&rsquo;s the same cable most phones, tablets, and whatnot use to charge) into the wall-wart and CHIP, and you&rsquo;ll see the <code class="prettyprint">PWR</code> LED light up. This CHIP is using the power from a computer&rsquo;s USB port:</p>
 
-<p><img alt="CHIP indicator LEDs" src="images/chip_ledon.jpg" /></p>
+<p><img src="images/chip_ledon.jpg" alt="CHIP indicator LEDs" /></p>
 
 <h3 id="power-from-a-battery">Power From A Battery</h3>
 
 <p>CHIP can also be battery powered. Specifically, any single cell (1S) 3.7V Lithium Polymer (LiPo) battery with a 2-pin JST-PH 2.0mm end can be connected to the JST-PH socket.</p>
 
-<p><img alt="CHIP powered by a battery. Slick!" src="images/chip_battery.jpg" /></p>
+<p><img src="images/chip_battery.jpg" alt="CHIP powered by a battery. Slick!" /></p>
 
 <p>The JST can only plug it in one way: if you are having a hard time lining things up, turn it around! Needless to say, do not force the battery connector into the socket if something doesn&rsquo;t feel right!</p>
 
@@ -98,25 +182,25 @@
 
 <p>Connecting to a WiFi network is easy using the WiFi icon the top right system tray. Just select a network to initiate a connection. If the network requires a password you’ll be prompted for it. You can also <a href="#wifi-connection">set up Wi-Fi from the command line</a>.</p>
 
-<p><img alt="Select a wireless connection access point" src="images/screen_wifisettings.jpg" /></p>
+<p><img src="images/screen_wifisettings.jpg" alt="Select a wireless connection access point" /></p>
 
 <p>If you need more control and information over your network connection, use the Settings-&gt;Network Connections panel to show your connections. Double click on a connection to bring up the connection editor:</p>
 
-<p><img alt="Network connection editor" src="images/screen_networksettings.jpg" /></p>
+<p><img src="images/screen_networksettings.jpg" alt="Network connection editor" /></p>
 
 <h2 id="connect-bluetooth">Connect Bluetooth</h2>
 
 <p>Bluetooth device setup can be accessed using the Bluetooth icon in the top right system tray.</p>
 
-<p><img alt="Bluetooth settings menu" src="images/screen_btsettings.jpg" /></p>
+<p><img src="images/screen_btsettings.jpg" alt="Bluetooth settings menu" /></p>
 
 <p>When you begin a connection, you&rsquo;ll be guided through the necessary steps to connect to your device. For example, when you pair with a keyboard, you&rsquo;ll often be prompted for a code to enter to ensure a unique connection. Once you have paired a device, future connections will usually be automatic when the devices are in range and powered up.</p>
 
-<p><img alt="Bluetooth settings menu" src="images/screen_btsetup01.jpg" /></p>
+<p><img src="images/screen_btsetup01.jpg" alt="Bluetooth settings menu" /></p>
 
 <p>You can manage, and also connect to, your devices using the the Bluetooth Devices panel, accessed from the Bluetooth system tray:</p>
 
-<p><img alt="Bluetooth devices panel" src="images/screen_btdevices.jpg" /></p>
+<p><img src="images/screen_btdevices.jpg" alt="Bluetooth devices panel" /></p>
 
 <h2 id="using-the-terminal">Using The Terminal</h2>
 
@@ -202,7 +286,7 @@ Not only is there only one USB port (keeping CHIP nice and small), but CHIP&rsqu
 
 <p>Many keyboards have USB hubs built-in, so you can attach a mouse to the keyboard, attach the keyboard to CHIP, and immediately have control. However, it&rsquo;s likely the two will draw too much current, so you&rsquo;ll want to connect to a powered hub before you connect.</p>
 
-<p><img alt="keyboard, mouse, and powered USB hub connected to CHIP" src="images/chip_usbconnections.jpg" /></p>
+<p><img src="images/chip_usbconnections.jpg" alt="keyboard, mouse, and powered USB hub connected to CHIP" /></p>
 
 <h2 id="bluetooth-keyboard-and-mouse">Bluetooth Keyboard and Mouse</h2>
 
@@ -212,17 +296,17 @@ Not only is there only one USB port (keeping CHIP nice and small), but CHIP&rsqu
 
 <p>In the spirit of keeping things small, CHIP packs all the audio and video into a small TRRS (Tip-Ring-Ring-Sleeve) connector. Built-in video output is restricted to standard composite video resolution of 640x480. Higher video resolutions are possible using the <a href="https://getchip.com/pages/store">VGA and HMDI</a> DIP boards.</p>
 
-<p><img alt="monitor connected to CHIP" src="images/chip_withmonitor.jpg" /></p>
+<p><img src="images/chip_withmonitor.jpg" alt="monitor connected to CHIP" /></p>
 
 <p>Here&rsquo;s what the other end of the cable looks like, attached to a monitor with stereo audio inputs (red and white) and the composite video plug, moved so you can see the label on the monitor:</p>
 
-<p><img alt="monitor connected to CHIP" src="images/chip_withmonitor_cnxn.jpg" /></p>
+<p><img src="images/chip_withmonitor_cnxn.jpg" alt="monitor connected to CHIP" /></p>
 
 <h3 id="about-the-trrs-connector">About the TRRS Connector</h3>
 
 <p>CHIP has a 1/8&quot; (3.5mm) Tip-Ring-Ring-Sleeve (TRRS) output jack, capable of carrying stereo audio, and either composite video out, or microphone in.</p>
 
-<p><img alt="Typical AV cable that carries stereo audio and composite video" src="images/avcable.jpg" /></p>
+<p><img src="images/avcable.jpg" alt="Typical AV cable that carries stereo audio and composite video" /></p>
 
 <p>This is a fairly common port, but there are a few different arrangements of the conductors, so not all cables are equal.  Fortunately, CHIP uses the same conductor arrangement as Pi, Zune, and iPod audio/video cables, so the most common &ldquo;mini to RCA A/V&rdquo; cables should work just fine.</p>
 
@@ -236,7 +320,7 @@ Not only is there only one USB port (keeping CHIP nice and small), but CHIP&rsqu
 
 <p>The conductors on the TRRS plug are arranged like this:</p>
 
-<p><img alt="Tip: Audio Left, Ring: Audio Right, Ring: Ground, Sleeve: Video" src="images/trrs_annotated.jpg" /></p>
+<p><img src="images/trrs_annotated.jpg" alt="Tip: Audio Left, Ring: Audio Right, Ring: Ground, Sleeve: Video" /></p>
 
 <p>If you want to learn even more about TRRS connectors and the general lack of standardization with them, <a href="http://wiki.robotz.com/index.php/TRRS_Phono_Plug">this page</a> has even more details.</p>
 
@@ -250,20 +334,18 @@ setenv video-mode <span class="o">(</span>mode data<span class="o">)</span>
 saveenv
 reset
 </code></pre>
-
 <p>where <em>mode data</em> can be, for NTSC and PAL respectively:</p>
 <pre class="highlight shell"><code>setenv video-mode sunxi:640x480-24@60,monitor<span class="o">=</span>composite-ntsc,overscan_x<span class="o">=</span>40,overscan_y<span class="o">=</span>20
 
 setenv video-mode sunxi:720x576-24@50,monitor<span class="o">=</span>composite-pal,overscan_x<span class="o">=</span>40,overscan_y<span class="o">=</span>20
 
 </code></pre>
-
 <h2 id="headphones">Headphones</h2>
 
 <p>The audio and video connector on CHIP can be dedicated to audio output suitable for headphones or connecting to an amplifier for filling a room or public space with glorious sound. 
 Just connect a standard 3.5 mm (1/8&quot;) TRS audio plug into CHIP&rsquo;s a/v jack. Of course, if headphones are plugged in, there will be no room for a composite video output jack. You can also get audio left, common, and right output from <a href="#pin-headers">pins 4, 6 &amp; 8 on header U14</a>.</p>
 
-<p><img alt="CHIP connected to headphones" src="images/chip_withaudio.jpg" /></p>
+<p><img src="images/chip_withaudio.jpg" alt="CHIP connected to headphones" /></p>
 
 <h2 id="microphone-and-audio-input">Microphone and Audio Input</h2>
 
@@ -271,11 +353,11 @@ Just connect a standard 3.5 mm (1/8&quot;) TRS audio plug into CHIP&rsquo;s a/v 
 
 <p>If you look at the bottom of CHIP with the audio and USB jacks pointed up, you&rsquo;ll see three small contact pads to the left of the audio jack. The left pad has a small label of <strong>mic</strong> and the right pad has a <strong>tv</strong> label. Between the middle pad and the <strong>tv</strong> pad is a trace that can be carefully cut with an Exacto or utility razor blade. Once that is cut (check with a volt or continuity meter), you can put a solder blob between the <strong>mic</strong> and middle pad. Now the outer ring can be used for audio input.</p>
 
-<p><img alt="Slice video trace, bridge mic in pad" src="images/chip_audioinbridge.jpg" /></p>
+<p><img src="images/chip_audioinbridge.jpg" alt="Slice video trace, bridge mic in pad" /></p>
 
 <p>As another reference, if you had X-ray vision and you were looking from the <strong>bottom</strong> of CHIP, you&rsquo;d see a trace like this:</p>
 
-<p><img alt="Xray vision of TV and Mic traces from top of CHIP" src="images/chip_tvmonxray.jpg" /></p>
+<p><img src="images/chip_tvmonxray.jpg" alt="Xray vision of TV and Mic traces from top of CHIP" /></p>
 
 <p>If the composite video connection is needed again, just reverse the process: desolder the connection between <strong>mic</strong> and the middle pad, then solder a bridge between <strong>tv</strong> and the middle pad.</p>
 
@@ -283,7 +365,7 @@ Just connect a standard 3.5 mm (1/8&quot;) TRS audio plug into CHIP&rsquo;s a/v 
 
 <p>If you want to use the <a href="#pin-headers">pins 10 and 12 on header U14</a>, you&rsquo;ll most likely need to add some additional circuitry to get a good input signal. Here is a schematic of the simple circuit:</p>
 
-<p><img alt="Schematic for adding a microphone input to MIC pins on CHIP" src="images/microphone_schematic.jpg" /></p>
+<p><img src="images/microphone_schematic.jpg" alt="Schematic for adding a microphone input to MIC pins on CHIP" /></p>
 
 <p>You&rsquo;ll need two 4.7 microfarad capacitors, one 100 nanofarad capacitor, and a 3300 picofarad capacitor. You&rsquo;ll also need one 2 kilo-ohm and one 4.3 kilo-ohm resistors.</p>
 
@@ -291,7 +373,7 @@ Just connect a standard 3.5 mm (1/8&quot;) TRS audio plug into CHIP&rsquo;s a/v 
 
 <p>If you have files that you want to modify, use, or transfer to CHIP&rsquo;s internal storage, you can attach a USB thumb drive, card-reader, or hard drive. Open the file manager and access the files.</p>
 
-<p><img alt="USB drive attatched to CHIP" src="images/chip_usbstorage.jpg" /></p>
+<p><img src="images/chip_usbstorage.jpg" alt="USB drive attatched to CHIP" /></p>
 
 <h2 id="usb-audio">USB Audio</h2>
 
@@ -311,51 +393,51 @@ Just connect a standard 3.5 mm (1/8&quot;) TRS audio plug into CHIP&rsquo;s a/v 
 
 <p>Most of the settings for the computer and for the desktop can be set using the apps in the &ldquo;Computer Things&rdquo; menu. Select the appropriate app from either the Settings Menu or the Settings Manager.</p>
 
-<p><img alt="Screenshot of GUI showing where to change WiFi settings" src="images/screen_settingsmenu.jpg" /></p>
+<p><img src="images/screen_settingsmenu.jpg" alt="Screenshot of GUI showing where to change WiFi settings" /></p>
 
-<p><img alt="Screenshot of GUI showing where to change WiFi settings" src="images/screen_settingsmgr.jpg" /></p>
+<p><img src="images/screen_settingsmgr.jpg" alt="Screenshot of GUI showing where to change WiFi settings" /></p>
 
 <h3 id="wifi">WiFi</h3>
 
 <p>Connecting to a WiFi network is easy using the WiFi icon the top right system tray. Just select a network to initiate a connection. If you need a password, you&rsquo;ll be prompted for it.</p>
 
-<p><img alt="Select a wireless connection access point" src="images/screen_wifisettings.jpg" /></p>
+<p><img src="images/screen_wifisettings.jpg" alt="Select a wireless connection access point" /></p>
 
 <p>If you need more control and information over your network connection, use the Settings-&gt;Network Connections panel to show your connections. Double click on a connection to bring up the connection editor:</p>
 
-<p><img alt="Network connection editor" src="images/screen_networksettings.jpg" /></p>
+<p><img src="images/screen_networksettings.jpg" alt="Network connection editor" /></p>
 
 <h3 id="bluetooth">Bluetooth</h3>
 
 <p>Bluetooth device setup can be accessed using the Bluetooth icon in the top right system tray.</p>
 
-<p><img alt="Bluetooth settings menu" src="images/screen_btsettings.jpg" /></p>
+<p><img src="images/screen_btsettings.jpg" alt="Bluetooth settings menu" /></p>
 
 <p>When you begin a connection, you&rsquo;ll be guided through the necessary steps to connect to your device. For example, when you pair with a keyboard, you&rsquo;ll often be prompted for a code to enter to ensure a unique connection. Once you have paired a device, future connections will usually be automatic when the devices are in range and powered up.</p>
 
-<p><img alt="Bluetooth settings menu" src="images/screen_btsetup01.jpg" /></p>
+<p><img src="images/screen_btsetup01.jpg" alt="Bluetooth settings menu" /></p>
 
 <p>You can manage, and also connect to, your devices using the the Bluetooth Devices panel, accessed from the Bluetooth system tray:</p>
 
-<p><img alt="Bluetooth devices panel" src="images/screen_btdevices.jpg" /></p>
+<p><img src="images/screen_btdevices.jpg" alt="Bluetooth devices panel" /></p>
 
 <h3 id="sound">Sound</h3>
 
 <p>By default sound output comes from the built-in connector, served by the &ldquo;sunxi codec&rdquo; driver. If you want to change the volume, you can use the volume control in the top right system tray:</p>
 
-<p><img alt="Desktop volume control" src="images/screen_volumectl.jpg" /></p>
+<p><img src="images/screen_volumectl.jpg" alt="Desktop volume control" /></p>
 
 <p>Or, open the Audio Mixer in the Multimedia category:</p>
 
-<p><img alt="Open Audio Mixer app in Multimedia category" src="images/screen_audiomixermenu.jpg" /></p>
+<p><img src="images/screen_audiomixermenu.jpg" alt="Open Audio Mixer app in Multimedia category" /></p>
 
 <p>Here, you can select the &ldquo;Playback&rdquo; category to change the volume:</p>
 
-<p><img alt="Control panel for sound" src="images/screen_audiosettings03.jpg" /></p>
+<p><img src="images/screen_audiosettings03.jpg" alt="Control panel for sound" /></p>
 
 <p>If you don&rsquo;t see that control, just click on the &ldquo;Select Controls&rdquo; button and enable all controls:</p>
 
-<p><img alt="Enable all controls for audio mixer" src="images/screen_audiosettings02.jpg" /></p>
+<p><img src="images/screen_audiosettings02.jpg" alt="Enable all controls for audio mixer" /></p>
 
 <h3 id="display">Display</h3>
 
@@ -363,11 +445,11 @@ Just connect a standard 3.5 mm (1/8&quot;) TRS audio plug into CHIP&rsquo;s a/v 
 
 <p>If you want to customize the desktop image, icons, colors, and fonts, there are two different panels. The Appearance panel lets you select a theme to make instant changes for several properties.</p>
 
-<p><img alt="Change monitor settings with the Display control panel" src="images/screen_desktopsettings04.jpg" /></p>
+<p><img src="images/screen_desktopsettings04.jpg" alt="Change monitor settings with the Display control panel" /></p>
 
 <p>The Desktop panel lets you customize images and colors, along with the behavior of menus.</p>
 
-<p><img alt="Change desktop look with Desktop panel" src="images/screen_desktopsettings01.jpg" /></p>
+<p><img src="images/screen_desktopsettings01.jpg" alt="Change desktop look with Desktop panel" /></p>
 
 <p>If you want to change the theme or the icon sets, you can search for these using the <a href="#synaptic-package-manager">Synaptic Package Manager</a>. Search for <code class="prettyprint">gtk2 themes</code> or <code class="prettyprint">icon sets</code>. There are also packages that can make it easy to find and configure themes, such as <code class="prettyprint">gtk-theme-config.</code> Similarly you can use the command line to search packages with <code class="prettyprint">apt-cache search gtk2 theme</code>.</p>
 
@@ -375,13 +457,13 @@ Just connect a standard 3.5 mm (1/8&quot;) TRS audio plug into CHIP&rsquo;s a/v 
 
 <p>Set the Time with the Orage Globaltime panel. This can be found in Accessories-&gt;Orage Globaltime or in Office-&gt;Orage Globaltime. Simply click the time to bring up the preferences panel. You can quickly view the date from the Orage Calendar in the Office menu.</p>
 
-<p><img alt="Orage Globaltime is used to set the time and date" src="images/screencap_timesettings.jpg" /></p>
+<p><img src="images/screencap_timesettings.jpg" alt="Orage Globaltime is used to set the time and date" /></p>
 
 <h3 id="mouse-sensitivity">Mouse Sensitivity</h3>
 
 <p>Mouse sensitivity is set for the default 640x480 resolution. If you are using CHIP with a higher resolution monitor, you may want to adjust the sensitivity of the mouse. You can get to the Mouse settings panel from <strong>Computer Things-&gt;Settings-&gt;Mouse and Touchpad</strong></p>
 
-<p><img alt="Screenshot of mouse configuration panel" src="images/screen_mousepanel.jpg" /></p>
+<p><img src="images/screen_mousepanel.jpg" alt="Screenshot of mouse configuration panel" /></p>
 
 <h3 id="language-and-location">Language and Location</h3>
 
@@ -389,27 +471,25 @@ Just connect a standard 3.5 mm (1/8&quot;) TRS audio plug into CHIP&rsquo;s a/v 
 Then use the <a href="#apt-get"><code class="prettyprint">apt-get</code></a> command to install the language packs and run a simple program to configure your language and location:</p>
 <pre class="highlight shell"><code>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install locales <span class="o">&amp;&amp;</span> sudo dpkg-reconfigure locales <span class="o">&amp;&amp;</span> sudo locale-gen
 </code></pre>
-
 <p>You&rsquo;ll get a large menu to select locales. Use the arrow keys to scroll down and spacebar to mark your location with an [*]. It&rsquo;s advised that you choose the location marked <code class="prettyprint">UTF8</code>. Others are somewhat arcane edge cases! Hit return to continue.</p>
 
-<p><img alt="Setting locales in ncurses ui" src="images/screen_set_locales.jpg" /></p>
+<p><img src="images/screen_set_locales.jpg" alt="Setting locales in ncurses ui" /></p>
 
 <p>You can set the timezone with </p>
 <pre class="highlight plaintext"><code>sudo dpkg-reconfigure tzdata
 </code></pre>
-
-<p><img alt="Setting timezone in ncurses ui" src="images/screen_set_tzdata.jpg" /></p>
+<p><img src="images/screen_set_tzdata.jpg" alt="Setting timezone in ncurses ui" /></p>
 
 <h2 id="launching-installed-apps">Launching Installed Apps</h2>
 
 <p>CHIP comes prepackaged with many open-source applications to get you started. It&rsquo;s easy to launch an application. 
 You can select an application from the &ldquo;Computer Things!&rdquo; menu and select an app from the categories:</p>
 
-<p><img alt="Screenshot of GUI launching apps" src="images/screen_appfinder01.jpg" /></p>
+<p><img src="images/screen_appfinder01.jpg" alt="Screenshot of GUI launching apps" /></p>
 
 <p>Or, for more control, launch the Application Finder in Accessories, where you can use the search bar and easily navigate among the categories:</p>
 
-<p><img alt="Screenshot of GUI launching apps" src="images/screen_appfinder02.jpg" /></p>
+<p><img src="images/screen_appfinder02.jpg" alt="Screenshot of GUI launching apps" /></p>
 
 <p>Below are some of the applications that come pre-installed with CHIP:</p>
 
@@ -417,7 +497,7 @@ You can select an application from the &ldquo;Computer Things!&rdquo; menu and s
 
 <p>AbiWord is a fully featured word processor. You can learn more at <a href="http://www.abiword.org">The AbiWord website</a></p>
 
-<p><img alt="AbiWord can process words." src="images/appscreen_abiword.jpg" /></p>
+<p><img src="images/appscreen_abiword.jpg" alt="AbiWord can process words." /></p>
 
 <h3 id="web-browser">Web Browser</h3>
 
@@ -426,19 +506,19 @@ The browser is largely the same as Firefox, just with a different name.
 More information is at the <a href="https://wiki.debian.org/Iceweasel">Debian website</a> and in this <a href="http://unix.stackexchange.com/questions/44215/is-there-any-advantage-of-using-iceweasel-and-firefox">stack exchange thread</a>.
 If you update your system (either through Synaptic or the command <code class="prettyprint">apt-get update &amp;&amp; apt-get upgrade</code>, you will suddenly find that your browser is called Firefox. This change is documented on the <a href="https://wiki.debian.org/Iceweasel">debian wiki</a></p>
 
-<p><img alt="Browse the web with IceWeasel" src="images/appscreen_webbrowser.jpg" /></p>
+<p><img src="images/appscreen_webbrowser.jpg" alt="Browse the web with IceWeasel" /></p>
 
 <h3 id="video-player">Video Player</h3>
 
 <p>CHIP plays video! Use the built-in Mplayer to open and play videos.</p>
 
-<p><img alt="Mplayer plays video" src="images/appscreen_videoplayer.jpg" /></p>
+<p><img src="images/appscreen_videoplayer.jpg" alt="Mplayer plays video" /></p>
 
 <h3 id="terminal-commandline">Terminal (commandline)</h3>
 
 <p>The life blood of linux. If there&rsquo;s something you can&rsquo;t do on the desktop, or you want to automate tasks, or access different hardware settings using nothing but a keyboard and text, you&rsquo;ll open up Terminal.</p>
 
-<p><img alt="Terminal does even more computer things" src="images/appscreen_terminal.jpg" /></p>
+<p><img src="images/appscreen_terminal.jpg" alt="Terminal does even more computer things" /></p>
 
 <h3 id="complete-list-of-installed-software">Complete List of Installed Software</h3>
 
@@ -483,34 +563,34 @@ Synaptic is a graphical interface to the <code class="prettyprint">apt-get</code
 
 <p>There&rsquo;s a simple search bar to make it easy to find packages you are interested in. If you don&rsquo;t find the package you are looking for, hit the <strong>Reload</strong> button to refresh Synaptic&rsquo;s record of available packages.</p>
 
-<p><img alt="Install software with Synaptic" src="images/appscreen_synaptic.jpg" /></p>
+<p><img src="images/appscreen_synaptic.jpg" alt="Install software with Synaptic" /></p>
 
 <h3 id="example-installing-scratch-programming-environment">Example: Installing Scratch Programming Environment</h3>
 
 <p>Using Synaptic is very easy. For example, if you wanted to install the Scratch Programming Environment, you can simply search for &ldquo;scratch&rdquo; and you&rsquo;ll get a lot of results. Scroll through, and you&rsquo;ll eventually find &ldquo;scratch&rdquo; in the packages window.
 However, you&rsquo;ll probably want to narrow your results with better search terms, such as &ldquo;scratch programming environments&rdquo;</p>
 
-<p><img alt="Search Synaptic for Scratch" src="images/screen_scratchsearch.jpg" /></p>
+<p><img src="images/screen_scratchsearch.jpg" alt="Search Synaptic for Scratch" /></p>
 
 <p>When search is complete, you can select &ldquo;scratch&rdquo; from the package panel.</p>
 
-<p><img alt="Scratch package found" src="images/screen_scratchfound.jpg" /></p>
+<p><img src="images/screen_scratchfound.jpg" alt="Scratch package found" /></p>
 
 <p>Press the top &ldquo;Apply&rdquo; button, and you&rsquo;ll get the following dialog:</p>
 
-<p><img alt="Scratch package found" src="images/screen_instscratch_02.jpg" /></p>
+<p><img src="images/screen_instscratch_02.jpg" alt="Scratch package found" /></p>
 
 <p>and you&rsquo;ll be notified of the progress:</p>
 
-<p><img alt="Scratch installing" src="images/screen_instscratch_03.jpg" /></p>
+<p><img src="images/screen_instscratch_03.jpg" alt="Scratch installing" /></p>
 
 <p>After a minute or so, you&rsquo;ll be notified that it&rsquo;s finished:</p>
 
-<p><img alt="Scratch installed" src="images/screen_instscratch_04.jpg" /></p>
+<p><img src="images/screen_instscratch_04.jpg" alt="Scratch installed" /></p>
 
 <p>Now that it&rsquo;s installed, you can launch scratch:</p>
 
-<p><img alt="Scratch installed" src="images/screen_scratchinstalled.jpg" /></p>
+<p><img src="images/screen_scratchinstalled.jpg" alt="Scratch installed" /></p>
 
 <h3 id="auto-update">Auto Update</h3>
 
@@ -538,27 +618,27 @@ If you know the name, you can use the Search function to find the package, then 
 
 <p>For example, if you want to remove AbiWord, first open Synaptic and search for &ldquo;<strong>abiword</strong>&rdquo;:</p>
 
-<p><img alt="Uninstall with Synaptic" src="images/screen_uninstall01.jpg" /></p>
+<p><img src="images/screen_uninstall01.jpg" alt="Uninstall with Synaptic" /></p>
 
 <p>Once found, select AbiWord in the package list, and select &ldquo;<strong>Mark for Removal</strong>&rdquo; in the Package menu:</p>
 
-<p><img alt="Uninstall with Synaptic" src="images/screen_uninstall03.jpg" /></p>
+<p><img src="images/screen_uninstall03.jpg" alt="Uninstall with Synaptic" /></p>
 
 <p>If there are additional, related packages that need to be removed, you&rsquo;ll be notified:</p>
 
-<p><img alt="Uninstall with Synaptic" src="images/screen_uninstall04.jpg" /></p>
+<p><img src="images/screen_uninstall04.jpg" alt="Uninstall with Synaptic" /></p>
 
 <p>Finally, press the top &ldquo;<strong>Apply</strong>&rdquo; menu to remove the packages:</p>
 
-<p><img alt="Uninstall with Synaptic" src="images/screen_uninstall05.jpg" /></p>
+<p><img src="images/screen_uninstall05.jpg" alt="Uninstall with Synaptic" /></p>
 
 <p>You&rsquo;ll be notified what changes will be applied:</p>
 
-<p><img alt="Uninstall with Synaptic" src="images/screen_uninstall06.jpg" /></p>
+<p><img src="images/screen_uninstall06.jpg" alt="Uninstall with Synaptic" /></p>
 
 <p>Finally, you can confirm that AbiWord has been removed by checking the Applications menu:</p>
 
-<p><img alt="Uninstall with Synaptic" src="images/screen_uninstall08.jpg" /></p>
+<p><img src="images/screen_uninstall08.jpg" alt="Uninstall with Synaptic" /></p>
 
 <h2 id="boot-into-console">Boot into Console</h2>
 
@@ -566,12 +646,10 @@ If you know the name, you can use the Search function to find the package, then 
 For the temporary case, you can open a terminal window and use the command </p>
 <pre class="highlight shell"><code>sudo systemctl <span class="nb">set</span>-default multi-user.target
 </code></pre>
-
 <p>Next time you boot CHIP, it will not load the desktop or window environment, leaving you with command-line operation only.
 If you wanted to return to booting into the GUI, you can use this command before you reboot:</p>
 <pre class="highlight shell"><code>sudo systemctl <span class="nb">set</span>-default graphical.target
 </code></pre>
-
 <p>The other option is to run a linux distribution with no GUI installed. You may want to do this if you want to use commandline only and want to save some storage space. 
 You can follow instructions to <a href="#flash-chip-firmware">flash CHIP</a> with buildroot, or Debian (with no GUI).</p>
 
@@ -581,8 +659,8 @@ You can follow instructions to <a href="#flash-chip-firmware">flash CHIP</a> wit
 
 <h2 id="parts-and-pieces">Parts and Pieces</h2>
 
-<p><img alt="Callout graphic of chip parts on top" src="images/chip_top_annotated.jpg" />
-<img alt="Callout graphic of chip parts on bottom" src="images/chip_bottom_annotated.jpg" /></p>
+<p><img src="images/chip_top_annotated.jpg" alt="Callout graphic of chip parts on top" />
+<img src="images/chip_bottom_annotated.jpg" alt="Callout graphic of chip parts on bottom" /></p>
 
 <h2 id="wireless">Wireless</h2>
 
@@ -621,7 +699,7 @@ By default, connecting CHIP&rsquo;s micro USB to a computer will create a USB Se
 
 <p>The Pin Headers provide a massive amount of connectivity, making CHIP a suitable platform for product development for physical computing and &ldquo;internet of things&rdquo; devices. Here&rsquo;s a basic diagram that labels all the pins:</p>
 
-<p><img alt="CHIP pinout" src="images/chip_pinouts.jpg" /></p>
+<p><img src="images/chip_pinouts.jpg" alt="CHIP pinout" /></p>
 
 <table><thead>
 <tr>
@@ -757,7 +835,7 @@ By default, connecting CHIP&rsquo;s micro USB to a computer will create a USB Se
 
 <h2 id="mechanical-drawing">Mechanical Drawing</h2>
 
-<p><img alt="CHIP mechanical drawing" src="images/chip_mechanical.jpg" /></p>
+<p><img src="images/chip_mechanical.jpg" alt="CHIP mechanical drawing" /></p>
 
 <p>Our git repo for CHIP hardware has a <a href="https://github.com/NextThingCo/CHIP-Hardware/tree/master/CHIP%5Bv1_0%5D/C.H.I.P._Mechanical">mechanical drawing</a></p>
 
@@ -765,7 +843,7 @@ By default, connecting CHIP&rsquo;s micro USB to a computer will create a USB Se
 
 <p>CHIP is open source hardware. Here&rsquo;s where you can get all the data you need to make, modify, or learn about your own CHIP. Visit the <a href="https://github.com/NextThingCo/CHIP-Hardware">CHIP Hardware git repository</a>.</p>
 
-<p><img alt="Sample schematic of CHIP" src="images/chip_schematic.jpg" /></p>
+<p><img src="images/chip_schematic.jpg" alt="Sample schematic of CHIP" /></p>
 
           <h1 id="making-stuff">Making Stuff</h1>
 
@@ -796,7 +874,7 @@ CHIP&rsquo;s pin headers have all the connections to make this happen. An annota
 
 <p>There are eight (8) GPIO pins always available for connecting CHIP to the sense-able world. If you orient CHIP with the USB connector pointed up, you&rsquo;ll find the GPIO pins in the middle of the right header, U14, Pins 13-20, labeled XIO-P0 to P7: </p>
 
-<p><img alt="Pinout diagram for CHIP" src="images/chip_pinouts.jpg" /></p>
+<p><img src="images/chip_pinouts.jpg" alt="Pinout diagram for CHIP" /></p>
 
 <h3 id="gpio-library">GPIO Library</h3>
 
@@ -815,7 +893,6 @@ CHIP&rsquo;s pin headers have all the connections to make this happen. An annota
 cat gpiochip<span class="k">*</span>/ngpio
 cat gpiochip<span class="k">*</span>/base
 </code></pre>
-
 <p>The <code class="prettyprint">label</code> you are interested in is the value <code class="prettyprint">pcf8574a</code> which is the device that provides GPIO expansion. This provides the number of GPIO as returned by <code class="prettyprint">ngpio</code>. The first expander pin starts with the <code class="prettyprint">base</code> value. If you parse all these values and apply to your code, you can setup your application to be kernel-agnostic for GPIO access. </p>
 
 <p>Here is a python script that demonstrates this <a href="https://gist.github.com/howientc/606545e0ff47e2cda61f14fca5c46eee">in a gist</a></p>
@@ -824,13 +901,11 @@ cat gpiochip<span class="k">*</span>/base
 <pre class="highlight shell"><code><span class="nv">LABEL_FILE</span><span class="o">=</span><span class="sb">`</span>grep -l pcf8574a /sys/class/gpio/<span class="k">*</span>/<span class="k">*</span>label<span class="sb">`</span> <span class="nv">BASE_FILE</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$LABEL_FILE</span><span class="sb">`</span>/base 
 <span class="nv">BASE</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$BASE_FILE</span><span class="sb">`</span>
 </code></pre>
-
 <h3 id="how-the-system-sees-gpio">How The System Sees GPIO</h3>
 
 <p>There is a <code class="prettyprint">sysfs</code> interface available for the GPIO. This just means you can access the GPIO states in a file-system-like manner. For example, you can reference XIO-P0 using this path:</p>
 <pre class="highlight shell"><code>  /sys/class/gpio/gpio408/
 </code></pre>
-
 <p>The number is somewhat unfortunate, since the <code class="prettyprint">sysfs</code> names do not match the labels on our diagram! But is not too hard to translate. Pins XIO-P0 to P7 linearly map to <code class="prettyprint">gpio408</code> to <code class="prettyprint">gpio415</code> on kernel 4.3 and <code class="prettyprint">gpio1016</code> to <code class="prettyprint">gpio1023</code> on kernel 4.4.11. For kernel 4.4.13-ntc-mlc the range is <code class="prettyprint">gpio1013</code> to <code class="prettyprint">gpio1019</code>. See <a href="#kernel-4-3-vs-4-4-gpio-how-to-tell-the-difference">above</a> to learn more about that distinction.</p>
 
 <h3 id="some-gpio-switch-action">Some GPIO Switch Action</h3>
@@ -843,7 +918,6 @@ cat gpiochip<span class="k">*</span>/base
   <span class="c">#4.4.13-ntc-mlc</span>
   sudo sh -c <span class="s1">'echo 1019 &gt; /sys/class/gpio/export'</span>
 </code></pre>
-
 <p>View the mode of the pin. It should return “in”:</p>
 <pre class="highlight shell"><code>    <span class="c">#4.3</span>
   cat /sys/class/gpio/gpio415/direction
@@ -852,7 +926,6 @@ cat gpiochip<span class="k">*</span>/base
   <span class="c">#4.4.13-ntc-mlc</span>
   cat /sys/class/gpio/gpio1019/direction
 </code></pre>
-
 <p>Connect a jumper wire between Pin 20 (XIO-P7) and Pin 39 (GND). Now use this line of code to read the value:</p>
 <pre class="highlight shell"><code>    <span class="c">#4.3</span>
   cat /sys/class/gpio/gpio415/value
@@ -861,7 +934,6 @@ cat gpiochip<span class="k">*</span>/base
   <span class="c">#4.4.13-ntc-mlc</span>
   cat /sys/class/gpio/gpio1019/value
 </code></pre>
-
 <h3 id="some-gpio-output">Some GPIO Output</h3>
 
 <p>You could also change the mode of a pin from “in” to “out”</p>
@@ -872,7 +944,6 @@ cat gpiochip<span class="k">*</span>/base
   <span class="c">#4.4.13-ntc-mlc</span>
   sudo sh -c <span class="s1">'echo out &gt; /sys/class/gpio/gpio1019/direction'</span>
 </code></pre>
-
 <p>Now that it&rsquo;s in output mode, you can write a value to the pin:</p>
 <pre class="highlight shell"><code>    <span class="c">#4.3</span>
   sudo sh -c <span class="s1">'echo 1 &gt; /sys/class/gpio/gpio415/value'</span>
@@ -881,7 +952,6 @@ cat gpiochip<span class="k">*</span>/base
   <span class="c">#4.4.13-ntc-mlc</span>
   sudo sh -c <span class="s1">'echo 1 &gt; /sys/class/gpio/gpio1019/value'</span>
 </code></pre>
-
 <p>If you attach an LED to the pin and ground, the LED will illuminate according to your control messages.</p>
 
 <h3 id="enough-io">Enough IO</h3>
@@ -894,7 +964,6 @@ cat gpiochip<span class="k">*</span>/base
   <span class="c">#4.4.13-ntc-mlc</span>
   sudo sh -c <span class="s1">'echo 1019 &gt; /sys/class/gpio/unexport'</span>
 </code></pre>
-
 <h3 id="learn-more">Learn More</h3>
 
 <p>You can learn more about GPIO and Linux <a href="https://www.kernel.org/doc/Documentation/gpio/sysfs.txt">here:</a></p>
@@ -932,11 +1001,9 @@ These are the pins numbered 18-40 on U13 and 27-40 on U14 to act as GPIO to incr
 <pre class="highlight plaintext"><code>D=3
 (32*3)+4 = 100
 </code></pre>
-
 <p>Therefore, listening to LCD_D4 in sysfs would begin with</p>
 <pre class="highlight plaintext"><code>sudo sh -c 'echo 415 &gt; /sys/class/gpio/export'
 </code></pre>
-
 <h2 id="analog-to-digital-conversion">Analog to Digital Conversion</h2>
 
 <p>Pin 9 on header U14 provides a link for low resolution analog to digital conversion (ADC). 
@@ -947,7 +1014,6 @@ There is no driver for this link yet. ADC is used to read continuous sensors (te
 <p>Only available in CHIP OS 4.4 and above, the <a href="https://en.wikipedia.org/wiki/1-Wire">1 Wire serial protocol</a> data is accessible from the sysfs device. Find your one wire devices with</p>
 <pre class="highlight shell"><code>ls /sys/bus/w1/devices/2<span class="k">*</span>/eeprom
 </code></pre>
-
 <p>The <code class="prettyprint">*</code> is there because your eeprom device will register a unique UUID number with C.H.I.P., so the <code class="prettyprint">ls</code> command will show you all available one wire devices.</p>
 
 <h2 id="uart">UART</h2>
@@ -988,7 +1054,6 @@ There is no driver for this link yet. ADC is used to read continuous sensors (te
         <span class="k">print</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">(</span><span class="n">ser</span><span class="o">.</span><span class="n">read</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre>
-
 <p>Finally let&rsquo;s run it:</p>
 <pre class="highlight shell"><code>    <span class="nv">$ </span>sudo python test.py
     1
@@ -997,7 +1062,6 @@ There is no driver for this link yet. ADC is used to read continuous sensors (te
     ...
     99
 </code></pre>
-
 <h2 id="pwm">PWM</h2>
 
 <p><a href="https://en.wikipedia.org/wiki/Pulse-width_modulation">Pulse Width Modulation</a> can be used to control
@@ -1010,7 +1074,6 @@ not fast enough for robust and smooth control. PWM can be accessed through an <c
 a <code class="prettyprint">sysfs</code> protocol using the debian i2c-tools. In the terminal, use</p>
 <pre class="highlight shell"><code>sudo apt-get install i2c-tools
 </code></pre>
-
 <p>Note that the &ldquo;XIO GPIO&rdquo; pins are provided by an I2C expander at address 0x38 on the TWI bus 2, so that address cannot be used on bus 2.</p>
 
 <h2 id="lcd-monitor-support">LCD Monitor Support</h2>
@@ -1046,7 +1109,7 @@ a <code class="prettyprint">sysfs</code> protocol using the debian i2c-tools. In
 
 <p>Here is a photo (which may be clearer than the animation in the web flasher) which shows where to place your jumper wire or paper clip:</p>
 
-<p><img alt="CHIP with jumper wire attached" src="images/uboot_fel_jumper.jpg" /></p>
+<p><img src="images/uboot_fel_jumper.jpg" alt="CHIP with jumper wire attached" /></p>
 
 <p><em>Note: this jumper needs to be present only when you connect CHIP to power</em>. If for some reason the wire becomes disconnected after you have powered CHIP, there is no problem or need to panic.</p>
 
@@ -1104,7 +1167,6 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", GROUP="plug
 '</span> | sudo tee /etc/udev/rules.d/99-allwinner.rules
 sudo udevadm control --reload-rules
 </code></pre>
-
 <p>Then logout and log back in. </p>
 
 <p>For the curious:</p>
@@ -1131,7 +1193,6 @@ In rare cases, you may have an issue with your <a href="http://askubuntu.com/que
 <span class="nv">AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST</span><span class="o">=</span><span class="s2">"1f3a:efe8"</span>
 reboot
 </code></pre>
-
           <h1 id="advanced">Advanced</h1>
 
 <p>For those interested in building with a stripped-down version of an operating system, or looking to customize CHIP from the command line, we have several tutorials that describe how to setup CHIP with more depth.</p>
@@ -1183,22 +1244,18 @@ brew cask install vagrant</p>
 <p>Assuming you have <a href="http://www.chambaud.com/2013/07/08/adding-git-to-path-when-using-github-for-windows/">git in your PATH</a>, open up a terminal and type:</p>
 <pre class="highlight shell"><code>git clone https://github.com/NextThingCo/CHIP-SDK
 </code></pre>
-
 <p>and start up the virtual machine:</p>
 <pre class="highlight shell"><code><span class="nb">cd </span>CHIP-SDK
 vagrant up
 </code></pre>
-
 <h3 id="login-to-virtual-machine">Login To Virtual Machine</h3>
 
 <p>In the same shell on the host type the following:</p>
 <pre class="highlight shell"><code> vagrant ssh
 </code></pre>
-
 <p>If everything went well you should see the following prompt:</p>
 <pre class="highlight shell"><code>vagrant@vagrant-ubuntu-trusty-32:~<span class="err">$</span>
 </code></pre>
-
 <h4 id="all-the-commands-at-once">All The Commands At Once</h4>
 
 <p>Here&rsquo;s all the commands in one place:</p>
@@ -1207,7 +1264,6 @@ vagrant up
 vagrant up
 vagrant ssh
 </code></pre>
-
 <p>Congratulations! Now you&rsquo;re ready to Flash a C.H.I.P. from your SDK!</p>
 
 <h3 id="troubleshooting-flashing-from-the-sdk">Troubleshooting Flashing from the SDK</h3>
@@ -1219,7 +1275,6 @@ vagrant ssh
 <p>In case you run into trouble because the kernel in the VM was updated and the shared vagrant folder can no longer be mounted, update the guest additions by typing the following in the CHIP-SDK directory on the host:</p>
 <pre class="highlight shell"><code>vagrant plugin install vagrant-vbguest
 </code></pre>
-
 <p>This <a href="http://kvz.io/blog/2013/01/16/vagrant-tip-keep-virtualbox-guest-additions-in-sync/">blog post</a> has some more tips on keeping additions in sync.</p>
 
 <h4 id="invalid-state">Invalid State</h4>
@@ -1227,7 +1282,6 @@ vagrant ssh
 <p>If you get an error like:</p>
 <pre class="highlight shell"><code>error: The guest machine entered an invalid state <span class="k">while </span>waiting <span class="k">for </span>it to boot.
 </code></pre>
-
 <p>This probably means your version of VirtualBox needs updating and/or needs the Extension Pack. Update as necessary and try <code class="prettyprint">vagrant up</code> again.</p>
 
 <h4 id="couldn-39-t-find-file">Couldn&rsquo;t Find File</h4>
@@ -1235,7 +1289,6 @@ vagrant ssh
 <p>If you get the error:</p>
 <pre class="highlight shell"><code>error: Couldn<span class="s1">'t open file /Volumes/Satellite/gitbins/CHIP-SDK/base
 </span></code></pre>
-
 <p>that means you didn&rsquo;t cd CHIP-SDK. Very basic, perhaps, but late nights sometimes need that bump!</p>
 
 <h3 id="updating-the-chip-sdk-virtual-machine">Updating the CHIP-SDK Virtual Machine</h3>
@@ -1257,21 +1310,17 @@ vagrant ssh
 <pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-SDK
   git pull
 </code></pre>
-
 <p>Make sure the virtual machine is shut down and update it:</p>
 <pre class="highlight shell"><code>  vagrant halt
   vagrant provision
 </code></pre>
-
 <p>Now you can boot the virtual machine and ssh into it:</p>
 <pre class="highlight shell"><code>  vagrant up
   vagrant ssh
 </code></pre>
-
 <p>Once you see the trusty prompt, your CHIP SDK virtual machine is ready to use:</p>
 <pre class="highlight shell"><code>  vagrant@vagrant-ubuntu-trusty-32:~<span class="err">$</span>
 </code></pre>
-
 <h4 id="all-the-commands-at-once">All The Commands At Once</h4>
 
 <p>Here&rsquo;s all the commands in one place:</p>
@@ -1282,7 +1331,6 @@ vagrant ssh
   vagrant up
   vagrant ssh
 </code></pre>
-
 <h2 id="flash-chip-firmware">Flash CHIP Firmware</h2>
 
 <p>Now that the <a href="#installing-c-h-i-p-sdk">virtual machine and SDK</a> are running and configured, you can connect CHIP to your computer and give it an operating system. If you want to flash using a native Ubuntu installation, read how to <a href="#setup-ubuntu-for-flashing">prepare Ubuntu to flash</a></p>
@@ -1291,7 +1339,7 @@ vagrant ssh
 
 <p>Prepare CHIP with a jumper wire connecting Pin 7 and Pin 39 on header U14 (FEL pin and GND). Here&rsquo;s a reference image that labels the headers and pins:</p>
 
-<p><img alt="CHIP with jumper wire attached" src="images/uboot_fel_jumper.jpg" /></p>
+<p><img src="images/uboot_fel_jumper.jpg" alt="CHIP with jumper wire attached" /></p>
 
 <p><em>Note: this jumper needs to be present only when you connect CHIP to power</em>. If for some reason the wire becomes disconnected after you have powered CHIP, there is no problem or need to panic.</p>
 
@@ -1303,7 +1351,6 @@ vagrant ssh
 <pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-tools
   ./chip-update-firmware.sh -f
 </code></pre>
-
 <p>The <code class="prettyprint">-f</code> option means &ldquo;fastboot.&rdquo; If you have problems flashing, particularly on Windows or OS X, you can run <code class="prettyprint">./chip-update-firmware.sh</code> to disable fastboot flashing.</p>
 
 <p>During flashing, the terminal will fill with messages.  If successful, you&rsquo;ll see C.H.I.P. run through a hardware test, with the answers being &lsquo;OK&rsquo;.  If C.H.I.P. is &#39;OK&rsquo;, you can remove the jumper wire. Here is a <a href="#buildroot-output">sample successful output</a>.</p>
@@ -1314,7 +1361,6 @@ vagrant ssh
 <pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-tools
   ./chip-update-firmware.sh -d -f
 </code></pre>
-
 <p>The <code class="prettyprint">-f</code> option means &ldquo;fastboot.&rdquo; If you have problems flashing, particularly on Windows or OS X, you can disable fastboot by leaving off the -f option: <code class="prettyprint">./chip-update-firmware.sh -d</code>. Here is a <a href="#debian-output">sample successful output</a>.</p>
 
 <h4 id="option-3-flash-with-chip-operating-system">Option 3: Flash With CHIP Operating System</h4>
@@ -1323,7 +1369,6 @@ vagrant ssh
 <pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-tools
   ./chip-update-firmware.sh -d -b stable-gui -f
 </code></pre>
-
 <p>During flashing, the terminal will fill with messages. If successful, you&rsquo;ll see C.H.I.P. run through a hardware test, with the answers being &#39;OK&rsquo;.  If C.H.I.P. is &#39;OK&rsquo;, you can remove the jumper wire. Here is a <a href="#debian-output">sample successful output</a>. Because of filesize, the &ldquo;gui&rdquo; option must also include the <code class="prettyprint">-f</code> fastboot option. Windows and OS X are not yet supported as flashing hosts.</p>
 
 <h4 id="connect-to-chip-and-do-something">Connect to CHIP and Do Something</h4>
@@ -1331,13 +1376,11 @@ vagrant ssh
 <p>If everything went OK, you can now power up your CHIP again and connect via serial as a USB gadget:</p>
 <pre class="highlight shell"><code>  screen /dev/ttyACM0 115200
 </code></pre>
-
 <p>You can login to CHIP as <code class="prettyprint">chip</code> or <code class="prettyprint">root</code> using the password <code class="prettyprint">chip</code>.</p>
 
 <p>and even test the hardware:</p>
 <pre class="highlight shell"><code>  sudo hwtest
 </code></pre>
-
 <h4 id="customize-buildroot">Customize Buildroot</h4>
 
 <p>If you want to customize buildroot, use these commands before you run the <code class="prettyprint">./chip-update-firmware.sh</code> script to flash CHIP with firmware:</p>
@@ -1346,20 +1389,16 @@ vagrant ssh
   make chip_defconfig
   make nconfig
 </code></pre>
-
 <p>The <code class="prettyprint">nconfig</code> command will display a text interface in your terminal. Use your arrow keys to browse and select additional software for the buildroot OS. When you&rsquo;re finished with your selections, exit by hitting the F9 key, which will automatically save your custom buildroot to:</p>
 <pre class="highlight shell"><code>  /home/vagrant/CHIP-buildroot/.config
 </code></pre>
-
 <p>Now let&rsquo;s build your buildroot with your custom additions:</p>
 <pre class="highlight shell"><code>  make
 </code></pre>
-
 <p>This will take a while, maybe an hour. When finished, flash CHIP with the script:</p>
 <pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-tools
   <span class="nv">BUILDROOT_OUTPUT_DIR</span><span class="o">=</span>../CHIP-buildroot/output ./chip-fel-flash.sh
 </code></pre>
-
 <p>Unless you changed the users or passwords, you can login to CHIP as <code class="prettyprint">chip</code> or <code class="prettyprint">root</code> using the password <code class="prettyprint">chip</code>.</p>
 
 <h5 id="buildroot-cheat-sheet">Buildroot Cheat Sheet</h5>
@@ -1377,7 +1416,6 @@ vagrant ssh
 └── make nconfig
     └── make realtime changes to currently applied buildroot defconfig
 </code></pre>
-
 <p>The <code class="prettyprint">defconfig</code> is a sort of macro that loads a suggested starting point for a buildroot OS, for packages (nconfig) and kernel (linux-nconfig).</p>
 
 <p>Use <code class="prettyprint">make nconfig</code> to add packages for extending the capabilities, like you might with a package manager in debian.</p>
@@ -1463,7 +1501,6 @@ login... OK
 password... OK
 poweroff... OK
 </code></pre>
-
 <h4 id="debian-output">Debian Output</h4>
 
 <p>Sample output from a successful Debian output:</p>
@@ -1540,7 +1577,6 @@ login... OK
 password... OK
 poweroff... OK
 </code></pre>
-
 <h4 id="failure">Failure</h4>
 
 <p>There are a couple common errors that occur when flashing.</p>
@@ -1564,7 +1600,6 @@ ERROR: Allwinner USB FEL device not found!
 <span class="o">==</span> execute the main u-boot binary <span class="o">==</span>
 ERROR: Allwinner USB FEL device not found!
 </code></pre>
-
 <p>The other common error is that you need to run the <strong>chip-update-firmware.sh</strong> script with <strong>sudo</strong> (or you need to add a rules file as described in the next section). This error looks like this in your terminal window:</p>
 <pre class="highlight shell"><code>Image 0: 848 Bytes <span class="o">=</span> 0.83 kB <span class="o">=</span> 0.00 MB
 <span class="o">==</span> upload the SPL to SRAM and execute it <span class="o">==</span>
@@ -1577,18 +1612,15 @@ ERROR: You don<span class="s1">'t have permission to access Allwinner USB FEL de
 == execute the main u-boot binary ==
 ERROR: You don'</span>t have permission to access Allwinner USB FEL device
 </code></pre>
-
 <h4 id="option-flash-without-sudo">Option: Flash Without sudo</h4>
 
 <p>As a developer, there&rsquo;s a good chance you&rsquo;ll flash CHIP more than once in your life. You&rsquo;ll probably want to follow these steps.
 In order to be able to run the <strong>chip-update-firmware.sh</strong> script without sudo, make a rules file:</p>
 <pre class="highlight shell"><code>sudo touch /etc/udev/rules.d/99-allwinner.rules
 </code></pre>
-
 <p>and add the content with the tee command:</p>
 <pre class="highlight shell"><code><span class="nb">echo</span> <span class="s1">'SUBSYSTEM=="usb", ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="efe8", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip"'</span> | sudo tee /etc/udev/rules.d/99-allwinner.rules
 </code></pre>
-
 <p>then, to make this rules file work:
 <code class="prettyprint">shell
   sudo udevadm control --reload-rules
@@ -1612,16 +1644,13 @@ In order to be able to run the <strong>chip-update-firmware.sh</strong> script w
 <pre class="highlight shell"><code>sudo apt-get update
 sudo apt-get install u-boot-tools android-tools-fastboot git build-essential curl android-tools-fsutils libusb-1.0-0-dev pkg-config
 </code></pre>
-
 <p>If you get an error that &ldquo;the repository android-tools-fastboot can&rsquo;t be found&rdquo;, you are probably booting from an Ubuntu Live CD (or USB stick). You&rsquo;ll need to add a repository so you can install the android-tools-fastboot:</p>
 <pre class="highlight shell"><code>sudo add-apt-repository universe <span class="o">&amp;&amp;</span> sudo apt-get update
 sudo apt-get install u-boot-tools android-tools-fastboot git build-essential curl android-tools-fsutils libusb-1.0-0-dev pkg-config
 </code></pre>
-
 <p>If you intend to customize buildroot with additional software, install these packages:</p>
 <pre class="highlight shell"><code>  sudo apt-get install libncurses5-dev libc6-i386 lib32stdc++6 lib32z1
 </code></pre>
-
 <p>Get and make the fel tools:</p>
 <pre class="highlight shell"><code>git clone http://github.com/NextThingCo/sunxi-tools
 <span class="nb">cd </span>sunxi-tools
@@ -1629,18 +1658,15 @@ make
 sudo rm -f /usr/local/bin/fel
 sudo ln -s <span class="nv">$PWD</span>/fel /usr/local/bin/fel
 </code></pre>
-
 <p>Clone the CHIP-tools repository</p>
 <pre class="highlight shell"><code><span class="nb">cd</span> ..
 git clone http://github.com/NextThingCo/CHIP-tools
 <span class="nb">cd </span>CHIP-tools
 </code></pre>
-
 <p>If you have already cloned the CHIP-tools from a previous CHIP flashing, you can, of course, just update your existing repository</p>
 <pre class="highlight shell"><code><span class="nb">cd </span>CHIP-tools
 git pull
 </code></pre>
-
 <p>You&rsquo;ll also need to add your user to some groups and add a udev rule</p>
 <pre class="highlight shell"><code>sudo usermod -a -G dialout <span class="nv">$LOGNAME</span> <span class="o">&amp;&amp;</span>
 sudo usermod -a -G plugdev <span class="nv">$LOGNAME</span> <span class="o">&amp;&amp;</span>
@@ -1650,7 +1676,6 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="1010", GROUP="plug
 SUBSYSTEM=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", GROUP="plugdev", MODE="0660" SYMLINK+="usb-serial-adapter"
 '</span> | sudo tee /etc/udev/rules.d/99-allwinner.rules
 </code></pre>
-
 <p>Now you are ready to <a href="#flash-chip-firmware">flash CHIP</a> with firmware.</p>
 
 <p>Note, if you are using openSUSE, you have to change the GROUP to &#39;lp&rsquo;.</p>
@@ -1669,7 +1694,6 @@ sudo ln -s <span class="nv">$PWD</span>/fel /usr/local/bin/fel
 git clone http://github.com/NextThingCo/CHIP-tools
 <span class="nb">cd </span>CHIP-tools
 </code></pre>
-
 <h2 id="wifi-connection">WiFi Connection</h2>
 
 <p>Below are detailed instructions for connecting to Wi-Fi networks using two different command line protocols: <code class="prettyprint">nmcli</code> and <code class="prettyprint">connman</code>. If you are using the CHIP OS that comes installed on CHIP, or you have flashed with our Debian distribution, you&rsquo;ll want to use the first section about connecting with <code class="prettyprint">nmcli</code>. If you have flashed CHIP with our buildroot OS, you&rsquo;ll need to use <code class="prettyprint">connman</code>.</p>
@@ -1694,14 +1718,12 @@ git clone http://github.com/NextThingCo/CHIP-tools
 <p>In the terminal, type</p>
 <pre class="highlight shell"><code>nmcli device wifi list
 </code></pre>
-
 <p>The output will list available access points</p>
 <pre class="highlight shell"><code><span class="k">*</span>  SSID      MODE   CHAN  RATE       SIGNAL  BARS  SECURITY
 <span class="k">*</span>  NextThing HQ    Infra  11    54 Mbit/s  100     ▂▄▆█  --
    NextThing Shop  Infra  6     54 Mbit/s  30      ▂___  WPA1 WPA2
    2WIRE533        Infra  10    54 Mbit/s  44      ▂▄__  WPA1 WPA2
 </code></pre>
-
 <h4 id="step-2-connect-to-a-network">Step 2: Connect to a network</h4>
 
 <p>You can connect to password -protected or open access points.</p>
@@ -1711,7 +1733,6 @@ git clone http://github.com/NextThingCo/CHIP-tools
 <p>To connect to an open network with no password, use this command:</p>
 <pre class="highlight shell"><code>sudo nmcli device wifi connect <span class="s1">'(your wifi network name/SSID)'</span> ifname wlan0
 </code></pre>
-
 <p>These commands will respond with information about the connection.</p>
 
 <h5 id="b-password-protected">B: Password Protected</h5>
@@ -1719,7 +1740,6 @@ git clone http://github.com/NextThingCo/CHIP-tools
 <p>To connect to a password protected network, use this command, inserting your own network name and password:</p>
 <pre class="highlight shell"><code>sudo nmcli device wifi connect <span class="s1">'(your wifi network name/SSID)'</span> password <span class="s1">'(your wifi password)'</span> ifname wlan0
 </code></pre>
-
 <h5 id="c-hidden-ssid-and-password-protected">C: Hidden SSID and Password Protected</h5>
 
 <p>To connect to a hidden network, append <code class="prettyprint">hidden yes</code> to the command, after <code class="prettyprint">ifname wlan0</code></p>
@@ -1733,7 +1753,6 @@ git clone http://github.com/NextThingCo/CHIP-tools
 <p>You can verify your connection using the command</p>
 <pre class="highlight shell"><code>nmcli device status
 </code></pre>
-
 <p>which outputs a list of the various network devices and their connections. For example, a successful connection would look like this:</p>
 <pre class="highlight shell"><code>DEVICE   TYPE      STATE         CONNECTION
 wlan0    wifi      connected     NextThing HQ
@@ -1742,16 +1761,13 @@ ip6tnl0  ip6tnl    unmanaged     --
 lo       loopback  unmanaged     --
 sit0     sit       unmanaged     --
 </code></pre>
-
 <p>Because it is worth knowing that Linux offers many ways of doing things, another command that shows your current active connection is</p>
 <pre class="highlight shell"><code>nmcli connection show --active
 </code></pre>
-
 <p>which outputs like so:</p>
 <pre class="highlight shell"><code>NAME  UUID                                  TYPE             DEVICE
 NTC   59962bac-3441-437b-94ea-bf31dee66e8f  802-11-wireless  wlan0
 </code></pre>
-
 <p>After you have connected once, your C.H.I.P. will automatically connect to this network next time you reboot (or start NetworkManager services).</p>
 
 <h5 id="test">Test</h5>
@@ -1759,14 +1775,12 @@ NTC   59962bac-3441-437b-94ea-bf31dee66e8f  802-11-wireless  wlan0
 <p>Finally, you can test your connection to the internet with <code class="prettyprint">ping</code>. Google&rsquo;s DNS server at the IP address 8.8.8.8 is probably the most reliable computer on the internet, so:</p>
 <pre class="highlight shell"><code>ping -c 4 8.8.8.8
 </code></pre>
-
 <p>results in output like:</p>
 <pre class="highlight shell"><code>64 bytes from 8.8.8.8: <span class="nv">icmp_seq</span><span class="o">=</span>1 <span class="nv">ttl</span><span class="o">=</span>55 <span class="nb">time</span><span class="o">=</span>297 ms
 64 bytes from 8.8.8.8: <span class="nv">icmp_seq</span><span class="o">=</span>2 <span class="nv">ttl</span><span class="o">=</span>55 <span class="nb">time</span><span class="o">=</span>26.3 ms
 64 bytes from 8.8.8.8: <span class="nv">icmp_seq</span><span class="o">=</span>3 <span class="nv">ttl</span><span class="o">=</span>55 <span class="nb">time</span><span class="o">=</span>24.8 ms
 64 bytes from 8.8.8.8: <span class="nv">icmp_seq</span><span class="o">=</span>4 <span class="nv">ttl</span><span class="o">=</span>55 <span class="nb">time</span><span class="o">=</span>55.7 ms
 </code></pre>
-
 <p>You can stop this command by pressing CTRL-C on your keyboard. The <code class="prettyprint">-c 4</code> option means it will happen only 4 times.</p>
 
 <p>Congratulations! You are now network with CHIP!</p>
@@ -1776,20 +1790,16 @@ NTC   59962bac-3441-437b-94ea-bf31dee66e8f  802-11-wireless  wlan0
 <p>The command to disconnect from a wireless device needs a few parameters:</p>
 <pre class="highlight shell"><code>sudo nmcli dev disconnect wlan0
 </code></pre>
-
 <p>You may want to prevent auto-connection to a network, so you can use this process to &ldquo;forget&rdquo; a network. First, get the connection names:</p>
 <pre class="highlight shell"><code>nmcli c
 </code></pre>
-
 <p>which outputs something like</p>
 <pre class="highlight shell"><code>NAME       UUID                                  TYPE             DEVICE 
 NTC 2461   d0a6fb32-3ed8-4a95-a631-ee2ae6153761  802-11-wireless  wlan0
 </code></pre>
-
 <p>then, disconnect (using the example above)</p>
 <pre class="highlight shell"><code>sudo nmcli connection delete id <span class="s2">"NTC 2461"</span>
 </code></pre>
-
 <h4 id="troubleshooting-networks">Troubleshooting Networks</h4>
 
 <p>Here are a few possible problems with connections.</p>
@@ -1810,7 +1820,6 @@ NTC 2461   d0a6fb32-3ed8-4a95-a631-ee2ae6153761  802-11-wireless  wlan0
 <span class="o">[</span>32269.970000] RTL871X: start auth
 Error: Timeout 90 sec expired.
 </code></pre>
-
 <p>Try connecting again with the correct password.</p>
 
 <h5 id="failed-ping">Failed ping</h5>
@@ -1825,13 +1834,11 @@ From 192.168.2.56 <span class="nv">icmp_seq</span><span class="o">=</span>16 Des
 18 packets transmitted, 0 received, +9 errors, 100% packet loss, <span class="nb">time </span>17013ms
 pipe 4
 </code></pre>
-
 <h5 id="loss-of-wireless-network">Loss of wireless network</h5>
 
 <p>A sudden, unplanned disconnection will post an error in the terminal window, for example:</p>
 <pre class="highlight shell"><code><span class="o">[</span>30863.880000] RTL871X: linked_status_chk<span class="o">(</span>wlan0<span class="o">)</span> disconnect or roaming
 </code></pre>
-
 <p>The Network Manager will periodically try to reconnect. If the access point is restored, you&rsquo;ll get something like this in your terminal window:</p>
 <pre class="highlight shell"><code><span class="o">[</span>31798.970000] RTL871X: rtw_set_802_11_connect<span class="o">(</span>wlan0<span class="o">)</span>
 <span class="o">[</span>31799.030000] RTL871X: start auth
@@ -1839,7 +1846,6 @@ pipe 4
 <span class="o">[</span>31799.050000] RTL871X: rtw_cfg80211_indicate_connect<span class="o">(</span>wlan0<span class="o">)</span> BSS not found !!
 <span class="o">[</span>31799.060000] RTL871X: assoc success
 </code></pre>
-
 <h5 id="nmcli-not-installed-error">nmcli not installed error</h5>
 
 <p>If you try to use <code class="prettyprint">nmcli</code> and you get an error that it is not found or is not a command, chances are that you are using the CHIP buildroot image. The <code class="prettyprint">nmcli</code> commands only apply to CHIPs running CHIP OS or Debian linux.</p>
@@ -1869,7 +1875,6 @@ pipe 4
   connmanctl scan wifi
   connmanctl services
 </code></pre>
-
 <p>The <code class="prettyprint">services</code> command has output similar to:</p>
 <pre class="highlight shell"><code><span class="k">*</span>AO
     NTC                  wifi_7cc70905cd77_4e5443_managed_psk
@@ -1885,7 +1890,6 @@ pipe 4
     Twirl-Eco-Events-2.4 wifi_7cc70905cd77_547769726c2d45636f2d4576656e74732d322e34_managed_psk
     xfinitywifi          wifi_7cc70905cd77_7866696e69747977696669_managed_none
 </code></pre>
-
 <h4 id="step-2-connect-to-an-access-point">Step 2: Connect To An Access Point</h4>
 
 <p>Unfortunately, connman doesn&rsquo;t use the nice name on the left of the services list. It wants the unfriendly string on the right, so you&rsquo;ll want to get copy and paste ready.</p>
@@ -1895,7 +1899,6 @@ pipe 4
 <p>For example, to connect to NTC Guest, which has no password, <code class="prettyprint">services</code> shows two choices. We want the one without “hidden” in the string. Use the connect command to connect:</p>
 <pre class="highlight shell"><code>  connmanctl connect wifi_7cc70905cd77_4e5443204775657374_managed_psk
 </code></pre>
-
 <p>If your network is not password protected, you&rsquo;ll get some output that will indicate a successful connection, such as:</p>
 <pre class="highlight shell"><code><span class="o">[</span>  961.780000] RTL871X: rtw_set_802_11_connect<span class="o">(</span>wlan0<span class="o">)</span>  <span class="nv">fw_state</span><span class="o">=</span>0x00000008
 <span class="o">[</span>  962.070000] RTL871X: start auth
@@ -1907,7 +1910,6 @@ pipe 4
 <span class="o">[</span>  962.300000] RTL871X: <span class="nb">set </span>pairwise key camid:4, addr:0a:18:d6:97:2d:26, kid:0, <span class="nb">type</span>:AES
 <span class="o">[</span>  962.320000] RTL871X: <span class="nb">set </span>group key camid:5, addr:0a:18:d6:97:2d:26, kid:1, <span class="nb">type</span>:AES
 </code></pre>
-
 <p>If your network is password protected, you&rsquo;ll get an error.</p>
 
 <h5 id="b-password-protected">B: Password-Protected</h5>
@@ -1915,29 +1917,23 @@ pipe 4
 <p>To deal with passwords, you&rsquo;ll need to put <code class="prettyprint">connman</code> into interactive mode:</p>
 <pre class="highlight shell"><code>  connmanctl
 </code></pre>
-
 <p>which gives a connmanctl prompt:</p>
 <pre class="highlight shell"><code>  connmanctl&gt;
 </code></pre>
-
 <p>In the shell, turn the &#39;agent&rsquo; on so it can process password requests:</p>
 <pre class="highlight shell"><code>  agent on
 </code></pre>
-
 <p>and now use the connect command (your network name will be different than what&rsquo;s below of course)</p>
 <pre class="highlight shell"><code>  connect wifi_7cc70905cd77_4e5443_managed_psk
 </code></pre>
-
 <p>and enter your password when prompted:</p>
 <pre class="highlight shell"><code>  Agent RequestInput wifi_7cc70905cd77_4e5443_managed_psk
   Passphrase <span class="o">=</span> <span class="o">[</span> <span class="nv">Type</span><span class="o">=</span>psk, <span class="nv">Requirement</span><span class="o">=</span>mandatory <span class="o">]</span>
   Passphrase?
 </code></pre>
-
 <p>Now that you are connected to a wireless network, you can exit connmanctl interactive mode by typing</p>
 <pre class="highlight shell"><code>  quit
 </code></pre>
-
 <h6 id="all-the-commands-in-one-place">All The Commands In One Place</h6>
 
 <p>Here&rsquo;s all the commands in one place:</p>
@@ -1946,13 +1942,11 @@ pipe 4
   connect wifi_7cc70905cd77_4e5443_managed_psk
   quit
 </code></pre>
-
 <h4 id="step-3-test-connection">Step 3: Test Connection</h4>
 
 <p>In CHIP&rsquo;s command line, you can ping Google four times:</p>
 <pre class="highlight shell"><code>  ping -c 4 8.8.8.8
 </code></pre>
-
 <p>and expect ping to output some timing messages like:</p>
 <pre class="highlight shell"><code>PING 8.8.8.8 <span class="o">(</span>8.8.8.8<span class="o">)</span>: 56 data bytes
 64 bytes from 8.8.8.8: <span class="nv">seq</span><span class="o">=</span>0 <span class="nv">ttl</span><span class="o">=</span>55 <span class="nb">time</span><span class="o">=</span>209.147 ms
@@ -1963,12 +1957,10 @@ pipe 4
 4 packets transmitted, 4 packets received, 0% packet loss
 round-trip min/avg/max <span class="o">=</span> 111.125/162.824/209.147 ms
 </code></pre>
-
 <p>If your connection is not successful, then ping will tell you your network is down:</p>
 <pre class="highlight shell"><code>PING 8.8.8.8 <span class="o">(</span>8.8.8.8<span class="o">)</span>: 56 data bytes
 ping: sendto: Network is unreachable
 </code></pre>
-
 <h5 id="troubleshooting-connection-problems">Troubleshooting Connection Problems</h5>
 
 <ul>
@@ -1986,38 +1978,30 @@ ping: sendto: Network is unreachable
 <p>To disconnect from your network, you might first want a reminder of what unfriendly string is used to describe your access point, so type:</p>
 <pre class="highlight shell"><code>  connmanctl services
 </code></pre>
-
 <p>which will output information about your current link:</p>
 <pre class="highlight shell"><code>  <span class="k">*</span>AO NTC                  wifi_7cc70905cd77_4e5443_managed_psk
 </code></pre>
-
 <p>Use the ID to disconnect:</p>
 <pre class="highlight shell"><code>  connmanctl disconnect wifi_7cc70905cd77_4e5443_managed_psk
 </code></pre>
-
 <p>and you&rsquo;ll get some status like this:</p>
 <pre class="highlight shell"><code><span class="o">[</span>  301.890000] RTL871X: clear key <span class="k">for </span>addr:0a:18:d6:97:2d:26, camid:4
 <span class="o">[</span>  301.900000] RTL871X: clear key <span class="k">for </span>addr:0a:18:d6:97:2d:26, camid:5
 <span class="o">[</span>  301.920000] IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: wlan0: link is not ready
 Disconnected wifi_7cc70905cd77_4e5443_managed_psk
 </code></pre>
-
 <p>Generally, <code class="prettyprint">conman</code> will remember and cache setup information - if you reboot in the vicinity of a known network, it will attempt to connect. However, if you need to forget a network setup, these setups can be found by navigating:</p>
 <pre class="highlight shell"><code>  <span class="nb">cd</span> /var/lib/connman/
 </code></pre>
-
 <p>You can delete a single connection by seeing what connections are stored</p>
 <pre class="highlight shell"><code>  ls /var/lib/connman/
 </code></pre>
-
 <p>and then delete a setup that you find, for example</p>
 <pre class="highlight shell"><code>  rm -r wifi_7cc70905cd77_4e5443_managed_psk
 </code></pre>
-
 <p>You can delete all the “wifi” directories with</p>
 <pre class="highlight shell"><code>  rm -r wifi<span class="k">*</span>
 </code></pre>
-
 <p>(the <code class="prettyprint">-r</code> is needed because these are directories you are deleting, and the star at the end of <code class="prettyprint">wifi*</code> assumes your configurations all start with the string “wifi”)</p>
 
 <h4 id="for-advanced-users">For Advanced Users</h4>
@@ -2025,7 +2009,6 @@ Disconnected wifi_7cc70905cd77_4e5443_managed_psk
 <p>It&rsquo;s worth noting that you&rsquo;ll see two wireless networking interfaces if you list them with</p>
 <pre class="highlight shell"><code>  ifconfig
 </code></pre>
-
 <p><code class="prettyprint">connman</code> is configured to see only the physical interface wlan0 which simplifies setup. We do this with a blacklist, which can be modified at <code class="prettyprint">/etc/connman/main.conf</code></p>
 
 <h2 id="configure-sound-output-on-debian">Configure Sound Output on Debian</h2>
@@ -2048,15 +2031,12 @@ If you are using CHIP OS, sound output is already configured and working. Howeve
 <p>Update your apt repository list if you haven&rsquo;t done so recently:</p>
 <pre class="highlight shell"><code>  sudo apt-get update
 </code></pre>
-
 <p>Then install ALSA:</p>
 <pre class="highlight shell"><code>  sudo apt-get install libasound2 alsa-utils
 </code></pre>
-
 <p>This will install alsa and some utilities for playing sound from the command line. Once those have installed, you&rsquo;ll need to make the outputs active for sound</p>
 <pre class="highlight shell"><code>  alsamixer
 </code></pre>
-
 <p>will open up a simple interface. Use the left and right arrow keys on your keyboard to select among the items, and use the up/down keys to change the options:</p>
 
 <ul>
@@ -2066,51 +2046,42 @@ If you are using CHIP OS, sound output is already configured and working. Howeve
 <li>Right Mixer - set to Right</li>
 </ul>
 
-<p><img alt="alsamixer interface" src="images/alsamixer.jpg" /></p>
+<p><img src="images/alsamixer.jpg" alt="alsamixer interface" /></p>
 
 <h3 id="play-a-sound">Play a Sound</h3>
 
 <p>Change to the root media directory:</p>
 <pre class="highlight shell"><code>  <span class="nb">cd</span> /media
 </code></pre>
-
 <p>Alternatively, you could download a sound into chip&rsquo;s home directory:</p>
 <pre class="highlight shell"><code>  mkdir /home/chip/Media <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /home/chip/Media
 </code></pre>
-
 <p>Use <code class="prettyprint">wget</code> to download a sound of piano chords to the file test.wav:</p>
 <pre class="highlight shell"><code>  wget -O test.wav https://upload.wikimedia.org/wikipedia/commons/d/db/Descending_thirds.wav
 </code></pre>
-
 <p>If wget returns command not found you can install it:</p>
 <pre class="highlight shell"><code>  sudo apt-get install wget
 </code></pre>
-
 <p>We can finally play the sound and hear it over CHIP&rsquo;s headphone jack:</p>
 <pre class="highlight shell"><code>  aplay test.wav
 </code></pre>
-
 <p>If you want to play mp3 or ogg files, you can install mplayer:</p>
 <pre class="highlight shell"><code>  sudo apt-get install mplayer
 </code></pre>
-
 <p>Then try an ogg file:</p>
 <pre class="highlight shell"><code>  wget -O test.ogg https://upload.wikimedia.org/wikipedia/commons/e/e7/Agogo.ogg <span class="o">&amp;&amp;</span>
   mplayer test.ogg
 </code></pre>
-
 <p>And mp3 file:</p>
 <pre class="highlight shell"><code>  wget -O test.mp3 http://www.freesound.org/data/previews/315/315618_2050105-lq.mp3 <span class="o">&amp;&amp;</span>
   mplayer test.mp3
 </code></pre>
-
 <h3 id="record-a-sound">Record A Sound</h3>
 
 <p>If you want to try the audio input, you need to connect audio input to <a href="#pin-headers">header U14, pins 06 &amp; 12</a> or <a href="#microphone-and-audio-input">modify CHIP</a> to use audio in on the TRRS connector.
 Once you have an audio signal going into CHIP, you can test it out by recording a three second (<code class="prettyprint">-d 3</code>) WAV file with arecord:</p>
 <pre class="highlight shell"><code>arecord -f <span class="nb">cd</span> -d 3 -D hw:0,0 chipaudioin.wav
 </code></pre>
-
 <h3 id="more-packages">More Packages</h3>
 
 <p>Developers that want to use sound will probably want to download these packages:</p>
@@ -2119,7 +2090,6 @@ sudo apt-get install swig <span class="o">&amp;&amp;</span>
 sudo apt-get install python-setup-tools <span class="o">&amp;&amp;</span>
 sudo apt-get install python-dev
 </code></pre>
-
 <h2 id="usb-storage-devices">USB Storage Devices</h2>
 
 <p>In this tutorial, we&rsquo;ll describe how you can use the USB port to add more storage with a thumb drive, hard drive, card reader, or whatever else. You can then copy, store, and edit files on the storage device, extending the capability of CHIP.</p>
@@ -2140,7 +2110,6 @@ sudo apt-get install python-dev
 <p>Once formatted, insert the drive into CHIP&rsquo;s USB port. Enter the command</p>
 <pre class="highlight shell"><code>dmesg
 </code></pre>
-
 <p>You&rsquo;ll get output like:</p>
 <pre class="highlight shell"><code><span class="o">[</span> 4953.430000] usb 1-1: new high-speed USB device number 2 using ehci-platform
 <span class="o">[</span> 4953.580000] usb-storage 1-1:1.0: USB Mass Storage device detected
@@ -2154,25 +2123,20 @@ sudo apt-get install python-dev
 <span class="o">[</span> 4954.650000] sda: sda1
 <span class="o">[</span> 4954.650000] sd 0:0:0:0: <span class="o">[</span>sda] Attached SCSI removable disk
 </code></pre>
-
 <p>Notice the second to last line. This tells you the device location for the drive. Storage devices generally have device names that start with “sd”. If you want to see all the storage devices attached to CHIP, you can use a wildcard to display all devices that start with “sd”:</p>
 <pre class="highlight shell"><code>ls /dev/sd<span class="k">*</span>
 </code></pre>
-
 <p>and you&rsquo;ll get something like:</p>
 <pre class="highlight shell"><code>/dev/sda /dev/sda1
 </code></pre>
-
 <p>With one thumb drive attached, it appears as two devices: the device itself (sda), and the storage partitions (sda1). There is only one partition on this drive.</p>
 
 <p>Another way to find storage devices is the command</p>
 <pre class="highlight shell"><code>blkid
 </code></pre>
-
 <p>which lists them, along with the names you might have initialized them with:</p>
 <pre class="highlight shell"><code>/dev/sda1: <span class="nv">LABEL</span><span class="o">=</span><span class="s2">"TEST"</span> <span class="nv">UUID</span><span class="o">=</span><span class="s2">"6668-11E9"</span>
 </code></pre>
-
 <h3 id="step-2-mount-the-drive-device-to-your-filesystem">Step 2: Mount the Drive Device to Your Filesystem</h3>
 
 <p>Now that you know where your partition is, it&rsquo;s time to mount the partition so you can access the files.</p>
@@ -2180,28 +2144,23 @@ sudo apt-get install python-dev
 <p>First, make a directory where your drive can mount:</p>
 <pre class="highlight shell"><code>sudo mkdir /drives
 </code></pre>
-
 <p>Mount the drive device to your /drives directory:</p>
 <pre class="highlight shell"><code>sudo mount /dev/sda1 /drives
 </code></pre>
-
 <p>Now you can navigate to the <code class="prettyprint">drives</code> directory and see all the files in the drive:</p>
 <pre class="highlight shell"><code><span class="nb">cd</span> /drives
 ls
 </code></pre>
-
 <h3 id="step-3-unmount-the-drive-from-filesystem">Step 3: Unmount the Drive From Filesystem</h3>
 
 <p>If you want to remove the drive from the USB port on CHIP, it&rsquo;s best to unmount it:</p>
 <pre class="highlight shell"><code>sudo umount /dev/sda1
 </code></pre>
-
 <h3 id="step-4-automatic-mounting-on-boot">Step 4: Automatic Mounting on Boot</h3>
 
 <p>You&rsquo;ll probably want to mount this drive automatically next time you use it, though. We can set that up with a quick modification to the <code class="prettyprint">fstab</code> (file system table) document:</p>
 <pre class="highlight shell"><code>vi /etc/fstab
 </code></pre>
-
 <p>Getting around vi is not very intuitive. If you are new to it, here&rsquo;s a quick guide on getting this text into the fstab document:</p>
 
 <ul>
@@ -2211,7 +2170,6 @@ ls
 </ul>
 <pre class="highlight shell"><code>/dev/sda1 /drives vfat defaults 0 0
 </code></pre>
-
 <p>To exit vi,</p>
 
 <ul>
@@ -2223,15 +2181,12 @@ ls
 <p>You can test your work with:</p>
 <pre class="highlight shell"><code>mount -a
 </code></pre>
-
 <p>If there&rsquo;s an error, double check the <code class="prettyprint">fstab</code> file and make sure it has the line <code class="prettyprint">/dev/sda1 /drives vfat defaults 0 0</code> at the end. If it&rsquo;s successful, you&rsquo;ll be able to view, modify and copy the files on the disk:</p>
 <pre class="highlight shell"><code>ls /drives
 </code></pre>
-
 <p>Now, if you reboot , the drive will mount automatically. If you remove the drive, then insert it again, you&rsquo;ll need the command</p>
 <pre class="highlight shell"><code>mount -a
 </code></pre>
-
 <h2 id="connecting-bluetooth-devices">Connecting Bluetooth Devices</h2>
 
 <p>CHIP has built-in Bluetooth and uses the <a href="http://www.bluez.org/">bluez 5 stack</a> for implementing connections and devices. 
@@ -2259,54 +2214,45 @@ Future tutorials (search our <a href="http://bbs.nextthing.co">bbs</a> will cove
 <p>In the terminal, type</p>
 <pre class="highlight shell"><code>  bluetoothctl
 </code></pre>
-
 <p>This starts up <code class="prettyprint">bluetoothctl</code> in interactive mode. You should see output like</p>
 <pre class="highlight shell"><code><span class="o">[</span>NEW] Controller 7C:C7:08:05:CD:77 BlueZ 5.27 <span class="o">[</span>default]
 <span class="o">[</span>NEW] Device 60:33:4B:13:A7:45 nyb
 <span class="o">[</span>NEW] Device 15:03:26:A0:26:26 SK032B02-2626
 </code></pre>
-
 <p>which is a list of MAC addresses of CHIP&rsquo;s Bluetooth controller chip (the first line) and any other devices that have been paired with CHIP in the past. 
 Use the <code class="prettyprint">help</code> command - it lists all the very useful commands in the <code class="prettyprint">bluetoothctl</code> interactive mode.</p>
 
 <p>In Bluetooth interactive mode, use the command</p>
 <pre class="highlight shell"><code>  power on
 </code></pre>
-
 <p>which outputs</p>
 <pre class="highlight shell"><code>Changing power on succeeded
 <span class="o">[</span>CHG] Controller 7C:C7:08:05:CD:77 Powered: yes
 </code></pre>
-
 <h3 id="find-a-bluetooth-device">Find A Bluetooth Device</h3>
 
 <p>If you need to discover a device, start the scan process:</p>
 <pre class="highlight shell"><code>  scan on
 </code></pre>
-
 <p>which will start printing MAC addresses and names (if available) of Bluetooth devices in your vicinity.</p>
 <pre class="highlight shell"><code><span class="o">[</span>NEW] Device 15:03:26:A0:26:26 SK032B02-2626
 <span class="o">[</span>NEW] Device 1C:1A:C0:85:5E:2C 1C-1A-C0-85-5E-2C
 <span class="o">[</span>NEW] Device 60:33:4B:13:A7:45 nyb
 </code></pre>
-
 <h3 id="pair-with-a-bluetooth-device">Pair With A Bluetooth Device</h3>
 
 <p>Pair to a device with the MAC address and the <code class="prettyprint">pair</code> command:</p>
 <pre class="highlight shell"><code>  pair 1C:1A:C0:85:5E:2C
 </code></pre>
-
 <p>This may fail if the device is powered off, goes out of range, or your toddler spills water on it. Here&rsquo;s what failure looks like:</p>
 <pre class="highlight shell"><code>Attempting to pair with 1C:1A:C0:85:5E:2C
 <span class="o">[</span>CHG] Device 1C:1A:C0:85:5E:2C Connected: yes
 <span class="o">[</span>CHG] Device 1C:1A:C0:85:5E:2C Connected: no
 Failed to pair: org.bluez.Error.AuthenticationCanceled
 </code></pre>
-
 <p>As the scan continues, you&rsquo;ll eventually see the device you are interested in, so copy that MAC address and type:</p>
 <pre class="highlight shell"><code>  pair 15:03:26:A0:26:26
 </code></pre>
-
 <p>with output like:</p>
 <pre class="highlight shell"><code><span class="o">[</span>CHG] Device 15:03:26:A0:26:26 Connected: yes
 <span class="o">[</span>CHG] Device 15:03:26:A0:26:26 Modalias: usb:v05ACp3232d0001
@@ -2318,25 +2264,20 @@ Pairing successful
 <span class="o">[</span>CHG] Device 15:03:26:A0:26:26 Connected: no
 Pair with a Bluetooth Device with Password <span class="o">(</span>keyboard<span class="o">)</span>
 </code></pre>
-
 <p>Some Bluetooth devices need user input to pair. In that case, you&rsquo;ll need to turn the agent &#39;on&rsquo; so the device can post a password, and you can enter it:</p>
 <pre class="highlight shell"><code>  agent on
 </code></pre>
-
 <p>will output</p>
 <pre class="highlight shell"><code>  Agent registered
 </code></pre>
-
 <p>now you can pair it:</p>
 <pre class="highlight shell"><code>  pair DC:2C:26:D7:B6:8F
 </code></pre>
-
 <p>will output</p>
 <pre class="highlight shell"><code>Attempting to pair with DC:2C:26:D7:B6:8F
 <span class="o">[</span>CHG] Device DC:2C:26:D7:B6:8F Connected: yes
 <span class="o">[</span>agent] PIN code: 245261
 </code></pre>
-
 <p>Now you can use the Bluetooth device to enter the PIN code, then hit enter. The terminal will give some status about the pairing:</p>
 <pre class="highlight shell"><code><span class="o">[</span>CHG] Device DC:2C:26:D7:B6:8F Modalias: usb:v05ACp022Cd011B
 <span class="o">[</span>CHG] Device DC:2C:26:D7:B6:8F UUIDs:
@@ -2347,7 +2288,6 @@ Pair with a Bluetooth Device with Password <span class="o">(</span>keyboard<span
 Pairing successful
 <span class="o">[</span>CHG] Device DC:2C:26:D7:B6:8F Connected: no
 </code></pre>
-
 <p>Now that you are paired, you will have to connect.</p>
 
 <h3 id="connect-with-a-bluetooth-device">Connect With A Bluetooth Device</h3>
@@ -2355,7 +2295,6 @@ Pairing successful
 <p>Now that you have paired the Bluetooth device, you won&rsquo;t have to do that again. However, the device still needs to be connected:</p>
 <pre class="highlight shell"><code>  connect 15:03:26:A0:26:26
 </code></pre>
-
 <p>will output, when successful:</p>
 <pre class="highlight shell"><code>Attempting to connect to 15:03:26:A0:26:26
 <span class="o">[</span>CHG] Device 15:03:26:A0:26:26 Connected: yes
@@ -2364,41 +2303,34 @@ Connection successful
 <span class="o">[</span> 1405.360000] input: SK032B02-2626 as /devices/platform/soc@01c00000/1c28c00.serial/tty/ttyS1/hci0/hci0:4/0005:05AC:3232.0001/input/input1
 <span class="o">[</span> 1405.380000] hid-generic 0005:05AC:3232.0001: input: BLUETOOTH HID v0.01 Mouse <span class="o">[</span>SK032B02-2626] on 7c:c7:08:05:cd:77
 </code></pre>
-
 <p>or, if the device is not available, it will fail:</p>
 <pre class="highlight shell"><code>Attempting to connect to 15:03:26:A0:26:26
 <span class="gp">[bluetooth]## </span><span class="o">[</span> 1304.470000] Bluetooth: HIDP <span class="o">(</span>Human Interface Emulation<span class="o">)</span> ver 1.2
 <span class="o">[</span> 1304.480000] Bluetooth: HIDP socket layer initialized
 Failed to connect: org.bluez.Error.Failed
 </code></pre>
-
 <h3 id="trusting-a-bluetooth-device">Trusting a Bluetooth Device</h3>
 
 <p>Trust between people leads to understanding and perhaps even harmonious living. Trust between bluetooth devices means that you won&rsquo;t have to connect the device every time it&rsquo;s near. Which is a sort of harmony, I suppose. 
 Once you have connected a bluetooth device to CHIP, if you intend to use it again, you can trust it:</p>
 <pre class="highlight shell"><code> trust 15:03:26:A0:26:26
 </code></pre>
-
 <h3 id="remove-a-bluetooth-device">Remove a Bluetooth device</h3>
 
 <p>You may want CHIP to not pair or connect to a device - perhaps the conveniently trusted device needs to be freed for another connection. Whatever the reason, if you want to remove your Bluetooth device, </p>
 <pre class="highlight shell"><code> remove 15:03:26:A0:26:26
 </code></pre>
-
 <h3 id="troubleshooting-bluetooth">Troubleshooting Bluetooth</h3>
 
 <p>If your Bluetooth controller module on CHIP is not functioning, you can easily find the problem. Type</p>
 <pre class="highlight shell"><code>  bluetoothctl
 </code></pre>
-
 <p>to get into the interactive mode, then type</p>
 <pre class="highlight shell"><code>  power on
 </code></pre>
-
 <p>If you get the response</p>
 <pre class="highlight shell"><code>  No default controller available
 </code></pre>
-
 <p>Then there&rsquo;s a problem with CHIP recognizing the Bluetooth module. <a href="#important!">Read the very first instructions</a> at the top of this tutorial.</p>
 
 <h2 id="install-x-windows">Install X-windows</h2>
@@ -2418,14 +2350,12 @@ Once you have connected a bluetooth device to CHIP, if you intend to use it agai
 <p>CHIP is a lightweight computer, so we&rsquo;ll install the lightweight xfce4:</p>
 <pre class="highlight shell"><code>  sudo apt-get install xfce4
 </code></pre>
-
 <p>It might take some time to download and install all the packages, since there are a lot of dependencies and libraries involved. Once installed, start the windowing system with the command</p>
 <pre class="highlight shell"><code>  startx&amp;
 </code></pre>
-
 <p>(the <code class="prettyprint">&amp;</code> runs Xwindows in the background, so you can still use your terminal). After a minute or so, you&rsquo;ll get an image on the monitor:</p>
 
-<p><img alt="Xwindows up and running on CHIP" src="images/xwindows_first.jpg" /></p>
+<p><img src="images/xwindows_first.jpg" alt="Xwindows up and running on CHIP" /></p>
 
 <p>Now you can use a mouse and keyboard to explore CHIP and launch programs.</p>
 
@@ -2434,7 +2364,6 @@ Once you have connected a bluetooth device to CHIP, if you intend to use it agai
 <p>If you get errors from apt that report &ldquo;unmet dependencies,&rdquo; you can run the command</p>
 <pre class="highlight shell"><code>sudo apt-get install -f
 </code></pre>
-
 <p>which will force installation of any alternate or missing dependencies of any installed packages.</p>
 
           <h2 id="install-the-latest-puredata">Install the latest PureData</h2>
@@ -2449,7 +2378,6 @@ sudo apt-get install -y puredata
 <span class="nv">WHO</span><span class="o">=</span><span class="nv">$USER</span>
 sudo adduser <span class="nv">$WHO</span> audio
 </code></pre>
-
 <h2 id="building-and-installing-puredata-pd-on-chip">Building and Installing PureData (PD) on CHIP</h2>
 
 <p>If you want to build from source, these instructions will take you there.
@@ -2462,7 +2390,6 @@ PureData is a graphical programming environment, primarily for making audio and 
 gzip -d pd-0.46-7.src.tar.gz
 tar -xvf pd-0.46-7.src.tar
 </code></pre>
-
 <h3 id="install-dependencies">Install Dependencies</h3>
 
 <p>Now, you&rsquo;ll need to install all the dependencies and make a symbolic link to wish:</p>
@@ -2471,11 +2398,9 @@ sudo apt-get install libasound2 alsa-utils mplayer software-properties-common gi
 sudo apt-get build-dep puredata
 sudo ln -s /usr/bin/wish8.6 /usr/bin/wish
 </code></pre>
-
 <p>Navigate to the pd directory the archive created:</p>
 <pre class="highlight shell"><code><span class="nb">cd </span>pd-0.46-7
 </code></pre>
-
 <h3 id="build-it">Build It</h3>
 
 <p>You&rsquo;re ready to go ahead and build, running some scripts, then making the install:</p>
@@ -2485,13 +2410,11 @@ sudo ln -s /usr/bin/wish8.6 /usr/bin/wish
 make
 sudo make install
 </code></pre>
-
 <p>You&rsquo;ll probably also want the &ldquo;extra&rdquo; objects such as expr, expr~, clone, fiddle~, bonk~, bob~, sigmund~, et al. 
 These require an extra build step. The &ldquo;extra&rdquo; folder is in <code class="prettyprint">pd-0.46-7/extra</code>, so if you are still in <code class="prettyprint">src/</code> you can</p>
 <pre class="highlight shell"><code><span class="nb">cd</span> ../extra
 make install
 </code></pre>
-
 <p>You&rsquo;ll probably also want to install the deken plugin so you can add more externals to your bag of tricks:
 https://github.com/pure-data/deken</p>
 
@@ -2504,21 +2427,17 @@ https://puredata.info/downloads/kiosk-plugin</p>
 This is mostly about giving audio the necessary thread priority and giving the chip user access:</p>
 <pre class="highlight shell"><code>sudo nano /etc/security/limits.conf
 </code></pre>
-
 <p>Navigate to the end of the file (CTL-V) and add the lines</p>
 <pre class="highlight shell"><code>@audio - rtprio 99
 @audio - memlock unlimited
 </code></pre>
-
 <p>and save (CTL-X to exit, you&rsquo;ll be prompted to save)
 You&rsquo;ll want to double check that the <code class="prettyprint">chip</code> user is in the audio group:</p>
 <pre class="highlight shell"><code>sudo adduser username audio
 </code></pre>
-
 <p>Then reboot CHIP:</p>
 <pre class="highlight shell"><code>sudo reboot
 </code></pre>
-
 <h3 id="test-pd">Test PD</h3>
 
 <p>Now test pd with a test patch. Open a terminal and use this command, which should result in a sine wave:</p>
@@ -2526,14 +2445,12 @@ You&rsquo;ll want to double check that the <code class="prettyprint">chip</code>
 unzip testPatch.pd_.zip
 pd -rt -nogui -noadc -alsa testPatch.pd
 </code></pre>
-
 <h3 id="test-midi-controller">Test MIDI Controller</h3>
 
 <p>If you need to test out a midi controller to make sure data is coming into CHIP, you can do this from the terminal.
 You&rsquo;ll want to list the connected devices, if not just to get the port name as ALSA sees it.</p>
 <pre class="highlight shell"><code>amidi -l
 </code></pre>
-
 <p>Example output might look like
 <code class="prettyprint">shell
 Dir Device    Name
@@ -2543,7 +2460,6 @@ IO  hw:1,0,0  DS1 MIDI 1
 <p>You can then use the command to display MIDI data bytes (in hex) in the terminal window:</p>
 <pre class="highlight shell"><code>amidi -p hw:1,0,0 -d
 </code></pre>
-
 <p>Moving a fader might provide output like:</p>
 <pre class="highlight shell"><code>B0 29 1D
 B0 29 20
@@ -2555,7 +2471,6 @@ B0 29 37
 B0 29 3A
 B0 29 3C
 </code></pre>
-
 <h3 id="uninstall">Uninstall</h3>
 
 <p>If you need to remove pd, it takes a few steps:</p>
@@ -2565,13 +2480,11 @@ sudo apt-get purge puredata-core
 sudo apt-get install aptitude wget unzip
 sudo apt-get autoremove
 </code></pre>
-
 <h3 id="run-pd">Run PD</h3>
 
 <p>Start PD from the terminal with the command</p>
 <pre class="highlight shell"><code>pd -rt &amp;
 </code></pre>
-
 <p>You can then use the mouse and keyboard to go through the Browser and learn more about PD.</p>
 
 <h3 id="references">References</h3>
@@ -2631,7 +2544,7 @@ Of course, you&rsquo;ll still want to access it and control it without a monitor
 <p>We&rsquo;ll find those on header U14, pin outs 1,3 and 5.
 See the following diagram, which assumes CHIP&rsquo;s USB ports are pointed up&hellip;</p>
 
-<p><img alt="Pinout diagram for CHIP" src="images/chip_pinouts.jpg" /></p>
+<p><img src="images/chip_pinouts.jpg" alt="Pinout diagram for CHIP" /></p>
 
 <h4 id="about-the-cable">About the Cable</h4>
 
@@ -2666,11 +2579,11 @@ Please check your data sheets!</p>
 
 <p>The correct pins are on U14 at 1, 3, and 5.</p>
 
-<p><img alt="Pinout diagram for CHIP" src="images/chip_pinouts.jpg" /></p>
+<p><img src="images/chip_pinouts.jpg" alt="Pinout diagram for CHIP" /></p>
 
 <p>Here&rsquo;s a photo of the cable properly plugged in:</p>
 
-<p><img alt="Properly connect USB to UART cable" src="images/uart_connection.jpg" /></p>
+<p><img src="images/uart_connection.jpg" alt="Properly connect USB to UART cable" /></p>
 
 <h3 id="ssh">SSH</h3>
 
@@ -2681,11 +2594,9 @@ Please check your data sheets!</p>
 <p>CHIP comes with <code class="prettyprint">avahi</code> installed, meaning you can simply refer to it with a name, rather than an IP address</p>
 <pre class="highlight shell"><code>ssh chip@chip.local
 </code></pre>
-
 <p>In some situations, you&rsquo;ll need to use CHIP&rsquo;s <a href="#how-to-get-your-ip-address">IP address</a> to connect, in which case the command would look like: </p>
 <pre class="highlight shell"><code>ssh chip@10.1.1.99
 </code></pre>
-
 <p>You&rsquo;ll be asked for CHIP&rsquo;s password. The default password is <code class="prettyprint">chip</code>.
 This process is the same if CHIP is connected to the network using built-in wireless or a USB-Ethernet adapter.</p>
 
@@ -2694,21 +2605,17 @@ This process is the same if CHIP is connected to the network using built-in wire
 <p>The easiest way to get CHIPs IP address is to hook up a monitor and keyboard. Bootup, log in, <a href="#connecting-c-h-i-p-to-wi-fi-with-nmcli">connect to the network</a> if you need to, and use the command</p>
 <pre class="highlight shell"><code>hostname -i
 </code></pre>
-
 <p>which results in your IP address, which might look like this:</p>
 <pre class="highlight shell"><code>10.1.1.99
 </code></pre>
-
 <p>If the <code class="prettyprint">hostname -i</code> command doesn&rsquo;t work you can use</p>
 <pre class="highlight shell"><code>ip addr show dev wlan0
 </code></pre>
-
 <p>(You can use the abbreviated <code class="prettyprint">ip a</code> for an easy to remember command).</p>
 
 <p>which will output a lot of data. Look for the line <code class="prettyprint">wlan0</code> and the entry <code class="prettyprint">inet</code>, something like:</p>
 <pre class="highlight shell"><code>inet 10.1.1.99
 </code></pre>
-
 <h4 id="make-connections-to-chip-easy">Make Connections To CHIP Easy</h4>
 
 <p>You may want to setup your network so it will always provide the same (static) IP address to CHIP. You can then rely on CHIP always having the same IP address. </p>
@@ -2742,15 +2649,12 @@ This process is the same if CHIP is connected to the network using built-in wire
 <p>If you are using screen, the command will look something like this:</p>
 <pre class="highlight shell"><code>screen /dev/tty.usbserial 115200
 </code></pre>
-
 <p>or</p>
 <pre class="highlight shell"><code>screen /dev/ttyUSB0 115200
 </code></pre>
-
 <p>What comes after the &rsquo;/dev/&rsquo; may vary among different systems and connections. You can narrow down the choices by using the command</p>
 <pre class="highlight shell"><code>ls /dev/tty<span class="k">*</span>
 </code></pre>
-
 <p>to list the serial devices. </p>
 
 <p>Now power up CHIP. You could do this at anytime, but you&rsquo;ll have the most reliable experience powering CHIP after connecting the USB-UART wires. If you make the serial connection after booting chip, you&rsquo;ll probably need to hit &#39;return&rsquo; on your keyboard a few times to get CHIP to send some data to you and print in your terminal.</p>
@@ -2763,11 +2667,11 @@ This process is the same if CHIP is connected to the network using built-in wire
 
 <p>If you are on Windows using PuTTy, you&rsquo;ll probably want to open the windows Device Manager to get the COM name for the serial port. The device won&rsquo;t show up in the Ports list until after the kernel loads and presents the device, so it may take a minute or so before Windows actually detects it.</p>
 
-<p><img alt="Device Manager showing serial ports" src="images/win_putty_00.jpg" /></p>
+<p><img src="images/win_putty_00.jpg" alt="Device Manager showing serial ports" /></p>
 
 <p>In the PuTTy configuration panel, you can now use the COM name to set it up. In this case, it&rsquo;s &ldquo;COM4&rdquo;:</p>
 
-<p><img alt="PuTTy configuration" src="images/win_putty_01.jpg" /></p>
+<p><img src="images/win_putty_01.jpg" alt="PuTTy configuration" /></p>
 
 <p>Press &ldquo;Open&rdquo; to open a terminal window ,where you can log in to CHIP with username and password <code class="prettyprint">chip</code>.</p>
 
@@ -2793,12 +2697,10 @@ This process is the same if CHIP is connected to the network using built-in wire
 <p>Getting avahi running is extremely simple. First, install the avahi-daemon:</p>
 <pre class="highlight shell"><code>  sudo apt-get install avahi-daemon
 </code></pre>
-
 <p>to install the necessary libraries. 
 You may want to configure the daemon with this service file so you can find Apple Bonjour devices from CHIP :</p>
 <pre class="highlight shell"><code>  sudo nano /etc/avahi/services/afpd.service
 </code></pre>
-
 <p>Then just copy and paste this XML into it:</p>
 <pre class="highlight shell"><code>&lt;?xml <span class="nv">version</span><span class="o">=</span><span class="s2">"1.0"</span> <span class="nv">standalone</span><span class="o">=</span><span class="s1">'no'</span>?&gt;&lt;!--<span class="k">*</span>-nxml-<span class="k">*</span>--&gt;
 &lt;!DOCTYPE service-group SYSTEM <span class="s2">"avahi-service.dtd"</span>&gt;
@@ -2810,15 +2712,12 @@ You may want to configure the daemon with this service file so you can find Appl
 &lt;/service&gt;
 &lt;/service-group&gt;
 </code></pre>
-
 <p>Then restart avahi-daemon:</p>
 <pre class="highlight shell"><code> sudo /etc/init.d/avahi-daemon restart
 </code></pre>
-
 <p>You can now find the hostname that you can use to reach CHIP:</p>
 <pre class="highlight shell"><code>  hostname
 </code></pre>
-
 <p>which will probably return “chip” as the hostname.</p>
 
 <h3 id="use-zero-conf">Use Zero-Conf</h3>
@@ -2826,7 +2725,6 @@ You may want to configure the daemon with this service file so you can find Appl
 <p>From a terminal on another computer you can try accessing CHIP with the network name <code class="prettyprint">chip.local</code></p>
 <pre class="highlight shell"><code>  ssh chip@chip.local
 </code></pre>
-
 <p>and enter the password (default is <code class="prettyprint">chip</code>). That&rsquo;s it. You can now reach CHIP without knowing the IP.</p>
 
 <h3 id="change-the-hostname">Change the hostname</h3>
@@ -2834,39 +2732,31 @@ You may want to configure the daemon with this service file so you can find Appl
 <p>If you have more than one CHIP on the network, or you just want to change the name from “chip” to fit into your network name scheme, you can modify the hostnames file. Open the file in an editor:</p>
 <pre class="highlight shell"><code>  sudo nano /etc/hostname
 </code></pre>
-
 <p>where you&rsquo;ll see a single word “chip.” Just modify that line (for example, change it to “bobofettywap”) and save the file. 
 You&rsquo;ll also need to modify the hosts file where you&rsquo;ll need to change the first line <code class="prettyprint">127.0.0.1    chip</code> where you replace &ldquo;chip&rdquo; with your new hostname.</p>
 <pre class="highlight shell"><code>  sudo nano /etc/hosts
 </code></pre>
-
 <p>Finally, to get this new name to broadcast over the network restart avahi-daemon:</p>
 <pre class="highlight shell"><code>  sudo /etc/init.d/avahi-daemon restart
 </code></pre>
-
 <p>You can now access chip with the new name:</p>
 <pre class="highlight shell"><code>  ssh chip@bobofettywap.local 
 </code></pre>
-
 <h3 id="other-packages">Other packages</h3>
 
 <p>You may want to explore some of the other features of avahi, such as browsing a network for other zero-configure enabled computers. There&rsquo;s a package you can install:</p>
 <pre class="highlight shell"><code>  sudo apt-get update &amp;
   sudo apt-get install avahi-utils
 </code></pre>
-
 <p>which gives you a set of tools for browsing the network, such as the command</p>
 <pre class="highlight shell"><code>  avahi-browse -d <span class="nb">local </span>_ssh._tcp --resolve -t
 </code></pre>
-
 <p>which will list other zero-configure-enabled devices on the local network. You could ssh to your Macintosh named &ldquo;bananna&rdquo;, for example with </p>
 <pre class="highlight shell"><code>  ssh username@bananna
 </code></pre>
-
 <p>An alternative to just installing the avahi-daemon, you can</p>
 <pre class="highlight shell"><code>  sudo apt-get install libnss-mdns
 </code></pre>
-
 <p>which installs some other tools for network name propagation.</p>
 
 <h3 id="troubleshooting-ssh-with-avahi">Troubleshooting SSH with avahi</h3>
@@ -2874,7 +2764,6 @@ You&rsquo;ll also need to modify the hosts file where you&rsquo;ll need to chang
 <p>If your computer returns the error</p>
 <pre class="highlight shell"><code>  ssh: Could not resolve hostname chip.local: nodename nor servname provided, or not known
 </code></pre>
-
 <p>then you either need to wait a minute or try installing avahi-daemon again, but pay closer attention to any errors that <code class="prettyprint">apt-get</code> returns.</p>
 
 <p>If you can&rsquo;t connect to CHIP even though you are sure avahi is properly configured, confirm that your CHIP and the computer you are trying to connect are on the same local network (and on the same subnet).</p>
@@ -3020,7 +2909,6 @@ You&rsquo;ll also need to modify the hosts file where you&rsquo;ll need to chang
 <p>It&rsquo;s a computer! It will tell you anything. If you want to find out more details about CHIP&rsquo;s processor, use the command:</p>
 <pre class="highlight shell"><code>cat /proc/cpuinfo
 </code></pre>
-
 <p>This will give output similar to:</p>
 <pre class="highlight shell"><code>processor   : 0
 model name  : ARMv7 Processor rev 2 <span class="o">(</span>v7l<span class="o">)</span>
@@ -3036,11 +2924,9 @@ Hardware    : Allwinner sun4i/sun5i Families
 Revision    : 0000
 Serial      : 162542c10c427777
 </code></pre>
-
 <p>If you want know more about the memory:</p>
 <pre class="highlight plaintext"><code>cat /proc/meminfo
 </code></pre>
-
 <p>with output something like:</p>
 <pre class="highlight shell"><code>MemTotal:         507108 kB
 MemFree:          298600 kB
@@ -3081,7 +2967,6 @@ VmallocTotal:     507904 kB
 VmallocUsed:       14560 kB
 VmallocChunk:     482532 kB
 </code></pre>
-
           <h1 id="troubleshooting-faq">Troubleshooting FAQ</h1>
 
 <h2 id="chip-won-39-t-boot-or-startup">CHIP Won&rsquo;t Boot or Startup</h2>
@@ -3132,7 +3017,7 @@ VmallocChunk:     482532 kB
 <h2 id="how-to-contact-us">How to Contact Us</h2>
 
 <p>If you need more support, try our <a href="https://bbs.nextthing.co">forums</a> or 
-<a href="mailto:ahoyahoy@nextthing.co?subject=&quot;C.H.I.P. S.O.S.&quot;">email</a> us.</p>
+<a href="mailto:ahoyahoy@nextthing.co?subject=&quot;C.H.I.P.%20S.O.S.&quot;">email</a> us.</p>
 
           <h1 id="compliance-statement">Compliance Statement</h1>
 
