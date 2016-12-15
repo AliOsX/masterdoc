@@ -1383,18 +1383,30 @@ vagrant ssh
 </code></pre>
 <h4 id="customize-buildroot">Customize Buildroot</h4>
 
-<p>If you want to customize buildroot, use these commands before you run the <code class="prettyprint">./chip-update-firmware.sh</code> script to flash CHIP with firmware:</p>
-<pre class="highlight shell"><code>  git clone https://github.com/NextThingCo/CHIP-buildroot
-  <span class="nb">cd</span> ~/CHIP-buildroot
-  make chip_defconfig
-  make nconfig
+<p>Buildroot is a tool for building and cross-compiling a linux distribution that only has what you need. Setting up buildroot requires either a <a href="chip.html#installing-c-h-i-p-sdk">virtual machine</a> or a computer running Ubuntu OS, <a href="#setup-ubuntu-for-flashing">setup for flashing</a>.</p>
+
+<h5 id="modify-and-build">Modify and Build</h5>
+
+<p><a href="https://github.com/NextThingCo/CHIP-buildroot">C.H.I.P.-buildroot</a> is used to build buildroot and the linux kernel. Its Makefile operates on a <code class="prettyprint">.config</code> file which specifies options to include in the build. The <code class="prettyprint">.config</code> lives in the repository&rsquo;s root, whereas the one for the linux kernel is: ./board/chip/linux.config/</p>
+
+<p>First, clone the buildroot repot and create the default config file with:</p>
+<pre class="highlight shell"><code>git clone https://github.com/NextThingCo/CHIP-buildroot
+<span class="nb">cd </span>CHIP-buildroot
+make chip_defconfig
 </code></pre>
-<p>The <code class="prettyprint">nconfig</code> command will display a text interface in your terminal. Use your arrow keys to browse and select additional software for the buildroot OS. When you&rsquo;re finished with your selections, exit by hitting the F9 key, which will automatically save your custom buildroot to:</p>
-<pre class="highlight shell"><code>  /home/vagrant/CHIP-buildroot/.config
+<p>This will copy the the <code class="prettyprint">chippro_defconfig</code> file as <code class="prettyprint">.config</code> in the root of the repository. Other default config targets for other hardware can be found in the <code class="prettyprint">config</code> subdirectory. You can, of course, create your own config files and use them later.</p>
+
+<p>Customize the buildroot using </p>
+<pre class="highlight shell"><code>make nconfig
 </code></pre>
-<p>Now let&rsquo;s build your buildroot with your custom additions:</p>
-<pre class="highlight shell"><code>  make
+<p>For Linux (which will modify the linux.config under board/nextthing/chip/): </p>
+<pre class="highlight shell"><code>make linux nconfig
 </code></pre>
+<p>Now</p>
+<pre class="highlight shell"><code>make
+</code></pre>
+<p>from the buildroot repository root. This will cross-compile linux/buildroot for C.H.I.P. Pro. The targets wind up in the ./output/images directory. If you make changes to your config files, you can just <code class="prettyprint">make</code> again without a <code class="prettyprint">make clean</code>. </p>
+
 <p>This will take a while, maybe an hour. When finished, flash CHIP with the script:</p>
 <pre class="highlight shell"><code>  <span class="nb">cd</span> ~/CHIP-tools
   <span class="nv">BUILDROOT_OUTPUT_DIR</span><span class="o">=</span>../CHIP-buildroot/output ./chip-fel-flash.sh
