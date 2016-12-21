@@ -884,7 +884,7 @@ CHIP&rsquo;s pin headers have all the connections to make this happen. An annota
 
 <p>For various reasons related to the community nature of Linux development, the GPIO expander pin numbers are different between CHIP OS kernels 4.3 and 4.4. What follows is a very technical discussion of the GPIO access. If you just want to start making stuff and don&rsquo;t need low-level information, you might just want to skip this section and go straight to the <a href="#python-library">python library</a>.</p>
 
-<p>If you are developing applications on CHIP that use GPIO pins and you would like consistent behavior between the kernel versions, you need to know how to find out the base value for the GPIO values. It may be enough for you to know that the GPIO expander pins start at <em>408</em> on 4.3, <em>1016</em> on 4.4.11, and <em>1013</em> on 4.4.13-ntc-mlc, <strong>however, it would be ideal to calculate this in your application to truly future-proof for future kernels.</strong></p>
+<p>If you are developing applications on CHIP that use GPIO pins and you would like consistent behavior between the kernel versions, you need to know how to find out the base value for the GPIO values. It may be enough for you to know that the GPIO expander pins start at <em>408</em> on 4.3, <em>1016</em> on 4.4.11, and <em>1013</em> on 4.4.13-ntc-mlc, <strong>however, it would be ideal to calculate this in your application to truly future-proof for future kernels.</strong> </p>
 
 <p>If you look in the directory <code class="prettyprint">/sys/class/gpio</code>, you&rsquo;ll find two directories starting with <code class="prettyprint">gpio</code>: <code class="prettyprint">gpiochip0</code> and either <code class="prettyprint">gpiochip408</code> (4.3) or <code class="prettyprint">gpiochip1016</code> (4.4.11) or <code class="prettyprint">gpiochip1013</code> (4.4.13-ntc-mlc).</p>
 
@@ -901,6 +901,8 @@ cat gpiochip<span class="k">*</span>/base
 <pre class="highlight shell"><code><span class="nv">LABEL_FILE</span><span class="o">=</span><span class="sb">`</span>grep -l pcf8574a /sys/class/gpio/<span class="k">*</span>/<span class="k">*</span>label<span class="sb">`</span> <span class="nv">BASE_FILE</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$LABEL_FILE</span><span class="sb">`</span>/base 
 <span class="nv">BASE</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$BASE_FILE</span><span class="sb">`</span>
 </code></pre>
+<p>Finally, you can view a practical example of calcualting the &ldquo;xio base&rdquo; in the CHIP_IO library <a href="https://github.com/xtacocorex/CHIP_IO/blob/master/source/common.c#L148">common.c code</a>.</p>
+
 <h3 id="how-the-system-sees-gpio">How The System Sees GPIO</h3>
 
 <p>There is a <code class="prettyprint">sysfs</code> interface available for the GPIO. This just means you can access the GPIO states in a file-system-like manner. For example, you can reference XIO-P0 using this path:</p>
