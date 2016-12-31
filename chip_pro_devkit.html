@@ -1,0 +1,471 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+		<link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
+    <link rel="icon" href="//s3-us-west-2.amazonaws.com/ntcpublic/icon-16.png" type="image/x-icon">
+		
+    <title>Next Thing Co. C.H.I.P. Pro Developer's Kit Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #272822;
+  background-color: #f92672;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #f8f8f2;
+}
+.highlight .p, .highlight .pi {
+  color: #f8f8f2;
+}
+.highlight .gi {
+  color: #a6e22e;
+}
+.highlight .gd {
+  color: #f92672;
+}
+.highlight .gh {
+  color: #66d9ef;
+  background-color: #272822;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #ae81ff;
+}
+.highlight .kc {
+  color: #fd971f;
+}
+.highlight .kt {
+  color: #fd971f;
+}
+.highlight .kd {
+  color: #fd971f;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #a6e22e;
+}
+.highlight .sr {
+  color: #a1efe4;
+}
+.highlight .si {
+  color: #cc6633;
+}
+.highlight .se {
+  color: #cc6633;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #66d9ef;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #a6e22e;
+}
+.highlight .ss {
+  color: #a6e22e;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+    
+    <link href="stylesheets/ntc_override.css" rel="stylesheet" media="screen" />
+    
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAVI
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+    
+      <div class="nav-bar-logo">
+        <a href="index.html"><img src="images/ntclogo_doccorner.png" alt="Ntclogo doccorner" /></a>
+      </div>
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/NextThingCo/CHIP_Pro_DKit-Docs'>Have something to add or change?<br>Visit our GitHub!</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        
+          <h1 id="c-h-i-p-pro-dev-kit-intro">C.H.I.P Pro Dev Kit Intro</h1>
+
+<p>This documentation is a resource to getting started with the C.H.I.P Pro Developer&rsquo;s Kit. There are lists of contents, descriptions of parts, explanations of how to use the unique features of the board, and some examples to work through so you can get up and running developing your product around C.H.I.P Pro.</p>
+
+<h2 id="welcome">Welcome!</h2>
+
+<p>The C.H.I.P Pro Developer&rsquo;s Kit provides a complete electronic sandbox to test, iterate, and prototype products with the C.H.I.P Pro module. While many developer&rsquo;s kits assume a high-degree of technical experience, we make this kit approachable, compact, and easy to use. 
+We believe that great products can come from many backgrounds, so we provide several extras in this kit that help you get making and get comfortable. We even include an extra C.H.I.P Pro to get you started on your own PCB. If you do know it all, you&rsquo;ll find this documentation will help your product be the best it can be, whether you&rsquo;re making 1 or 1 million.</p>
+
+<h2 id="contents-c-h-i-p-pro">Contents: C.H.I.P Pro</h2>
+
+<p>If you need information unique to the C.H.I.P Pro module itself, such as schematics, specifications, dimensions, complete pin descriptions, a comparison between C.H.I.P and C.H.I.P Pro, and more, visit the <a href="http://docs.getchip.com/chippro.html">C.H.I.P Pro documentation site</a>.</p>
+
+<h2 id="what-39-s-in-the-kit">What&rsquo;s in the Kit</h2>
+
+<p><img src="images/CHIP_Pro_DKit_Contents.png" alt="C.H.I.P. Pro Dev Kit Package Contents" /></p>
+
+<p>The C.H.I.P. Pro Dev Kit comes with accessories to get you started on your first prototype:</p>
+
+<ul>
+<li>1 Dev board with C.H.I.P. Pro soldered on</li>
+<li>1 C.H.I.P. Pro (loose)</li>
+<li>4 Male/Female jumper wires</li>
+<li>Male 0.1&quot; pin headers</li>
+<li>1 Button with cap</li>
+<li>1 Mini breadboard</li>
+<li>4 Little Rubber Feet (LRF)</li>
+<li>1 USB A to Micro-USB B cable</li>
+<li>How to get started worksheet </li>
+</ul>
+
+          <h1 id="what-39-s-on-the-board">What&rsquo;s on the Board</h1>
+
+<h2 id="c-h-i-p-pro-dev-kit-features">C.H.I.P. Pro Dev Kit Features</h2>
+
+<p><img src="images/frontCallout.jpg" alt="Front Callouts" /></p>
+
+<ul>
+<li><strong>USB1 Port (2.0 Host)</strong> - USB A jack lets C.H.I.P. Pro act as a USB EHCI/OHCI host for external devices. By default, this is powered by the USB micro jack. Cut the appropriate trace to power this from the barrel jack instead. </li>
+<li><strong>USB0 VBUS Power LED</strong> - When there is power available to the USB1 port, this LED will illumniate.</li>
+<li><strong>USB0 + UART1</strong> - The micro USB jack provides serial and USB gadget connectivity, power from a USB power source, and UART connectivity for complete terminal messages from boot time.</li>
+<li><strong>3.7 LiPo battery jack</strong> - a JST connector for connecting and powering the dev kit from a 3.7 volt Lithium Polymer battery.</li>
+<li><strong>1/8&quot; Audio Jack</strong> - This TRRS jack provides stereo audio out and optional mono input.</li>
+<li><strong>DC In Jack</strong> - Connect a power supply ranging from 6V to 23V to power the C.H.I.P. Pro.</li>
+<li><strong>CHG-IN On/Off Switch</strong> - Switch can enable or disable the power feed from the DC in jack, allowing you to isolate the power source.</li>
+<li><strong>PWM0/1 LEDs</strong> - Two LEDs are connected directly to the PWM pins on C.H.I.P. Pro to make it easy to test PWM in software by dimming these LEDs.</li>
+<li><strong>C.H.I.P. Pro Power Button</strong> - If there is power from DC, USB, or battery, you can hold this down for 1 second to turn C.H.I.P. Pro on, or hold for 5 seconds to turn it off.</li>
+<li><strong>MIC1/2</strong> - Two on-board microphones are spaced 40mm apart, ideal for testing voice control applications and beam-forming algorithms. (With sound travelling at ~340 m/s, the delay between the two microphones is 5.64 samples @ 48K sampling rate, or 117 microseconds)</li>
+<li><strong>GPIO D0-7 LED</strong> - These are connected directly to GPIO D0 to D7 on C.H.I.P. Pro for easy software examples using GPIO control.</li>
+<li><strong>UART1 TX/RX LEDs</strong> - These LEDs indicate when data is passing on the UART1 TX and RX pins.</li>
+<li><strong>FEL Button</strong> - This button needs to be held down before C.H.I.P. Pro is powered up to put it in FEL mode for flashing new firmware.</li>
+</ul>
+
+<h2 id="pin-headers">Pin Headers</h2>
+
+<p><img src="images/ThruHoles.jpg" alt="Pin Headers" /></p>
+
+<p>There are several areas where pin headers can be soldered into through-holes for easy access and control of the pins on C.H.I.P. Pro.</p>
+
+<ul>
+<li><strong>PWM0/1 Through-Hole Breakout</strong> - Add pin headers to connect servos and LEDs with pulse width modulation.</li>
+<li><strong>Battery Switch</strong> - Add a switch so you can easily disable or enable power from a battery. You will need to <a href="#back-traces">cut a trace</a> to make this switch work. </li>
+<li><strong>C.H.I.P Pro</strong> - The through-holes surrounding the C.H.I.P Pro can be filled with pin headers to give access to the pin you need.</li>
+</ul>
+
+<h2 id="cuttable-traces">Cuttable Traces</h2>
+
+<p>The C.H.I.P. Pro Dev Kit is designed to be flexible for your design and provide valuable built-in hardware. There are several cuttable jumpers that will disconnect onboard components and reroute power and data to where you need. You can find all of the jumpers outlined in the images below.</p>
+
+<p>Most of these traces are on the back of the board with one very important exception. The USB0 jumpers on the front are connected to the micro-USB0 port on the Dev Kit. This renders the micro USB port on the C.H.I.P. Pro itself unusable. If you would like to use the micro-USB port on C.H.I.P. Pro these must be cut. </p>
+
+<p><img src="images/cutJumpers.jpg" alt="Front Callouts" /></p>
+
+<h3 id="front-traces">Front Traces</h3>
+
+<ul>
+<li><strong>USB0 Disconnect</strong>  There are two (2) traces that are important for USB communication and one (1) trace that will disconnect USB power from the main micro USB connnector to C.H.I.P Pro. To disconnect the dev kit&rsquo;s main micro USB connector, cut between the pads for the traces marked &ldquo;+&rdquo; and &ldquo;-&rdquo;. These are for the &ldquo;D+&rdquo; and &ldquo;D-&rdquo; USB data lines. This will allow you to use the micro USB connector on the C.H.I.P. Pro.</li>
+</ul>
+
+<h3 id="back-traces">Back Traces</h3>
+
+<ul>
+<li><strong>UART Disconnect</strong> - Cut these traces to disable the UART functionality from the dev kit&rsquo;s USB micro connector. This disables the FE1.1S USB hub controller IC.</li>
+<li><strong>MIC1/MIC2 Power Select</strong> - Cut-and-solder these pads to change the power source for the onboard mics. Cut between the pads marked with the line, then solder bridge the other two pads to select 3.3 volt power instead of the default VMIC power for MIC1 or MIC2. By default the dev kit is wired to VMIC which provides power only while recording. </li>
+<li><strong>MIC1/MIC2 Ground Select</strong> - Cut-and-solder these pads to change the ground for the onboard mics. Cut between the pads with the line, then solder between the other two pads to select GND instead of the default AGND power for MIC1 or MIC2.</li>
+<li><strong>GPIO LED Disconnect</strong> - If you don&rsquo;t want the on-board GPIO LEDs to illuminate, cut this trace.</li>
+<li><strong>MIC2 Disconnect</strong> - Cut this trace to disconnect the onboard microphone and enable the MIC2 pin on C.H.I.P. Pro.</li>
+<li><strong>PWM LED Disconnect</strong> - If you don&rsquo;t want the LEDs to illuminate when using PWM from the C.H.I.P. Pro pins, cut this trace. </li>
+<li><strong>MIC1 Disconnect</strong> - Cut this trace to disconnect the onboard microphone and enable the MIC1 pin on C.H.I.P. Pro.</li>
+<li><strong>Enable Sleeve for MIC1 IN</strong> - Solder over these pads to use the sleeve (&ldquo;S&rdquo; of the TRRS) of the 1/8&quot; audio jack.</li>
+<li><strong>HP (headphone) Ground Select</strong> - Cut-and-solder these pads to change the grounding for the headphone jack. Cut between the pads with the line, then solder between the other two pads to use HPCOM instead of GND.</li>
+<li><strong>Battery Disconnect</strong> - If you want to add a switch for a battery, you&rsquo;ll need to cut this trace, then solder a switch into the through-holes provided.</li>
+<li><strong>USB1 Host Power Select</strong> - Cut-and-solder to power the USB A (host) jack from the barrel jack (wall power) instead of the default power from the USB Micro. </li>
+</ul>
+
+<h2 id="how-to-cut">How to Cut</h2>
+
+<p>Here&rsquo;s what you need to know about modifying and repairing the traces on the dev kit to experiment and test different configurations.</p>
+
+<h3 id="cut">Cut</h3>
+
+<p>To get the job done, you need to grab an X-acto knife or another small, sharp blade. The goal is to cut the trace connecting the two solder pads while NOT cutting anything else. The area to cut is very small so if you happen to own a pair of magnifying eye glasses now is the time to use them! To help stay in one place and not accidentally run the blade over another trace think of the cutting action as more of a digging action. </p>
+
+<p><img src="images/traces_cut.jpg" alt="Cut Jumper" /></p>
+
+<p>When you feel like you may have successfully cut through test the connection with your multimeter to confirm the disconnect.</p>
+
+<p><img src="images/traces_test.jpg" alt="Test Jumper" /></p>
+
+<h3 id="cut-and-solder">Cut-and-Solder</h3>
+
+<p>Some of these require both a trace cut and a solder bridge. For example, the MIC1 power has three pads. Cut between two of the pads, and bridge two with solder.</p>
+
+<p><img src="images/traces_solderCutHand.jpg" alt="Solder and Cut Jumper" /></p>
+
+<h3 id="revert-and-repair">Revert and Repair</h3>
+
+<p>Once you cut a trace it can be reverted to the original behavior. To replace the jumper solder a small piece of wire across all the contacts you wish to reconnect, or, if you are nimble, bridge the contacts with a solder blob.</p>
+
+<p><img src="images/traces_solderBridge.jpg" alt="Solder Bridge" /></p>
+
+          <h1 id="let-39-s-get-started">Let&rsquo;s Get Started</h1>
+
+<p>Before you start building with the C.H.I.P. Pro Dev Kit the C.H.I.P. Pro needs to be flashed with an operating system. Grab these items, then read on:</p>
+
+<ul>
+<li>C.H.I.P. Pro Dev Kit</li>
+<li>USB A to Micro-USB B cable</li>
+<li>Separate computer with <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a> or <a href="https://www.chromium.org/getting-involved/download-chromium">Chromium</a> browser </li>
+</ul>
+
+<h2 id="flash-an-example">Flash an Example</h2>
+
+<p>You can select an OS and example from <a href="http://flash.getchip.com/pro">flash.getchip.com</a> in Chrome or Chromium browser.</p>
+
+<p>Plug the micro USB cable into the USB0 port on the Dev Kit (<strong>not in the C.H.I.P. Pro!</strong>). Hold down the FEL button and with the other hand plug the USB cable into the computer. The C.H.I.P. Pro will power up which will be indicated by the pink power and white status LEDs illuminating. </p>
+
+<p><img src="images/pressPlug.jpg" alt="pushing FELL button" /></p>
+
+<p>The web flasher will search for and eventually recognize your board. Keep holding the FEL button down until the magnifying glass goes away and you have an option to choose an image to flash.</p>
+
+<p>Choose one of our three delightful examples:</p>
+
+<ul>
+<li>Blinkenlights</li>
+<li>VU Meter</li>
+<li>Debian OS</li>
+</ul>
+
+<p>Except for the Debian example, when you connect to C.H.I.P. Pro, you will be logged in as root.</p>
+
+<h3 id="blinkenlights">Blinkenlights</h3>
+
+<p>Controlling LEDs is fundamental to almost any hardware. This simple example provides easy-to-understand code with exciting results! Flash C.H.I.P. Pro with this image and watch the GPIO D0-D7 lights turn on and off in a cascading pattern and the two PWM LEDs pulse on and off.   </p>
+
+<p>There are two scripts running in the background. If you want to modify the code for this example, you can go to: </p>
+<pre class="highlight plaintext"><code>/usr/bin/blink-leds
+/usr/bin/fade-pwms
+</code></pre>
+<h3 id="vu-meter">VU Meter</h3>
+
+<p>Want to make sure your Mics are working? Use this handy VU Meter example. Scream loudly, speak softly, tap the mics, and MAKE SOME NOISE, SPORTSFANS! You&rsquo;ll see the LEDs light proportional to the volume of the noise captured by the two built-in mics.</p>
+
+<p>If you want to modify the code for this example, you can go to: </p>
+<pre class="highlight plaintext"><code>/usr/bin/vu-meter
+</code></pre>
+<h3 id="debian">Debian</h3>
+
+<p>We provide a standard Debian distribution, complete with all the package managers and conveniences you know and love. This package is ideal for development, since it is more flexible than the buildroot-based Gadget OS. However, you will want to keep track of your dependencies to more easily transition to the more nimble Gadget OS.</p>
+
+          <h1 id="power">Power</h1>
+
+<h2 id="input">Input</h2>
+
+<p>There are three ports on the Dev Kit that support three different power supplies:</p>
+
+<ul>
+<li>Micro-USB port for AC adapter or powered USB hub </li>
+<li>JST-PH 2.0mm for Rechargable 3.7V Lithium Polymer battery </li>
+<li>DC-IN barrel jack for 6 - 23V AC adapter </li>
+</ul>
+
+<p>For AC adapters we recommend getting one that supplies 12V and 3 amps.</p>
+
+<p>Power can also be provided to three pins to power C.H.I.P. Pro.</p>
+
+<ul>
+<li>CHG-IN - connect 4.8 to 6 V of power to pin 4 (and GND) to provide power to C.H.I.P. Pro. If you have a 3.7V Lithium Polymer (LiPo) battery connected to BAT, then power provided to CHGIN will also charge the battery.</li>
+<li>BAT - connect a 3.7V Lithium Polymer (LiPo) battery to pin 8 (and GND) to provide power to C.H.I.P. Pro. You can charge the battery by providing voltage to the CHG-IN pin.</li>
+<li>VBUS - connect 5V to pin 50 (and GND to pin 53) to provide power to C.H.I.P. Pro.</li>
+</ul>
+
+<h2 id="output">Output</h2>
+
+<p>The C.H.I.P. Pro Dev kit can provide power to sensors and peripherals.</p>
+
+<ul>
+<li>VCC-3V3 - pin 2 provides 3.3V for sensors and anything else. This pin can provide a maximum of 800mA.</li>
+<li>For your servo needs PWM0 and PWM1 breakout through-holes provide 5V volts and 2.5A.</li>
+<li>IPSOUT - pin 3 provides a power rail based on the available power inputs for powering peripherals.</li>
+<li>USB1 Host - provide power to USB peripherals.</li>
+<li>PWRON - connect to ground to turn C.H.I.P. Pro on and boot the operating system.</li>
+</ul>
+
+<h2 id="management">Management</h2>
+
+<p>There are several ways to power the C.H.I.P. Pro Dev Kit and your creative endeavors. The Dev Kit boasts a AXP209 Power System Management IC designed to switch to any available power source. The following table details what happens with some different power scenarios.</p>
+
+<table><thead>
+<tr>
+<th>Power Source</th>
+<th>Result</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Battery</td>
+<td>C.H.I.P. Pro is powered by battery</td>
+</tr>
+<tr>
+<td>Battery + DC In</td>
+<td>C.H.I.P. Pro is powered by DC In, battery is charged</td>
+</tr>
+<tr>
+<td>Battery + USB In</td>
+<td>C.H.I.P. Pro is powered by USB in, battery is charged (though more slowly than by DC In)</td>
+</tr>
+<tr>
+<td>Battery + DC In + USB In</td>
+<td>C.H.I.P. Pro is powered by DC In, battery is charged</td>
+</tr>
+<tr>
+<td>Battery + low amperage DC or USB In</td>
+<td>Battery powers C.H.I.P. Pro as needed to prevent shut down</td>
+</tr>
+<tr>
+<td>Too much voltage!</td>
+<td>C.H.I.P. Pro shuts down and may become permanently damaged</td>
+</tr>
+</tbody></table>
+
+<h2 id="powering-off">Powering Off</h2>
+
+<p>If you are running any processes we recommend powering C.H.I.P. Pro off by holding the C.H.I.P. Pro Power Button down (for about 6 seconds) and wait for the power and status LED to turn off. Alternatively, you can switch off C.H.I.P. Pro through software. In both instances, once C.H.I.P. Pro has been powered down it is safe to remove power from the Dev Kit without the risk of losing data. </p>
+
+          <h1 id="connect-and-control">Connect and Control</h1>
+
+<p>C.H.I.P Pro is a headless computer, so you will need a separate computer in order to interact with it. The Dev Kit makes this easy and powerful, with a built-in USB to Serial converter for a direct connection to UART1. Connect the board to your computer with a common USB A to Micro-USB B cable. You can instantiate a UART connection with C.H.I.P Pro powered on or off. If you set it up before you power C.H.I.P Pro, you&rsquo;ll be able to see all messages starting from boot.</p>
+
+<p>The topics in this section cover features that are unique to the Dev Kit. Other topics, such as connecting to a network, USB Gadget serial connections, and using GPIO are covered in the <a href="http://docs.getchip.com/chippro.html#use_it">C.H.I.P. Pro documentation</a></p>
+
+<h2 id="usb-serial-uart1-connection">USB-Serial (UART1) Connection.</h2>
+
+<p>There are several applications you can use to make a USB-serial terminal connection to the Dev Kit. Below are some of the most common.</p>
+
+<h3 id="os-x-amp-linux">OS X &amp; Linux</h3>
+
+<p>Connect the Dev Kit to your computer and open a terminal window. Find out the tty.usbserial dev path the Dev Kit is attached to by using the command below or use the tab key to autocomplete, like <code class="prettyprint">screen /dev/tty. &lt;tab&gt;</code></p>
+<pre class="highlight plaintext"><code>ls /dev/tty.*
+</code></pre>
+<p>On Linux, this is usually <code class="prettyprint">ttyUSB0</code>, and on OS X, something similar to <code class="prettyprint">usbserial-DN022CZ9</code>. On Debian systems, you may need to install screen: </p>
+<pre class="highlight plaintext"><code>sudo apt-get install screen
+</code></pre>
+<p>Use Screen to create a serial terminal at 115200 bps:</p>
+<pre class="highlight plaintext"><code>screen /dev/tty.usbserialxxxxxxxx 115200
+</code></pre>
+<p>Log in to C.H.I.P. Pro using the default user and password <code class="prettyprint">chip</code>. </p>
+
+<h4 id="exit-screen">Exit Screen</h4>
+
+<p>When done, kill all windows and terminate Screen with Ctrl+A Ctrl+. If you get the error &ldquo;Cannot open line&hellip; Resource busy&rdquo; it&rsquo;s because the last session was not properly exited. Search for the open file and active process using usbserial:</p>
+<pre class="highlight plaintext"><code>lsof | grep usbserial
+</code></pre>
+<p>You will get an output that looks something like this:</p>
+<pre class="highlight plaintext"><code>screen  27127 Sefi  5u  CHR             18,0        0t0     605 /dev/tty.usbserial
+</code></pre>
+<p>Note the process ID. In this case, it&rsquo;s 27127. Then run:</p>
+<pre class="highlight plaintext"><code>screen -x 27127 
+</code></pre>
+<p>It will return to your previous screen session. Then use Ctrl+A Ctrl+\ to close it properly (will ask you to confirm).</p>
+
+<p><strong>Windows</strong></p>
+
+<p>Download the <a href="http://www.putty.org/">PuTTY terminal emulator</a> or <a href="https://www.cygwin.com/">Cygwin</a>.</p>
+
+<p>Open your Device Manager and find the port labeled USB Serial to find the COM port number. The items to plug into either Cygwin or PuTTY are:
+* COMxx number as the <em>Serial Line</em> or <em>COM Port</em> 
+* 115200 as the <em>Speed</em> or <em>Baud Rate</em> 
+* In PuTTY choose Serial as the <em>Connection Type</em>.</p>
+
+<h2 id="audio">Audio</h2>
+
+<p>The C.H.I.P. Pro Development Kit has several ways to access audio in and out. Stereo audio in and out is handled by a 24bit/48K DAC built-in to the GR8 processor. There are also digital options that you can use, but require configuration of the Linux kernel and additional hardware to access.</p>
+
+<ul>
+<li>Audio output via 3.5mm TRRS jack</li>
+<li>Mono input via 3.5mm TRRS jack</li>
+<li>Stereo microphones</li>
+<li>MIC1 and MIC2 header pins</li>
+<li>I2S digital audio</li>
+<li>SPIDIF digital audio</li>
+</ul>
+
+<h3 id="input">Input</h3>
+
+<p>There are two (2) analog MEM (micro electro mechanical) microphones on the Dev board. These are enabled by default. </p>
+
+<p>If you want to use the MIC1 and MIC2 pins for audio input, you&rsquo;ll need to <a href="#back-traces">cut a trace</a>.</p>
+
+<p>The &ldquo;Sleeve&rdquo; (bottom-most ring) on the TRRS jack can be used as a mono audio input, suitable for microphones commonly built-in to headphones. If you want to used this connector, you&rsquo;ll need to <a href="#back-traces">cut a trace</a>.</p>
+
+<h3 id="output">Output</h3>
+
+<p>The 3.5mm TRRS jack provides stereo output suitable for headphones or amplification to stereo speakers.</p>
+
+<h2 id="usb">USB</h2>
+
+<p>The USB A jack can be used to connect and use popular accessories like storage, MIDI controllers, keyboards, pointing devices, audio hardware, and more. C.H.I.P. Pro does not provide power to the USB A port on its own, so the Development Kit is a good example of how this works.  </p>
+
+<h2 id="on-board-leds">On-board LEDs</h2>
+
+<p>The Dev board provides ten LEDs to make it easy to test your GPIO skills without having to wire anything up. </p>
+
+<h3 id="gpio-leds">GPIO LEDs</h3>
+
+<p>Eight of these LEDs can be turned on and off with standard Linux sysfs commands to the GPIO pins DO to D7. </p>
+
+<h3 id="pwm-leds">PWM LEDs</h3>
+
+<p>There are also two LEDs that are connected to the PWM pins for testing and learning about pulse width modulation. </p>
+
+<h2 id="make-it-with-c-h-i-p-pro">Make it with C.H.I.P. Pro!</h2>
+
+<p>The Dev Kit board contains hardware to make rapid prototyping with C.H.I.P. Pro a unique experience. When it comes to software however, the C.H.I.P. Pro and Dev Board are the same. To learn more about how to connect to and control C.H.I.P. Pro head over to the official <a href="http://docs.getchip.com/chip.html">C.H.I.P. Pro Docs page</a>. </p>
+
+<h1 id="open-source">Open Source</h1>
+
+<p>The C.H.I.P. Pro is open source hardware. Get all the details in our <a href="https://github.com/NextThingCo/CHIP_Pro-Hardware">github repo</a>.</p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
