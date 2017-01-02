@@ -274,26 +274,34 @@ We believe that great products can come from many backgrounds, so we provide sev
 <li>Debian OS</li>
 </ul>
 
-<p>Except for the Debian example, when you connect to C.H.I.P. Pro, you will be logged in as root.</p>
+<p>Except for the Debian example, when you connect to C.H.I.P. Pro <a href="http://docs.getchip.com/chip_pro_devkit.html#usb-serial-uart1-connection">via serial</a>, you will be logged in as root.</p>
+
+<p>If you want to learn more about C.H.I.P. Pro software, such as connecting to WiFi and accessing GPIO, head over to the official <a href="http://docs.getchip.com/chip_pro.html#get-working-with-c-h-i-p-pro">C.H.I.P. Pro Docs page</a>.</p>
 
 <h3 id="blinkenlights">Blinkenlights</h3>
 
 <p>Controlling LEDs is fundamental to almost any hardware. This simple example provides easy-to-understand code with exciting results! Flash C.H.I.P. Pro with this image and watch the GPIO D0-D7 lights turn on and off in a cascading pattern and the two PWM LEDs pulse on and off.   </p>
 
-<p>There are two scripts running in the background. If you want to modify the code for this example, you can go to: </p>
-<pre class="highlight plaintext"><code>/usr/bin/blink-leds
-/usr/bin/fade-pwms
+<p>There are two scripts running in the background. If you want to modify the code for this example, you can use the <code class="prettyprint">vi</code> editor to play around with the code: </p>
+<pre class="highlight plaintext"><code>vi /usr/bin/blink-leds
+vi /usr/bin/fade-pwms
 </code></pre>
+<p>This image is a very rudimentary Linux distribution, based on buildroot. It demonstrates a fast-booting system that boots into a software system that immediately controls hardware.</p>
+
 <h3 id="vu-meter">VU Meter</h3>
 
 <p>Want to make sure your Mics are working? Use this handy VU Meter example. Scream loudly, speak softly, tap the mics, and MAKE SOME NOISE, SPORTSFANS! You&rsquo;ll see the LEDs light proportional to the volume of the noise captured by the two built-in mics.</p>
 
-<p>If you want to modify the code for this example, you can go to: </p>
-<pre class="highlight plaintext"><code>/usr/bin/vu-meter
+<p>If you want to modify the code for this example, you can use <code class="prettyprint">vi</code> to edit it: </p>
+<pre class="highlight plaintext"><code>vi /usr/bin/vu-meter
 </code></pre>
+<p>This image is a very rudimentary Linux distribution, based on buildroot. It demonstrates a fast-booting system that boots into a software system that reacts to the environment and controls hardware.</p>
+
 <h3 id="debian">Debian</h3>
 
 <p>We provide a standard Debian distribution, complete with all the package managers and conveniences you know and love. This package is ideal for development, since it is more flexible than the buildroot-based Gadget OS. However, you will want to keep track of your dependencies to more easily transition to the more nimble Gadget OS.</p>
+
+<p>If you want to configure and build the kernel and rootfs for the Debian image, take a look at our <a href="https://github.com/NextThingCo/chip-os-pro">github repo</a></p>
 
           <h1 id="power">Power</h1>
 
