@@ -1158,8 +1158,8 @@ a <code class="prettyprint">sysfs</code> protocol using the debian i2c-tools. In
 <h4 id="on-ubuntu">On Ubuntu:</h4>
 
 <p>You need to paste the following into a terminal:</p>
-<pre class="highlight shell"><code>sudo usermod -a -G dialout <span class="k">$(</span>logname<span class="k">)</span>
-sudo usermod -a -G plugdev <span class="k">$(</span>logname<span class="k">)</span>
+<pre class="highlight shell"><code>sudo usermod -a -G dialout <span class="k">$(</span>USER<span class="k">)</span>
+sudo usermod -a -G plugdev <span class="k">$(</span>USER<span class="k">)</span>
 
 <span class="c"># Create udev rules </span>
 <span class="nb">echo</span> -e <span class="s1">'SUBSYSTEM=="usb", ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="efe8", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip"
@@ -1174,7 +1174,7 @@ sudo udevadm control --reload-rules
 <p>For the curious:</p>
 
 <ul>
-<li>logname: outputs your username </li>
+<li>USER: outputs your username </li>
 <li>dialout: gives non-root access to serial connections </li>
 <li>plugdev: allows non-root mounting with pmount </li>
 </ul>
@@ -1682,8 +1682,8 @@ git clone http://github.com/NextThingCo/CHIP-tools
 git pull
 </code></pre>
 <p>You&rsquo;ll also need to add your user to some groups and add a udev rule</p>
-<pre class="highlight shell"><code>sudo usermod -a -G dialout <span class="nv">$LOGNAME</span> <span class="o">&amp;&amp;</span>
-sudo usermod -a -G plugdev <span class="nv">$LOGNAME</span> <span class="o">&amp;&amp;</span>
+<pre class="highlight shell"><code>sudo usermod -a -G dialout <span class="nv">$USER</span> <span class="o">&amp;&amp;</span>
+sudo usermod -a -G plugdev <span class="nv">$USER</span> <span class="o">&amp;&amp;</span>
 <span class="nb">echo</span> -e <span class="s1">'SUBSYSTEM=="usb", ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="efe8", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip"
 SUBSYSTEM=="usb", ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="1010", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip-fastboot"
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="1010", GROUP="plugdev", MODE="0660" SYMLINK+="usb-chip-fastboot"
