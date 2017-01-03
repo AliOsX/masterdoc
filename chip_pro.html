@@ -370,14 +370,24 @@ screen /dev/tty.ACM0 115200         #Ubuntu
 &gt;connect wifi_7cc70905cd77_4e5443_managed_psk #connect to wifi_ id, connman will then prompt for password
 &gt;quit # get back to linux terminal
 </code></pre>
-<p>If your network does not have a password connect using the <code class="prettyprint">wifi_</code> id that does not have the word &ldquo;hidden&rdquo; in it.</p>
+<p>If your network does not have a password (ends with <code class="prettyprint">managed_none</code>), you can connect using the <code class="prettyprint">wifi_</code> id that does not have the word &ldquo;hidden&rdquo; in it.</p>
+
+<p>Confirm your connection with <code class="prettyprint">ping -c 4 8.8.8.8</code> and get your IP address from the wlan0 line from <code class="prettyprint">ip a</code>.</p>
+
+<h4 id="ssh-on-buildroot">ssh on buildroot</h4>
+
+<p>Once you have your C.H.I.P. Pro on the network, chances are that you&rsquo;ll want to use <code class="prettyprint">ssh</code> to connect to it. You can <code class="prettyprint">ssh chip@&lt;ip address&gt;</code>. However, you&rsquo;ll probably want to switch to <code class="prettyprint">root</code> once you are in. You can do that with the command <code class="prettyprint">su</code> and use <code class="prettyprint">root</code> as the password.</p>
 
 <h3 id="nmcli">nmcli</h3>
 
-<p>You may find <code class="prettyprint">nmcli</code> is the gateway to your network. There&rsquo;s a lot of information about nmcli on the <a href="https://wiki.archlinux.org/index.php/NetworkManager">archlinux site</a>. If nmcli is what you need, here are the commands you can use to connect to a network using your serial connection in the terminal:</p>
+<p>You may find <code class="prettyprint">nmcli</code> is the gateway to your network if you are using a Debian linux image on C.H.I.P. Pro. There&rsquo;s a lot of information about nmcli on the <a href="https://wiki.archlinux.org/index.php/NetworkManager">archlinux site</a>. If nmcli is what you need, here are the commands you can use to connect to a network using your serial connection in the terminal:</p>
 <pre class="highlight plaintext"><code>sudo nmcli d wifi # list visible wifi networks
 sudo nmcli d wifi connect "Network SSID Name" password "Your Password" ifname wlan0 # if network is hidden add this to end: hidden yes
 </code></pre>
+<h4 id="ssh-on-debian">ssh on debian</h4>
+
+<p>If you want to connect to C.H.I.P. Pro with <code class="prettyprint">ssh</code> you will probably find it convenient to setup a unique name for your C.H.I.P. Pro. <a href="https://gist.github.com/nyboer/1fc232e0d006b656d2b724698c7ff90f">This gist</a> has a simple script to make this easy.</p>
+
 <h3 id="ping">ping!</h3>
 
 <p>It&rsquo;s always reassuring to check that you have a connection with ping:</p>
