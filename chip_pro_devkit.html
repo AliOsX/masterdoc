@@ -404,7 +404,7 @@ vi /usr/bin/fade-pwms
 
 <h4 id="exit-screen">Exit Screen</h4>
 
-<p>When done, kill all windows and terminate Screen with Ctrl+A Ctrl+. If you get the error &ldquo;Cannot open line&hellip; Resource busy&rdquo; it&rsquo;s because the last session was not properly exited. Search for the open file and active process using usbserial:</p>
+<p>When done, press Ctrl+A then Ctrl+\ to kill all windows and terminate Screen. If you get the error &ldquo;Cannot open line&hellip; Resource busy&rdquo; it&rsquo;s because the last session was not properly exited. Search for the open file and active process using usbserial:</p>
 <pre class="highlight plaintext"><code>lsof | grep usbserial
 </code></pre>
 <p>You will get an output that looks something like this:</p>
@@ -422,7 +422,7 @@ vi /usr/bin/fade-pwms
 <p>Open your Device Manager and find the port labeled USB Serial to find the COM port number. The items to plug into either Cygwin or PuTTY are:
 * COMxx number as the <em>Serial Line</em> or <em>COM Port</em> 
 * 115200 as the <em>Speed</em> or <em>Baud Rate</em> 
-* In PuTTY choose Serial as the <em>Connection Type</em>.</p>
+* In PuTTY choose Serial as the <em>Connection Type</em></p>
 
 <h2 id="audio">Audio</h2>
 
