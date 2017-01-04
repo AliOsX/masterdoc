@@ -1403,7 +1403,7 @@ make chip_defconfig
 <pre class="highlight shell"><code>make nconfig
 </code></pre>
 <p>For Linux (which will modify the linux.config under board/nextthing/chip/): </p>
-<pre class="highlight shell"><code>make linux nconfig
+<pre class="highlight shell"><code>make linux-nconfig
 </code></pre>
 <p>Now</p>
 <pre class="highlight shell"><code>make
@@ -1426,7 +1426,7 @@ make chip_defconfig
 ├── make chippro_defconfig
 │   ├── apply pre-existing chippro-specific configuration to buildroot
 │   └── apply pre-existing chippro-specific configuration to kernel
-├── make linux_nconfig
+├── make linux-nconfig
 │   └── make realtime changes to currently applied kernel defconfig
 └── make nconfig
     └── make realtime changes to currently applied buildroot defconfig
